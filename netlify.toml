@@ -1,6 +1,9 @@
 # Static deploy of the Danielli Vanz landing page.
-# The site is a single, self-contained index.html served from ./public,
-# so there is no build step.
+#
+# The site is a single, self-contained index.html living in ./public.
+# We set `base` to that folder so Netlify runs there: it finds no package.json,
+# skips dependency installation, and simply publishes the static files.
 [build]
-  publish = "public"
+  base = "public"
+  publish = "."
   command = ""
