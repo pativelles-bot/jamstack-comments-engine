@@ -3,664 +3,616 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danielli Vanz — Estética Avançada | Florianópolis</title>
-<meta name="description" content="Clínica de estética avançada no Centro de Florianópolis. Harmonização facial, toxina botulínica, bioestimuladores e protocolos regenerativos. Avaliação do rosto inteiro antes de qualquer aplicação.">
+<title>Clínica Pediátrica Clinipar — Florianópolis</title>
+<meta name="description" content="A clínica pediátrica mais tradicional de Florianópolis. Cuidado humanizado, acolhedor e de confiança para o seu filho — atendendo gerações com amor. Rua Presidente Coutinho, 579, Centro.">
+<meta name="theme-color" content="#3AA675">
+<meta property="og:title" content="Clínica Pediátrica Clinipar — Florianópolis">
+<meta property="og:description" content="A clínica pediátrica mais tradicional de Florianópolis. Cuidado humanizado que atende gerações com amor.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%233AA675'/%3E%3Ccircle cx='50' cy='44' r='16' fill='%23fff'/%3E%3Cpath d='M30 78c0-13 9-22 20-22s20 9 20 22z' fill='%23fff'/%3E%3C/svg%3E">
 <style>
   :root{
-    --choc:#241813;
-    --choc-2:#3A281F;
-    --brown:#5A4034;
-    --gold:#B98A50;
-    --gold-lt:#DCB98A;
-    --rose:#E6C0AC;
-    --sand:#F1E7DE;
-    --off:#FBF8F5;
-    --ink:#2C1F19;
-    --muted:#8A7566;
+    --green:#3AA675;
+    --green-deep:#25835A;
+    --green-ink:#1E5A41;
+    --green-soft:#E7F3EC;
+    --green-mist:#F1F8F3;
+    --rose:#F7DCE0;
+    --rose-soft:#FCEEF0;
+    --rose-deep:#E4A6B0;
+    --coral:#F3936F;
+    --cream:#FCF8F2;
+    --sand:#F4EDE3;
+    --ink:#24332C;
+    --muted:#6C7A72;
+    --line:rgba(37,131,90,.14);
 
-    --display:'Cormorant Garamond', Georgia, serif;
-    --body:'Jost', system-ui, -apple-system, sans-serif;
-    --script:'Sacramento', cursive;
+    --display:'Quicksand', system-ui, sans-serif;
+    --body:'Nunito', system-ui, -apple-system, sans-serif;
+    --script:'Caveat', cursive;
 
-    --w:1180px;
+    --w:1160px;
   }
 
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--off);
+    background:var(--cream);
     color:var(--ink);
     font-family:var(--body);
-    font-weight:300;
+    font-weight:400;
     font-size:17px;
-    line-height:1.65;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  img{max-width:100%;display:block}
+  img,svg{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  :focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:6px}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.01em;color:var(--green-ink)}
 
-  .wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 28px}
+  .wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 26px}
 
-  /* ── eyebrow / labels ───────────────────────── */
   .eyebrow{
     font-family:var(--body);
-    font-size:11px;
-    font-weight:400;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex;align-items:center;gap:12px;
+    font-size:12px;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;
+    color:var(--green);
+    display:inline-flex;align-items:center;gap:11px;
   }
-  .eyebrow::before{
-    content:"";width:28px;height:1px;background:var(--gold);flex:none;
-  }
+  .eyebrow::before{content:"";width:24px;height:2px;border-radius:2px;background:var(--rose-deep);flex:none}
 
-  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+  .script{font-family:var(--script);color:var(--coral);font-weight:600}
 
-  /* ── nav ────────────────────────────────────── */
+  .mark{width:44px;height:44px;flex:none}
+
+  /* ── nav ───────────────────────────────────── */
   nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(251,248,245,.88);
+    position:sticky;top:0;z-index:60;
+    background:rgba(252,248,242,.9);
     backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(185,138,80,.18);
+    border-bottom:1px solid var(--line);
   }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{display:flex;flex-direction:column;line-height:1}
-  .logo b{font-family:var(--script);font-size:32px;font-weight:400;color:var(--brown)}
-  .logo span{
-    font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--gold);margin-top:2px;margin-left:3px;
-  }
-  .nav-links{display:flex;gap:34px;align-items:center}
-  .nav-links a{
-    font-size:13px;letter-spacing:.06em;color:var(--brown);
-    transition:color .25s;
-  }
-  .nav-links a:hover{color:var(--gold)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand-txt{display:flex;flex-direction:column;line-height:1.05}
+  .brand-txt b{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.02em;color:var(--green-deep)}
+  .brand-txt span{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;margin-top:2px}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:15px;font-weight:600;color:var(--ink);opacity:.82;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:var(--green-deep)}
 
-  /* ── buttons ────────────────────────────────── */
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:var(--body);font-size:13.5px;font-weight:400;
-    letter-spacing:.09em;text-transform:uppercase;
-    padding:15px 30px;border:1px solid transparent;cursor:pointer;
-    transition:background .3s, color .3s, border-color .3s, transform .2s;
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--body);font-weight:700;font-size:15px;
+    padding:13px 24px;border-radius:100px;
+    background:var(--green);color:#fff;
+    box-shadow:0 8px 22px -8px rgba(37,131,90,.6);
+    transition:transform .18s,box-shadow .18s,background .18s;
+    cursor:pointer;border:none;white-space:nowrap;
   }
-  .btn-gold{background:var(--gold);color:#fff}
-  .btn-gold:hover{background:var(--brown);transform:translateY(-1px)}
-  .btn-line{background:transparent;color:var(--brown);border-color:rgba(185,138,80,.5)}
-  .btn-line:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-ghost-lt{background:transparent;color:var(--sand);border-color:rgba(220,185,138,.4)}
-  .btn-ghost-lt:hover{background:var(--gold);border-color:var(--gold);color:#fff}
-  .btn-sm{padding:11px 20px;font-size:11.5px}
+  .btn:hover{background:var(--green-deep);transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(37,131,90,.7)}
+  .btn svg{width:18px;height:18px;fill:#fff}
+  .btn.ghost{background:#fff;color:var(--green-deep);box-shadow:0 6px 18px -10px rgba(37,131,90,.4);border:1.5px solid var(--line)}
+  .btn.ghost:hover{background:var(--green-soft)}
+  .btn.ghost svg{fill:var(--green-deep)}
+  .nav-cta{display:flex}
 
-  /* ── HERO ───────────────────────────────────── */
-  .hero{position:relative;padding:88px 0 78px;overflow:hidden}
-  .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(720px 500px at 78% 30%, rgba(230,192,172,.28), transparent 65%);
+  /* ── hero ──────────────────────────────────── */
+  .hero{position:relative;overflow:hidden;padding:78px 0 90px}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(60% 55% at 82% 8%, var(--rose-soft) 0%, transparent 60%),
+      radial-gradient(55% 60% at 6% 88%, var(--green-mist) 0%, transparent 62%);
   }
-  .hero-grid{
-    position:relative;z-index:2;
-    display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;
-  }
-  .hero h1{
-    font-size:clamp(40px,5.4vw,68px);
-    margin:22px 0 0;
-    color:var(--choc);
-  }
-  .hero h1 em{
-    font-style:italic;font-weight:300;color:var(--gold);
-  }
-  .hero .sub{
-    margin-top:24px;max-width:44ch;font-size:18px;color:var(--brown);
-  }
-  .hero ul{list-style:none;margin:32px 0 0;display:flex;flex-direction:column;gap:11px}
-  .hero ul li{
-    display:flex;align-items:flex-start;gap:12px;
-    font-size:15.5px;color:var(--ink);
-  }
-  .tick{
-    flex:none;margin-top:6px;width:16px;height:1px;background:var(--gold);
-  }
-  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:38px}
-  .microcopy{
-    margin-top:14px;font-size:12.5px;letter-spacing:.05em;color:var(--muted);
-    display:flex;align-items:center;gap:8px;
-  }
-  .dot{width:5px;height:5px;border-radius:50%;background:#5BAA6E;flex:none;
-       box-shadow:0 0 0 0 rgba(91,170,110,.6);animation:pulse 2.4s infinite}
-  @keyframes pulse{
-    70%{box-shadow:0 0 0 7px rgba(91,170,110,0)}
-    100%{box-shadow:0 0 0 0 rgba(91,170,110,0)}
-  }
-  .trust{
-    margin-top:44px;padding-top:22px;border-top:1px solid rgba(185,138,80,.25);
-    display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
-    font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
-  }
-  .trust b{color:var(--brown);font-weight:500}
+  .blob{position:absolute;z-index:0;filter:blur(2px);opacity:.7}
+  .blob.b1{top:-40px;right:-60px;width:340px;color:var(--green-soft)}
+  .blob.b2{bottom:-70px;left:-50px;width:300px;color:var(--rose)}
+  .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.4vw,62px);margin:22px 0 20px}
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero .lead{font-size:19px;color:var(--muted);max-width:35ch;margin-bottom:14px}
+  .hero-hand{font-family:var(--script);font-size:30px;color:var(--coral);margin-bottom:30px;transform:rotate(-2deg);display:inline-block}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-stats{display:flex;gap:30px;margin-top:38px;flex-wrap:wrap}
+  .hero-stats .st b{font-family:var(--display);font-size:30px;color:var(--green-deep);display:block;line-height:1}
+  .hero-stats .st span{font-size:13px;color:var(--muted);font-weight:600}
 
-  /* ── SIGNATURE: mapa facial ─────────────────── */
-  .face-card{
-    position:relative;aspect-ratio:4/5;
-    background:linear-gradient(160deg,#FDFAF7 0%, var(--sand) 55%, var(--rose) 100%);
-    border:1px solid rgba(185,138,80,.3);
-    display:grid;place-items:center;overflow:hidden;
+  .hero-art{position:relative}
+  .art-card{
+    position:relative;border-radius:34px;overflow:hidden;
+    background:linear-gradient(160deg,var(--green-soft),var(--rose-soft) 130%);
+    aspect-ratio:4/4.4;
+    box-shadow:0 40px 80px -40px rgba(37,131,90,.45);
+    border:1px solid #fff;
   }
-  .face-card::before{
-    content:"";position:absolute;inset:14px;border:1px solid rgba(185,138,80,.22);
-    pointer-events:none;z-index:2;
+  .art-card svg.scene{position:absolute;inset:0;width:100%;height:100%}
+  .art-badge{
+    position:absolute;bottom:22px;left:22px;right:22px;z-index:3;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+    border-radius:18px;padding:16px 20px;
+    display:flex;align-items:center;gap:14px;
+    box-shadow:0 12px 30px -16px rgba(37,131,90,.5);
   }
-  .face-card img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:50% 32%;
+  .art-badge .heart{width:38px;height:38px;flex:none;fill:var(--coral)}
+  .art-badge p{font-size:14px;line-height:1.4;font-weight:600;color:var(--ink)}
+  .art-badge p b{color:var(--green-deep)}
+  .float-pill{
+    position:absolute;z-index:4;background:#fff;border-radius:100px;
+    padding:9px 16px;font-size:13px;font-weight:700;color:var(--green-deep);
+    box-shadow:0 14px 30px -14px rgba(37,131,90,.55);display:flex;align-items:center;gap:8px;
   }
-  .face-svg{width:74%;height:auto;overflow:visible}
-  .face-svg .stroke{
-    fill:none;stroke:var(--brown);stroke-width:1.1;
-    stroke-linecap:round;stroke-linejoin:round;opacity:.55;
-    stroke-dasharray:1400;stroke-dashoffset:1400;
-    animation:draw 2.6s cubic-bezier(.25,.8,.3,1) .3s forwards;
-  }
-  .face-svg .zone{
-    fill:none;stroke:var(--gold);stroke-width:.9;
-    stroke-dasharray:4 4;opacity:0;
-    animation:fade .9s ease forwards;
-  }
-  .face-svg .zone:nth-of-type(1){animation-delay:2.0s}
-  .face-svg .zone:nth-of-type(2){animation-delay:2.25s}
-  .face-svg .zone:nth-of-type(3){animation-delay:2.5s}
-  .face-svg .pt{fill:var(--gold);opacity:0;animation:fade .5s ease forwards}
-  .face-svg .pt:nth-of-type(4n+1){animation-delay:2.7s}
-  .face-svg .pt:nth-of-type(4n+2){animation-delay:2.85s}
-  .face-svg .pt:nth-of-type(4n+3){animation-delay:3.0s}
-  .face-svg .pt:nth-of-type(4n){animation-delay:3.15s}
-  .face-svg text{
-    font-family:var(--body);font-size:5.2px;letter-spacing:.22em;
-    text-transform:uppercase;fill:var(--gold);opacity:0;
-    animation:fade .8s ease 3.3s forwards;
-  }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
-  .face-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;
-    background:linear-gradient(to top, rgba(36,24,19,.9), transparent);
-    color:var(--sand);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  }
+  .float-pill svg{width:16px;height:16px;fill:var(--coral)}
+  .float-pill.p1{top:26px;left:-16px}
+  .float-pill.p2{top:44%;right:-18px}
 
-  /* ── PILARES ────────────────────────────────── */
-  .pillars{background:var(--choc);color:var(--sand);padding:66px 0}
-  .pillars-in{
-    display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;
-  }
-  .slogan{
-    font-family:var(--display);font-style:italic;font-weight:300;
-    font-size:clamp(24px,2.4vw,32px);line-height:1.25;color:var(--gold-lt);
-    max-width:11ch;
-  }
-  .pillar-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .pillar{padding:0 26px;border-left:1px solid rgba(220,185,138,.28)}
-  .pillar:first-child{padding-left:0;border-left:0}
-  .pillar h3{font-size:22px;color:#fff;margin-bottom:8px}
-  .pillar p{font-size:13.5px;line-height:1.55;color:rgba(241,231,222,.6)}
+  /* ── trust strip ───────────────────────────── */
+  .strip{background:var(--green-deep);color:#fff}
+  .strip-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:22px;padding:26px 0}
+  .strip .it{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
+  .strip .it svg{width:26px;height:26px;fill:none;stroke:var(--rose);stroke-width:1.7;flex:none;stroke-linecap:round;stroke-linejoin:round}
 
-  /* ── seções genéricas ───────────────────────── */
-  .sec{padding:96px 0}
-  .sec-head{max-width:640px;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(32px,3.8vw,46px);margin:18px 0 0;color:var(--choc)}
-  .sec-head p{margin-top:16px;color:var(--brown);font-size:17px}
+  /* ── sections ──────────────────────────────── */
+  section{padding:86px 0}
+  .sec-head{max-width:620px;margin-bottom:48px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(30px,3.6vw,42px);margin:16px 0 16px}
+  .sec-head p{color:var(--muted);font-size:18px}
 
-  /* sinais */
-  .signs{background:var(--sand)}
-  .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(185,138,80,.28)}
-  .sign{background:var(--sand);padding:34px 26px}
-  .sign .num{
-    font-family:var(--display);font-size:15px;color:var(--gold);
-    letter-spacing:.1em;margin-bottom:14px;
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .about-visual{
+    border-radius:30px;background:linear-gradient(155deg,var(--rose-soft),var(--green-mist));
+    padding:38px;position:relative;overflow:hidden;border:1px solid #fff;
+    box-shadow:0 34px 70px -44px rgba(37,131,90,.4);
   }
-  .sign h3{font-size:23px;margin-bottom:9px;color:var(--choc)}
-  .sign p{font-size:14.5px;color:var(--brown);line-height:1.6}
-  .signs-note{
-    margin-top:34px;font-family:var(--display);font-style:italic;
-    font-size:21px;color:var(--brown);
-  }
+  .about-visual .quote{font-family:var(--script);font-size:34px;color:var(--coral);line-height:1.15;margin-bottom:18px}
+  .about-visual p{color:var(--ink);font-weight:600}
+  .about-visual .sig{margin-top:22px;font-size:14px;color:var(--muted);font-weight:700}
+  .about-copy h2{font-size:clamp(30px,3.6vw,42px);margin:16px 0 20px}
+  .about-copy p{color:var(--muted);margin-bottom:18px}
+  .about-copy p strong{color:var(--ink)}
+  .vals{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+  .val{display:flex;gap:13px;align-items:flex-start}
+  .val .ico{width:42px;height:42px;flex:none;border-radius:12px;background:var(--green-soft);display:grid;place-items:center}
+  .val .ico svg{width:22px;height:22px;fill:none;stroke:var(--green-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .val b{display:block;font-family:var(--display);font-size:16px;color:var(--green-ink)}
+  .val span{font-size:14px;color:var(--muted)}
 
-  /* tratamentos */
-  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .treat{
-    border:1px solid rgba(185,138,80,.28);padding:32px 28px;
-    background:#fff;transition:border-color .3s, transform .3s;
+  /* services */
+  .svc-sec{background:var(--green-mist)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:#fff;border-radius:22px;padding:32px 28px;
+    border:1px solid var(--line);
+    box-shadow:0 24px 48px -38px rgba(37,131,90,.5);
+    transition:transform .2s,box-shadow .2s;
   }
-  .treat:hover{border-color:var(--gold);transform:translateY(-3px)}
-  .treat .tag{
-    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
-  }
-  .treat h3{font-size:25px;margin-bottom:10px;color:var(--choc)}
-  .treat p{font-size:14.5px;color:var(--brown);line-height:1.6}
+  .card:hover{transform:translateY(-5px);box-shadow:0 34px 60px -34px rgba(37,131,90,.55)}
+  .card .badge{width:56px;height:56px;border-radius:16px;background:var(--rose-soft);display:grid;place-items:center;margin-bottom:20px}
+  .card .badge svg{width:28px;height:28px;fill:none;stroke:var(--coral);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:20px;margin-bottom:9px}
+  .card p{font-size:15px;color:var(--muted)}
 
-  /* sobre */
-  .about{background:var(--choc-2);color:var(--sand)}
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-  .portrait{
-    position:relative;aspect-ratio:3/4;
-    background:linear-gradient(150deg, var(--brown), var(--choc));
-    border:1px solid rgba(220,185,138,.3);
-    overflow:hidden;
+  /* corpo clínico */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .doc{
+    background:#fff;border-radius:22px;padding:26px;text-align:center;
+    border:1px solid var(--line);
+    box-shadow:0 20px 44px -38px rgba(37,131,90,.5);
+    transition:transform .2s;
   }
-  .portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:32% 20%;
+  .doc:hover{transform:translateY(-4px)}
+  .avatar{
+    width:78px;height:78px;border-radius:50%;margin:0 auto 16px;
+    display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:24px;color:#fff;
+    box-shadow:0 10px 24px -12px rgba(37,131,90,.6);
   }
-  .about h2{font-size:clamp(30px,3.4vw,44px);color:#fff;margin:18px 0 22px}
-  .about p{color:rgba(241,231,222,.78);margin-bottom:16px;font-size:16.5px}
-  .about .sig{
-    font-family:var(--script);font-size:44px;color:var(--gold-lt);
-    margin-top:26px;line-height:1;
-  }
-  .about .crd{
-    font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:rgba(220,185,138,.6);margin-top:6px;
-  }
+  .doc h3{font-size:18px;margin-bottom:4px}
+  .doc .role{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--rose-deep)}
 
-  /* depoimentos */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .quote{
-    border-left:2px solid var(--gold);padding:6px 0 6px 24px;
+  /* convênios */
+  .conv-sec{background:linear-gradient(180deg,var(--cream),var(--rose-soft))}
+  .conv-note{
+    max-width:720px;margin:0 auto;text-align:center;
+    background:#fff;border-radius:24px;padding:44px 40px;
+    border:1px solid var(--line);box-shadow:0 30px 60px -44px rgba(37,131,90,.4);
   }
-  .quote p{
-    font-family:var(--display);font-size:21px;font-style:italic;
-    line-height:1.42;color:var(--choc);
-  }
-  .quote cite{
-    display:block;margin-top:16px;font-family:var(--body);font-style:normal;
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  }
-  .slot{
-    margin-top:30px;padding:14px 18px;border:1px dashed rgba(185,138,80,.55);
-    font-size:12.5px;letter-spacing:.05em;color:var(--muted);background:rgba(230,192,172,.12);
-  }
+  .conv-note .ico{width:60px;height:60px;border-radius:50%;background:var(--green-soft);display:grid;place-items:center;margin:0 auto 20px}
+  .conv-note .ico svg{width:30px;height:30px;fill:none;stroke:var(--green-deep);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .conv-note h3{font-size:24px;margin-bottom:12px}
+  .conv-note p{color:var(--muted);margin-bottom:22px}
 
-  /* CTA final */
-  .final{
-    background:var(--choc);color:var(--sand);text-align:center;padding:104px 0;
-    position:relative;overflow:hidden;
-  }
-  .final::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(600px 380px at 50% 0%, rgba(185,138,80,.22), transparent 70%);
-  }
-  .final-in{position:relative;z-index:2}
-  .final .eyebrow{justify-content:center}
-  .final .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
-  .final h2{font-size:clamp(34px,4.4vw,56px);color:#fff;margin:22px 0 18px}
-  .final p{max-width:52ch;margin:0 auto;color:rgba(241,231,222,.7)}
-  .final .cta-row{justify-content:center}
-  .addr{
-    margin-top:56px;padding-top:30px;border-top:1px solid rgba(220,185,138,.22);
-    display:flex;flex-wrap:wrap;gap:26px 60px;justify-content:center;text-align:left;
-  }
-  .addr div{min-width:180px}
-  .addr dt{
-    font-size:10px;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:7px;
-  }
-  .addr dd{font-size:15px;color:rgba(241,231,222,.85);line-height:1.5}
-
-  /* footer */
-  footer{background:#1B110D;color:rgba(241,231,222,.45);padding:32px 0;font-size:12.5px}
-  .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  footer a:hover{color:var(--gold-lt)}
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:stretch}
+  .contact-card{background:#fff;border-radius:26px;padding:40px;border:1px solid var(--line);box-shadow:0 30px 60px -46px rgba(37,131,90,.45)}
+  .contact-card h2{font-size:32px;margin-bottom:8px}
+  .contact-card .sub{color:var(--muted);margin-bottom:28px}
+  .info{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+  .info:first-of-type{border-top:none}
+  .info .ic{width:44px;height:44px;flex:none;border-radius:13px;background:var(--green-soft);display:grid;place-items:center}
+  .info .ic svg{width:22px;height:22px;fill:none;stroke:var(--green-deep);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .info b{display:block;font-family:var(--display);font-size:15px;color:var(--green-ink)}
+  .info a,.info span{color:var(--muted);font-size:15px}
+  .info a:hover{color:var(--green-deep)}
+  .contact-cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .map-card{border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -46px rgba(37,131,90,.45);min-height:420px;background:var(--green-mist)}
+  .map-card iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
 
   /* whatsapp float */
-  .wa{
-    position:fixed;right:22px;bottom:22px;z-index:90;
-    width:58px;height:58px;border-radius:50%;
-    background:#25D366;display:grid;place-items:center;
-    box-shadow:0 8px 26px rgba(37,211,102,.42);
-    transition:transform .25s, box-shadow .25s;
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:80;
+    width:60px;height:60px;border-radius:50%;background:#25D366;
+    display:grid;place-items:center;
+    box-shadow:0 14px 34px -10px rgba(37,211,102,.7);
+    transition:transform .2s;
   }
-  .wa:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(37,211,102,.6)}
-  .wa svg{width:30px;height:30px;fill:#fff}
-  .wa::after{
-    content:"";position:absolute;inset:0;border-radius:50%;
-    border:2px solid rgba(37,211,102,.5);animation:ring 2.6s ease-out infinite;
-  }
-  @keyframes ring{
-    0%{transform:scale(1);opacity:.8}
-    100%{transform:scale(1.55);opacity:0}
-  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:32px;height:32px;fill:#fff}
 
-  /* reveal */
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
-  .rv.in{opacity:1;transform:none}
+  /* footer */
+  footer{background:var(--green-ink);color:#dcefe4;padding:56px 0 30px}
+  .foot-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .foot-brand b{font-family:var(--display);font-size:20px;color:#fff}
+  footer p{font-size:14px;color:#b6d6c6;max-width:34ch}
+  footer h4{font-family:var(--display);font-size:15px;color:#fff;margin-bottom:14px;letter-spacing:.04em}
+  footer ul{list-style:none}
+  footer li{margin-bottom:9px}
+  footer a{font-size:14px;color:#c4dfd1;transition:color .2s}
+  footer a:hover{color:#fff}
+  .foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#9dc2b1}
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition:none!important}
-    .rv{opacity:1;transform:none}
-    .face-svg .stroke{stroke-dashoffset:0}
-    .face-svg .zone,.face-svg .pt,.face-svg text{opacity:1}
-  }
-
-  /* ── responsivo ─────────────────────────────── */
-  @media (max-width:980px){
+  /* responsive */
+  @media(max-width:900px){
     .nav-links{display:none}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .face-card{max-width:400px;margin:0 auto}
-    .pillars-in{grid-template-columns:1fr;gap:34px}
-    .slogan{max-width:none}
-    .pillar-list{grid-template-columns:repeat(2,1fr);gap:28px 0}
-    .pillar{padding:0 22px}
-    .pillar:nth-child(3){padding-left:0;border-left:0}
-    .sign-grid{grid-template-columns:repeat(2,1fr)}
-    .treat-grid{grid-template-columns:repeat(2,1fr)}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    .portrait{max-width:320px}
-    .quotes{grid-template-columns:1fr;gap:32px}
+    .hero-in,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .hero{padding:52px 0 66px}
+    .hero-art{max-width:420px;margin:6px auto 0}
+    .cards,.team{grid-template-columns:1fr 1fr}
+    .about-grid{gap:36px}
+    section{padding:64px 0}
   }
-  @media (max-width:620px){
+  @media(max-width:600px){
     body{font-size:16px}
-    .wrap{padding:0 20px}
-    .hero{padding:56px 0 60px}
-    .sec{padding:68px 0}
-    .final{padding:76px 0}
-    .sign-grid,.treat-grid{grid-template-columns:1fr}
-    .pillar-list{grid-template-columns:1fr;gap:24px}
-    .pillar{padding:0 0 0 20px;border-left:1px solid rgba(220,185,138,.28)}
-    .pillar:nth-child(3){padding-left:20px;border-left:1px solid rgba(220,185,138,.28)}
-    .cta-row .btn{width:100%}
-    .addr{justify-content:flex-start}
+    .nav-cta{display:none}
+    .cards,.team,.vals,.foot-in{grid-template-columns:1fr}
+    .hero-stats{gap:22px}
+    .contact-card,.conv-note{padding:30px 24px}
   }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══════════════════════════════════════ -->
+<!-- ══ NAV ══ -->
 <nav>
   <div class="wrap nav-in">
-    <a href="#top" class="logo">
-      <b>Danielli Vanz</b>
-      <span>Estética Avançada</span>
+    <a class="brand" href="#topo" aria-label="Clinipar — início">
+      <svg class="mark" viewBox="0 0 100 100" role="img" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#3AA675"/>
+        <path d="M68 30a26 26 0 1 0 0 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="50" cy="45" r="12" fill="#fff"/>
+        <path d="M35 74c0-9 7-16 15-16s15 7 15 16z" fill="#fff"/>
+      </svg>
+      <span class="brand-txt"><b>Clinipar</b><span>Clínica Pediátrica</span></span>
     </a>
     <div class="nav-links">
-      <a href="#sinais">Sinais</a>
-      <a href="#tratamentos">Tratamentos</a>
-      <a href="#sobre">A clínica</a>
-      <a href="#feedback">Feedback</a>
+      <a href="#clinica">A Clínica</a>
+      <a href="#corpo">Corpo Clínico</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#convenios">Convênios</a>
+      <a href="#contato">Contato</a>
     </div>
-    <a href="#agendar" class="btn btn-gold btn-sm">Agendar avaliação</a>
+    <div class="nav-cta">
+      <a class="btn" href="https://wa.me/5548991451097" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.6 15.6L2 22l6.6-1.7A10 10 0 1 0 20 3.9Zm-8 18a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.9 1 1-3.8-.2-.3A8.3 8.3 0 1 1 12 21.9Zm4.6-6.2c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.4v-.4c0-.1-.6-1.5-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2 5.3 5.3 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.5 1.5.6a3.6 3.6 0 0 0 1.6.1c.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>
+        Agende no WhatsApp
+      </a>
+    </div>
   </div>
 </nav>
 
-<!-- ══ HERO — dobra zero (Versão B) ═════════════ -->
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-
+<!-- ══ HERO ══ -->
+<header class="hero" id="topo">
+  <svg class="blob b1" viewBox="0 0 200 200" aria-hidden="true"><path fill="currentColor" d="M42 -62C55 -53 66 -42 71 -28C76 -14 74 3 68 18C62 33 52 46 39 55C26 64 10 69 -6 76C-22 83 -40 92 -54 86C-68 80 -78 59 -80 40C-82 21 -76 3 -70 -14C-64 -31 -58 -47 -46 -57C-34 -67 -17 -71 -1 -70C15 -69 29 -71 42 -62Z" transform="translate(100 100)"/></svg>
+  <svg class="blob b2" viewBox="0 0 200 200" aria-hidden="true"><path fill="currentColor" d="M45 -64C57 -55 64 -40 69 -25C74 -10 76 6 71 20C66 34 54 46 40 55C26 64 13 70 -3 74C-19 78 -38 80 -52 72C-66 64 -75 46 -78 28C-81 10 -78 -8 -71 -24C-64 -40 -53 -54 -39 -63C-25 -72 -12 -76 3 -79C18 -82 33 -73 45 -64Z" transform="translate(100 100)"/></svg>
+  <div class="wrap hero-in">
     <div>
-      <div class="eyebrow rv">Estética avançada · Centro, Florianópolis</div>
-
-      <h1 class="rv">Não são as rugas.<br>É o <em>contorno</em><br>que você perdeu.</h1>
-
-      <p class="sub rv">A maioria das mulheres percebe que o rosto mudou muito antes de conseguir nomear o quê. A avaliação existe pra dar nome — e dar caminho.</p>
-
-      <ul class="rv">
-        <li><span class="tick"></span>Descubra o que mudou no seu rosto</li>
-        <li><span class="tick"></span>Entenda a causa antes de qualquer aplicação</li>
-        <li><span class="tick"></span>Saia com um plano na ordem certa</li>
-      </ul>
-
-      <div class="cta-row rv">
-        <a href="#agendar" class="btn btn-gold">Quero entender meu rosto</a>
-        <a href="#sinais" class="btn btn-line">Ver os sinais mais comuns</a>
+      <span class="eyebrow">Florianópolis · Santa Catarina</span>
+      <h1>A clínica pediátrica <em>mais tradicional</em> de Florianópolis.</h1>
+      <p class="lead">Cuidado médico infantil com acolhimento, vínculo e confiança — do primeiro choro às consultas que atravessam gerações.</p>
+      <p class="hero-hand">atendendo com amor 💚</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/5548991451097" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.6 15.6L2 22l6.6-1.7A10 10 0 1 0 20 3.9Zm-8 18a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.9 1 1-3.8-.2-.3A8.3 8.3 0 1 1 12 21.9Zm4.6-6.2c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.4v-.4c0-.1-.6-1.5-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2 5.3 5.3 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.5 1.5.6a3.6 3.6 0 0 0 1.6.1c.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>
+          Agendar consulta
+        </a>
+        <a class="btn ghost" href="tel:+554832223622">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1Z"/></svg>
+          (48) 3222-3622
+        </a>
       </div>
-      <p class="microcopy rv"><span class="dot"></span>Avaliação presencial no Centro, sem compromisso de fechar</p>
-
-      <div class="trust rv">
-        <span><b>6 mil</b> mulheres acompanham</span>
-        <span><b>Clínica própria</b> no Centro</span>
-        <span><b>Regen Match</b> · Evo &amp; LMG Aesthetics</span>
+      <div class="hero-stats">
+        <div class="st"><b>+40</b><span>anos de história</span></div>
+        <div class="st"><b>6</b><span>pediatras dedicados</span></div>
+        <div class="st"><b>3</b><span>gerações atendidas</span></div>
       </div>
     </div>
 
-    <!-- retrato da Danielli -->
-    <div class="face-card rv">
-      <img src="img/danielli-hero.jpg" width="667" height="824"
-           alt="Danielli Vanz na clínica de estética avançada, diante do painel dourado DV com parede de flores">
-      <div class="face-cap">O rosto inteiro, antes de qualquer aplicação</div>
+    <div class="hero-art">
+      <div class="art-card">
+        <svg class="scene" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#EFF8F1"/><stop offset="1" stop-color="#FCEEF0"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="440" fill="url(#sky)"/>
+          <circle cx="312" cy="86" r="46" fill="#F9E4B8" opacity=".7"/>
+          <g fill="#fff" opacity=".85">
+            <ellipse cx="90" cy="72" rx="42" ry="20"/><ellipse cx="120" cy="80" rx="34" ry="16"/>
+            <ellipse cx="300" cy="180" rx="34" ry="15"/>
+          </g>
+          <path d="M200 300c-70-42-104-78-104-128 0-32 24-54 52-54 22 0 40 12 52 34 12-22 30-34 52-34 28 0 52 22 52 54 0 50-34 86-104 128Z" fill="#3AA675" opacity=".16"/>
+          <g>
+            <circle cx="160" cy="238" r="34" fill="#3AA675"/>
+            <path d="M118 340c0-24 19-42 42-42s42 18 42 42Z" fill="#3AA675"/>
+            <circle cx="150" cy="234" r="4.5" fill="#fff"/><circle cx="172" cy="234" r="4.5" fill="#fff"/>
+            <path d="M152 248q8 7 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <g>
+            <circle cx="248" cy="256" r="28" fill="#E4A6B0"/>
+            <path d="M214 344c0-20 15-34 34-34s34 14 34 34Z" fill="#E4A6B0"/>
+            <circle cx="240" cy="253" r="4" fill="#fff"/><circle cx="258" cy="253" r="4" fill="#fff"/>
+            <path d="M241 265q7 6 14 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          </g>
+          <path d="M0 360h400v80H0z" fill="#E7F3EC"/>
+          <circle cx="60" cy="382" r="10" fill="#F3936F" opacity=".55"/>
+          <circle cx="352" cy="392" r="14" fill="#3AA675" opacity=".3"/>
+        </svg>
+        <div class="art-badge">
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-6-4-9-7-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-9 11Z"/></svg>
+          <p><b>Acolhimento de verdade.</b> Cada criança é recebida com carinho — e cada família com atenção.</p>
+        </div>
+      </div>
+      <span class="float-pill p1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-6-4-9-7-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-9 11Z"/></svg> Vínculo &amp; confiança</span>
+      <span class="float-pill p2">👶 Do bebê ao adolescente</span>
     </div>
-
   </div>
 </header>
 
-<!-- ══ PILARES ══════════════════════════════════ -->
-<section class="pillars">
-  <div class="wrap pillars-in">
-    <p class="slogan rv">Realce sua essência. Revele sua confiança.</p>
-    <div class="pillar-list">
-      <div class="pillar rv">
-        <h3>Ciência</h3>
-        <p>Indicação baseada em evidência, não em tendência de rede social.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Técnica</h3>
-        <p>Protocolos avançados e atualização constante em estética regenerativa.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Naturalidade</h3>
-        <p>O objetivo é você parecer descansada, não parecer procedimento.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Confiança</h3>
-        <p>Você entende cada etapa antes de aceitar qualquer uma delas.</p>
-      </div>
-    </div>
+<!-- ══ TRUST STRIP ══ -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <div class="it"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg> Tradição desde sempre</div>
+    <div class="it"><svg viewBox="0 0 24 24"><path d="M12 21c-6-4-9-7-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-9 11Z"/></svg> Atendimento humanizado</div>
+    <div class="it"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg> Corpo clínico experiente</div>
+    <div class="it"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Convênios &amp; particular</div>
   </div>
-</section>
+</div>
 
-<!-- ══ SINAIS ═══════════════════════════════════ -->
-<section class="sec signs" id="sinais">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que costuma passar despercebido</div>
-      <h2>O rosto não envelhece com rugas. Envelhece com estrutura.</h2>
-      <p>Quatro sinais que aparecem antes das linhas de expressão — e que quase ninguém sabe nomear.</p>
-    </div>
-
-    <div class="sign-grid">
-      <div class="sign rv">
-        <div class="num">I</div>
-        <h3>Contorno</h3>
-        <p>A linha da mandíbula perde definição e o rosto parece "cair" na foto de perfil.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">II</div>
-        <h3>Volume</h3>
-        <p>A maçã do rosto esvazia. O olhar fica cansado mesmo depois de dormir bem.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">III</div>
-        <h3>Firmeza</h3>
-        <p>A pele responde menos ao toque e a maquiagem começa a marcar onde não marcava.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">IV</div>
-        <h3>Qualidade da pele</h3>
-        <p>Textura irregular, poro aparente e perda de viço, mesmo com skincare em dia.</p>
-      </div>
-    </div>
-
-    <p class="signs-note rv">Tratar um sinal isolado é o que produz resultado artificial. Por isso a avaliação vem antes.</p>
-  </div>
-</section>
-
-<!-- ══ TRATAMENTOS ══════════════════════════════ -->
-<section class="sec" id="tratamentos">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que é feito na clínica</div>
-      <h2>Tratamentos faciais, corporais e regenerativos</h2>
-      <p>A indicação sai da avaliação. Nada aqui é vendido como pacote fechado antes de olhar o seu rosto.</p>
-    </div>
-
-    <div class="treat-grid">
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Harmonização facial</h3>
-        <p>Reposição de volume e reequilíbrio de proporções, com leitura do rosto inteiro antes da primeira aplicação.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Toxina botulínica</h3>
-        <p>Suavização de linhas de expressão preservando a movimentação natural do rosto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Bioestimuladores de colágeno</h3>
-        <p>Recuperação de firmeza e sustentação a partir do estímulo do próprio colágeno.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Regenerativo</div>
-        <h3>REGEN-HK e HIPRO</h3>
-        <p>Tecnologias de estética regenerativa para qualidade de pele e sustentação profunda.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Pele</div>
-        <h3>LHA LA Peel</h3>
-        <p>Peeling de quarta geração, sem descamação, com efeito de pele lisa e uniforme.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Criolipólise da Pri</h3>
-        <p>Redução de gordura localizada por resfriamento controlado, com protocolo individual.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Diástase PH</h3>
-        <p>Protocolo para afastamento dos músculos abdominais, comum no pós-parto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Manutenção</div>
-        <h3>Tratamentos faciais</h3>
-        <p>Limpeza, hidratação e protocolos de rotina que sustentam o resultado dos procedimentos.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Rotina</div>
-        <h3>Skincare e home care</h3>
-        <p>Prescrição de cuidado diário, porque metade do resultado acontece fora da clínica.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SOBRE ════════════════════════════════════ -->
-<section class="sec about" id="sobre">
+<!-- ══ A CLÍNICA ══ -->
+<section id="clinica">
   <div class="wrap about-grid">
-    <div class="portrait rv">
-      <img src="img/danielli-clinica.jpg" width="683" height="821"
-           alt="Danielli Vanz na clínica, com equipamento de estética avançada">
+    <div class="about-visual">
+      <p class="quote">“Histórias que atravessam gerações.”</p>
+      <p>Pais que foram nossos pacientes hoje trazem seus filhos. É esse vínculo — construído com tempo, cuidado e amor — que faz da Clinipar parte da história de tantas famílias de Florianópolis.</p>
+      <p class="sig">— Clínica Pediátrica Clinipar</p>
     </div>
-    <div>
-      <div class="eyebrow rv">A profissional</div>
-      <h2 class="rv">Estratégia, não excesso.</h2>
-      <p class="rv">Danielli Cássia Vanz atua há anos na estética avançada em Florianópolis. Antes de abrir a clínica própria no Centro, foi sócia-proprietária da +Top Estética, onde construiu a base técnica que hoje sustenta os protocolos da Danielli Vanz Estética Avançada.</p>
-      <p class="rv">Em 2026 foi convidada pela Evo e pela LMG Aesthetics para o Regen Match, encontro fechado de estética regenerativa — o tipo de reconhecimento que vem de pares, não de anúncio.</p>
-      <p class="rv">A clínica funciona sobre uma regra simples: o rosto é avaliado por inteiro antes de qualquer aplicação. Cada área tem uma função, e tratar uma sozinha é exatamente o que gera aquele resultado que todo mundo percebe.</p>
-      <div class="sig rv">Danielli Vanz</div>
-      <div class="crd rv">Estética Avançada · Florianópolis, SC</div>
+    <div class="about-copy">
+      <span class="eyebrow">A Clínica</span>
+      <h2>Cuidar de crianças é cuidar de futuros.</h2>
+      <p>Somos uma <strong>clínica pediátrica</strong> no coração de Florianópolis, dedicada ao atendimento médico infantil com proximidade e acolhimento. Aqui, cada consulta é um encontro — entre o médico, a criança e a família.</p>
+      <p>Ao longo de décadas, construímos uma relação de <strong>confiança e tradição</strong>. Recebemos gerações inteiras com o mesmo compromisso: escutar com atenção, cuidar com carinho e caminhar junto de cada família.</p>
+      <div class="vals">
+        <div class="val">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21c-6-4-9-7-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-9 11Z"/></svg></span>
+          <div><b>Acolhimento</b><span>Ambiente afetivo e tranquilo para a criança.</span></div>
+        </div>
+        <div class="val">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg></span>
+          <div><b>Tradição</b><span>Décadas cuidando de famílias da cidade.</span></div>
+        </div>
+        <div class="val">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8M4 4h16v16H4z"/></svg></span>
+          <div><b>Vínculo</b><span>O mesmo médico acompanhando o crescimento.</span></div>
+        </div>
+        <div class="val">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><b>Dedicação</b><span>Tempo e escuta em cada atendimento.</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEEDBACK ═════════════════════════════════ -->
-<section class="sec" id="feedback">
+<!-- ══ SERVIÇOS ══ -->
+<section id="servicos" class="svc-sec">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Feedback</div>
-      <h2>O que dizem quem já sentou na cadeira</h2>
+    <div class="sec-head center">
+      <span class="eyebrow">Nossos Serviços</span>
+      <h2>Cuidado completo em cada fase</h2>
+      <p>Do recém-nascido ao adolescente, acompanhamos cada etapa do crescimento com atenção e carinho.</p>
     </div>
-
-    <div class="quotes">
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
+    <div class="cards">
+      <div class="card">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 21c-6-4-9-7-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-9 11Z"/></svg></span>
+        <h3>Consultas pediátricas</h3>
+        <p>Atendimento médico infantil de rotina e acompanhamento contínuo do desenvolvimento do seu filho.</p>
+      </div>
+      <div class="card">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M6 10a6 6 0 0 1 12 0v4a6 6 0 0 1-12 0zM9 20h6"/></svg></span>
+        <h3>Pneumopediatria</h3>
+        <p>Cuidado especializado da saúde respiratória infantil, com o Dr. Eduardo Piacentini Filho.</p>
+      </div>
+      <div class="card">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 9l7-5 7 5M7 22h10"/></svg></span>
+        <h3>Campanhas de vacinação</h3>
+        <p>Orientação e campanhas para manter a caderneta em dia e proteger cada fase da infância.</p>
+      </div>
+      <div class="card">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></span>
+        <h3>Acompanhamento do crescimento</h3>
+        <p>Monitoramento de peso, altura e marcos do desenvolvimento ao longo de toda a infância.</p>
+      </div>
+      <div class="card">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 3v4M16 3v4M4 10h16"/></svg></span>
+        <h3>Dicas &amp; orientações</h3>
+        <p>Conteúdo e orientações para as famílias sobre saúde, alimentação e o dia a dia dos pequenos.</p>
+      </div>
+      <div class="card">
+        <span class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h3>Convênios &amp; particular</h3>
+        <p>Atendimento por convênios e no particular, com agendamento simples pelo WhatsApp ou telefone.</p>
+      </div>
     </div>
-
-    <p class="slot rv">Espaços reservados: 3 depoimentos reais (destaque "Feedback" do Instagram) + 1 par de antes/depois na dobra, se houver autorização de uso de imagem assinada.</p>
   </div>
 </section>
 
-<!-- ══ CTA FINAL ════════════════════════════════ -->
-<section class="final" id="agendar">
-  <div class="wrap final-in">
-    <div class="eyebrow rv">Agende sua avaliação</div>
-    <h2 class="rv">Uma hora para entender o seu rosto.</h2>
-    <p class="rv">Você sai da avaliação sabendo o que mudou, por que mudou e qual a ordem certa de tratar. Sem pacote empurrado, sem promessa que a pele não sustenta.</p>
-
-    <div class="cta-row rv">
-      <a href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-gold" id="cta-wa">Chamar no WhatsApp</a>
-      <a href="https://instagram.com/daniellivanzestetica" target="_blank" rel="noopener" class="btn btn-ghost-lt">Ver o Instagram</a>
+<!-- ══ CORPO CLÍNICO ══ -->
+<section id="corpo">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Corpo Clínico</span>
+      <h2>Pediatras que você conhece pelo nome</h2>
+      <p>Uma equipe experiente e dedicada, que acompanha as famílias de Florianópolis há muitos anos.</p>
     </div>
-
-    <dl class="addr rv">
-      <div>
-        <dt>Endereço</dt>
-        <dd>Rua Cruz e Sousa, 57 — sala 1201<br>Centro · Florianópolis, SC</dd>
-      </div>
-      <div>
-        <dt>WhatsApp</dt>
-        <dd>Resposta em até 24h<br>Segunda a sexta</dd>
-      </div>
-      <div>
-        <dt>Instagram</dt>
-        <dd>@daniellivanzestetica</dd>
-      </div>
-    </dl>
+    <div class="team">
+      <div class="doc"><div class="avatar" style="background:linear-gradient(145deg,#3AA675,#25835A)">AS</div><h3>Dr. Austregesilo da Silva</h3><span class="role">Pediatria</span></div>
+      <div class="doc"><div class="avatar" style="background:linear-gradient(145deg,#E4A6B0,#F3936F)">DF</div><h3>Dr. Daniel Faraco Neto</h3><span class="role">Pediatria</span></div>
+      <div class="doc"><div class="avatar" style="background:linear-gradient(145deg,#4FB588,#2C7F58)">EP</div><h3>Dr. Eduardo Piacentini Filho</h3><span class="role">Pneumopediatria</span></div>
+      <div class="doc"><div class="avatar" style="background:linear-gradient(145deg,#F3936F,#E4A6B0)">FR</div><h3>Dr. Fernando Menegazzo Rosa</h3><span class="role">Pediatria</span></div>
+      <div class="doc"><div class="avatar" style="background:linear-gradient(145deg,#3AA675,#1E5A41)">LN</div><h3>Dr. Luiz Napoli</h3><span class="role">Pediatria</span></div>
+      <div class="doc"><div class="avatar" style="background:linear-gradient(145deg,#E4A6B0,#25835A)">RB</div><h3>Dr. Ricardo di Bernardi</h3><span class="role">Pediatria</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════ -->
+<!-- ══ CONVÊNIOS ══ -->
+<section id="convenios" class="conv-sec">
+  <div class="wrap">
+    <div class="conv-note">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+      <h3>Atendemos por convênios e particular</h3>
+      <p>Consulte as opções de convênios disponíveis e agende a consulta do seu filho. Nossa equipe ajuda você com todas as informações de forma rápida e carinhosa.</p>
+      <a class="btn" href="https://wa.me/5548991451097" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.6 15.6L2 22l6.6-1.7A10 10 0 1 0 20 3.9Zm-8 18a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.9 1 1-3.8-.2-.3A8.3 8.3 0 1 1 12 21.9Zm4.6-6.2c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.4v-.4c0-.1-.6-1.5-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2 5.3 5.3 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.5 1.5.6a3.6 3.6 0 0 0 1.6.1c.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>
+        Consultar convênios
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTATO ══ -->
+<section id="contato">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Contato &amp; Localização</span>
+      <h2>Venha nos visitar</h2>
+      <p>Estamos no Centro de Florianópolis, prontos para receber você e seu filho.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h2>Fale com a Clinipar</h2>
+        <p class="sub">Agendamento e informações pelo WhatsApp ou telefone.</p>
+
+        <div class="info">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <div>
+            <b>Endereço</b>
+            <span>Rua Presidente Coutinho, 579 — sala 405<br>Centro Médico, Centro · Florianópolis/SC · 88020-301</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M20 3.9A10 10 0 0 0 3.6 15.6L2 22l6.6-1.7A10 10 0 1 0 20 3.9Z"/></svg></span>
+          <div>
+            <b>WhatsApp</b>
+            <a href="https://wa.me/5548991451097" target="_blank" rel="noopener">(48) 99145-1097</a>
+          </div>
+        </div>
+        <div class="info">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1Z"/></svg></span>
+          <div>
+            <b>Telefone</b>
+            <a href="tel:+554832223622">(48) 3222-3622</a>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <a class="btn" href="https://wa.me/5548991451097" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.6 15.6L2 22l6.6-1.7A10 10 0 1 0 20 3.9Zm-8 18a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.9 1 1-3.8-.2-.3A8.3 8.3 0 1 1 12 21.9Z"/></svg>
+            Chamar no WhatsApp
+          </a>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Rua+Presidente+Coutinho+579+Florianopolis" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11Z"/></svg>
+            Ver no mapa
+          </a>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <iframe
+          title="Localização da Clínica Pediátrica Clinipar"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rua%20Presidente%20Coutinho%2C%20579%2C%20Centro%2C%20Florian%C3%B3polis%20-%20SC&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Danielli Vanz Estética Avançada · Florianópolis, SC</span>
-    <span>Resultados variam conforme avaliação individual.</span>
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="48" fill="#4FB588"/>
+            <path d="M68 30a26 26 0 1 0 0 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="50" cy="45" r="12" fill="#fff"/>
+            <path d="M35 74c0-9 7-16 15-16s15 7 15 16z" fill="#fff"/>
+          </svg>
+          <b>Clinipar</b>
+        </div>
+        <p>Clínica Pediátrica em Florianópolis. Cuidando de gerações com acolhimento, tradição e muito amor. 💚</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#clinica">A Clínica</a></li>
+          <li><a href="#corpo">Corpo Clínico</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#convenios">Convênios</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5548991451097" target="_blank" rel="noopener">WhatsApp (48) 99145-1097</a></li>
+          <li><a href="tel:+554832223622">Telefone (48) 3222-3622</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Rua+Presidente+Coutinho+579+Florianopolis" target="_blank" rel="noopener">R. Presidente Coutinho, 579 — sala 405</a></li>
+          <li><a href="https://instagram.com/clinicaclinipar" target="_blank" rel="noopener">@clinicaclinipar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Clínica Pediátrica Clinipar · Florianópolis/SC</span>
+      <span>Feito com cuidado para as famílias de Floripa.</span>
+    </div>
   </div>
 </footer>
 
-<!-- ══ WHATSAPP FLUTUANTE ═══════════════════════ -->
-<a class="wa" id="wa-float"
-   href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
-   target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.04 3C8.86 3 3.02 8.84 3.02 16.02c0 2.29.6 4.53 1.75 6.5L3 29l6.65-1.74a13 13 0 0 0 6.39 1.66h.01c7.18 0 13.02-5.84 13.02-13.02C29.07 8.84 23.22 3 16.04 3zm0 23.69h-.01a10.8 10.8 0 0 1-5.5-1.51l-.4-.23-4.09 1.07 1.09-3.99-.26-.41a10.77 10.77 0 0 1-1.65-5.76c0-5.97 4.86-10.83 10.83-10.83 2.89 0 5.61 1.13 7.65 3.18a10.75 10.75 0 0 1 3.17 7.66c0 5.97-4.86 10.82-10.83 10.82zm5.94-8.11c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.62-1.61-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.41-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.33c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
-  </svg>
+<!-- WhatsApp floating -->
+<a class="wa-float" href="https://wa.me/5548991451097" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.6 15.6L2 22l6.6-1.7A10 10 0 1 0 20 3.9Zm-8 18a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.9 1 1-3.8-.2-.3A8.3 8.3 0 1 1 12 21.9Zm4.6-6.2c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.4v-.4c0-.1-.6-1.5-.8-2s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2 5.3 5.3 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.5 1.5.6a3.6 3.6 0 0 0 1.6.1c.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>
 </a>
-
-<script>
-  // reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.rv').forEach((el, i) => {
-    el.style.transitionDelay = (Math.min(i % 6, 5) * 70) + 'ms';
-    io.observe(el);
-  });
-</script>
 
 </body>
 </html>
