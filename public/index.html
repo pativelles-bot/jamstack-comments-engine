@@ -195,9 +195,14 @@
   @keyframes draw{to{stroke-dashoffset:0}}
   @keyframes fade{to{opacity:1}}
   .brand-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;
+    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;z-index:3;
     background:linear-gradient(to top, rgba(42,33,30,.86), transparent);
     color:var(--nude);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  }
+  /* foto do hero (cobre o monograma quando o arquivo existe; 404 remove a img e revela o monograma) */
+  .brand-card .bc-photo{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:50% 38%;z-index:1;
   }
 
   /* ── PILARES ────────────────────────────────── */
@@ -268,6 +273,12 @@
   .portrait .p-sig{
     position:absolute;bottom:34px;font-family:var(--script);font-size:34px;
     color:var(--rose-lt);
+  }
+  .portrait::before{z-index:2}
+  /* foto da seção "A profissional" (cobre o monograma quando o arquivo existe) */
+  .portrait .pt-photo{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:50% 35%;z-index:1;
   }
   .about h2{font-size:clamp(30px,3.4vw,44px);color:#fff;margin:18px 0 22px}
   .about p{color:rgba(244,231,224,.8);margin-bottom:16px;font-size:16.5px}
@@ -419,9 +430,10 @@
       </div>
     </div>
 
-    <!-- cartão-monograma AM -->
-    <div class="brand-card rv" aria-hidden="true">
-      <svg class="brand-svg" viewBox="0 0 200 250" role="img" aria-label="Monograma A M — Ariadne Martins">
+    <!-- cartão de destaque: foto do atendimento (com monograma AM como fallback) -->
+    <div class="brand-card rv">
+      <img class="bc-photo" src="img/atendimento-1.jpg" alt="Procedimento estético facial em atendimento na clínica de Ariadne Martins" loading="lazy" onerror="this.remove()">
+      <svg class="brand-svg" viewBox="0 0 200 250" role="img" aria-label="Monograma A M — Ariadne Martins" aria-hidden="true">
         <circle class="ring" cx="100" cy="110" r="72"/>
         <path class="flourish" d="M46 158 C 72 176, 128 176, 154 158"/>
         <text class="amtext" x="100" y="126" text-anchor="middle">AM</text>
@@ -542,9 +554,10 @@
 <!-- ══ SOBRE ════════════════════════════════════ -->
 <section class="sec about" id="sobre">
   <div class="wrap about-grid">
-    <div class="portrait rv" aria-hidden="true">
-      <span class="p-mono">AM</span>
-      <span class="p-sig">Ariadne Martins</span>
+    <div class="portrait rv">
+      <img class="pt-photo" src="img/atendimento-2.jpg" alt="Procedimento estético com tecnologia de rejuvenescimento facial" loading="lazy" onerror="this.remove()">
+      <span class="p-mono" aria-hidden="true">AM</span>
+      <span class="p-sig" aria-hidden="true">Ariadne Martins</span>
     </div>
     <div>
       <div class="eyebrow rv">A profissional</div>
