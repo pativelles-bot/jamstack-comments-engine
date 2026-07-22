@@ -224,6 +224,17 @@
   .exp p{font-size:14.5px;color:var(--muted)}
   @media(max-width:720px){.exp{grid-template-columns:1fr}}
 
+  /* ── gallery ────────────────────────────── */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .gal{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);
+    background:linear-gradient(150deg,var(--teal),var(--teal-deep));}
+  .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+  .gal:hover img{transform:scale(1.05)}
+  .gal .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;color:#fff;
+    background:linear-gradient(to top,rgba(28,78,73,.72),rgba(28,78,73,0));
+    font-family:var(--display);font-size:21px;font-weight:500;letter-spacing:.01em}
+  @media(max-width:700px){.gal-grid{grid-template-columns:1fr}}
+
   /* ── testimonials ───────────────────────── */
   .testi{background:var(--graphite);color:#EAF4F2}
   .testi .head h2{color:#fff}
@@ -470,6 +481,27 @@
       <div class="item reveal"><div class="num">02</div><div><h3>Higiene e técnica</h3><p>Protocolos rigorosos e profissionais especializadas em cada serviço, do gel à limpeza de pele.</p></div></div>
       <div class="item reveal"><div class="num">03</div><div><h3>Atendimento que otimiza seu tempo</h3><p>Marcação simples pelo WhatsApp e horários organizados para respeitar a sua agenda.</p></div></div>
       <div class="item reveal"><div class="num">04</div><div><h3>Vínculo de verdade</h3><p>Uma família apaixonada pelo que faz, feliz em arrancar um sorriso e cuidar da sua autoestima.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALERIA ══ -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Momentos Spindola</span>
+      <h2>O cuidado que você sente em cada detalhe</h2>
+      <p>Um espaço pensado para você relaxar enquanto cuidamos de cada acabamento com carinho.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal reveal">
+        <img src="https://images.pexels.com/photos/5484948/pexels-photo-5484948.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Manicure profissional aplicando esmalte na Esmalteria Spindola" loading="lazy" onerror="this.remove()">
+        <figcaption class="cap">Esmalteria &amp; alongamento em gel</figcaption>
+      </figure>
+      <figure class="gal reveal">
+        <img src="https://images.pexels.com/photos/4677845/pexels-photo-4677845.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Aplicação de esmalte durante manicure em salão" loading="lazy" onerror="this.remove()">
+        <figcaption class="cap">Acabamento impecável &amp; nail art</figcaption>
+      </figure>
     </div>
   </div>
 </section>
