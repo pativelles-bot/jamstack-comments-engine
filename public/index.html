@@ -3,27 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danielli Vanz — Estética Avançada | Florianópolis</title>
-<meta name="description" content="Clínica de estética avançada no Centro de Florianópolis. Harmonização facial, toxina botulínica, bioestimuladores e protocolos regenerativos. Avaliação do rosto inteiro antes de qualquer aplicação.">
+<title>Naturale — Estética Avançada | Florianópolis &amp; Tijucas</title>
+<meta name="description" content="Clínica de estética avançada com 16 anos mudando vidas. Modelagem de glúteos, Face Magic, preenchimento labial, toxina botulínica e bioestimuladores. Unidades no Estreito (Florianópolis) e em Tijucas/SC.">
+<meta property="og:title" content="Naturale — Estética Avançada">
+<meta property="og:description" content="Inovação e beleza ao seu alcance. 16 anos mudando vidas com responsabilidade e carinho. Floripa &amp; Tijucas.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
   :root{
-    --choc:#241813;
-    --choc-2:#3A281F;
-    --brown:#5A4034;
-    --gold:#B98A50;
-    --gold-lt:#DCB98A;
-    --rose:#E6C0AC;
-    --sand:#F1E7DE;
-    --off:#FBF8F5;
-    --ink:#2C1F19;
-    --muted:#8A7566;
+    --wine:#2A0D18;
+    --wine-2:#3E1526;
+    --bord:#5A2238;
+    --plum:#7A3450;
+    --gold:#C79A5B;
+    --gold-lt:#E6C79A;
+    --rose:#E7BFC4;
+    --pink:#D96A8E;
+    --nude:#F1E1D6;
+    --champ:#FBF4EF;
+    --off:#FCF8F5;
+    --ink:#2E1A20;
+    --muted:#9A7B82;
 
     --display:'Cormorant Garamond', Georgia, serif;
     --body:'Jost', system-ui, -apple-system, sans-serif;
-    --script:'Sacramento', cursive;
+    --script:'Pinyon Script', cursive;
 
     --w:1180px;
   }
@@ -65,20 +71,20 @@
   /* ── nav ────────────────────────────────────── */
   nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(251,248,245,.88);
+    background:rgba(252,248,245,.88);
     backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(185,138,80,.18);
+    border-bottom:1px solid rgba(199,154,91,.20);
   }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
   .logo{display:flex;flex-direction:column;line-height:1}
-  .logo b{font-family:var(--script);font-size:32px;font-weight:400;color:var(--brown)}
+  .logo b{font-family:var(--script);font-size:38px;font-weight:400;color:var(--bord)}
   .logo span{
     font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--gold);margin-top:2px;margin-left:3px;
+    color:var(--gold);margin-top:1px;margin-left:4px;
   }
   .nav-links{display:flex;gap:34px;align-items:center}
   .nav-links a{
-    font-size:13px;letter-spacing:.06em;color:var(--brown);
+    font-size:13px;letter-spacing:.06em;color:var(--bord);
     transition:color .25s;
   }
   .nav-links a:hover{color:var(--gold)}
@@ -92,10 +98,10 @@
     transition:background .3s, color .3s, border-color .3s, transform .2s;
   }
   .btn-gold{background:var(--gold);color:#fff}
-  .btn-gold:hover{background:var(--brown);transform:translateY(-1px)}
-  .btn-line{background:transparent;color:var(--brown);border-color:rgba(185,138,80,.5)}
+  .btn-gold:hover{background:var(--bord);transform:translateY(-1px)}
+  .btn-line{background:transparent;color:var(--bord);border-color:rgba(199,154,91,.5)}
   .btn-line:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-ghost-lt{background:transparent;color:var(--sand);border-color:rgba(220,185,138,.4)}
+  .btn-ghost-lt{background:transparent;color:var(--nude);border-color:rgba(230,199,154,.4)}
   .btn-ghost-lt:hover{background:var(--gold);border-color:var(--gold);color:#fff}
   .btn-sm{padding:11px 20px;font-size:11.5px}
 
@@ -103,22 +109,22 @@
   .hero{position:relative;padding:88px 0 78px;overflow:hidden}
   .hero::after{
     content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(720px 500px at 78% 30%, rgba(230,192,172,.28), transparent 65%);
+    background:radial-gradient(720px 500px at 80% 28%, rgba(217,106,142,.16), transparent 62%);
   }
   .hero-grid{
     position:relative;z-index:2;
     display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;
   }
   .hero h1{
-    font-size:clamp(40px,5.4vw,68px);
+    font-size:clamp(40px,5.4vw,66px);
     margin:22px 0 0;
-    color:var(--choc);
+    color:var(--wine);
   }
   .hero h1 em{
     font-style:italic;font-weight:300;color:var(--gold);
   }
   .hero .sub{
-    margin-top:24px;max-width:44ch;font-size:18px;color:var(--brown);
+    margin-top:24px;max-width:45ch;font-size:18px;color:var(--bord);
   }
   .hero ul{list-style:none;margin:32px 0 0;display:flex;flex-direction:column;gap:11px}
   .hero ul li{
@@ -140,133 +146,156 @@
     100%{box-shadow:0 0 0 0 rgba(91,170,110,0)}
   }
   .trust{
-    margin-top:44px;padding-top:22px;border-top:1px solid rgba(185,138,80,.25);
+    margin-top:44px;padding-top:22px;border-top:1px solid rgba(199,154,91,.28);
     display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
     font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
   }
-  .trust b{color:var(--brown);font-weight:500}
+  .trust b{color:var(--bord);font-weight:500}
 
-  /* ── SIGNATURE: mapa facial ─────────────────── */
-  .face-card{
+  /* ── SIGNATURE: cartão da marca ─────────────── */
+  .brand-card{
     position:relative;aspect-ratio:4/5;
-    background:linear-gradient(160deg,#FDFAF7 0%, var(--sand) 55%, var(--rose) 100%);
-    border:1px solid rgba(185,138,80,.3);
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(122,52,80,.55), transparent 60%),
+      linear-gradient(160deg,#3E1526 0%, #2A0D18 55%, #1C0812 100%);
+    border:1px solid rgba(199,154,91,.42);
     display:grid;place-items:center;overflow:hidden;
+    box-shadow:0 30px 70px -30px rgba(42,13,24,.7);
   }
-  .face-card::before{
-    content:"";position:absolute;inset:14px;border:1px solid rgba(185,138,80,.22);
-    pointer-events:none;z-index:2;
+  .brand-card::before{
+    content:"";position:absolute;inset:14px;border:1px solid rgba(230,199,154,.30);
+    pointer-events:none;z-index:3;
   }
-  .face-card img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:50% 32%;
+  /* bokeh dourado */
+  .bokeh{position:absolute;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,var(--gold-lt),rgba(230,199,154,0) 70%);
+    opacity:.0;animation:twinkle 5s ease-in-out infinite}
+  .bokeh:nth-child(1){width:120px;height:120px;top:12%;left:-4%;animation-delay:.2s}
+  .bokeh:nth-child(2){width:70px;height:70px;top:64%;right:6%;animation-delay:1.1s}
+  .bokeh:nth-child(3){width:44px;height:44px;top:30%;right:14%;animation-delay:2.1s}
+  .bokeh:nth-child(4){width:30px;height:30px;bottom:16%;left:16%;animation-delay:1.6s}
+  @keyframes twinkle{
+    0%,100%{opacity:0;transform:scale(.85)}
+    50%{opacity:.55;transform:scale(1)}
   }
-  .face-svg{width:74%;height:auto;overflow:visible}
-  .face-svg .stroke{
-    fill:none;stroke:var(--brown);stroke-width:1.1;
-    stroke-linecap:round;stroke-linejoin:round;opacity:.55;
-    stroke-dasharray:1400;stroke-dashoffset:1400;
-    animation:draw 2.6s cubic-bezier(.25,.8,.3,1) .3s forwards;
+  .mark{position:relative;z-index:2;text-align:center;padding:0 24px}
+  .mark .mono{
+    font-family:var(--script);font-size:clamp(84px,13vw,150px);
+    line-height:.8;color:var(--gold-lt);
+    text-shadow:0 4px 22px rgba(0,0,0,.4);
   }
-  .face-svg .zone{
-    fill:none;stroke:var(--gold);stroke-width:.9;
-    stroke-dasharray:4 4;opacity:0;
-    animation:fade .9s ease forwards;
+  .mark .word{
+    display:inline-block;margin-top:6px;position:relative;
+    font-family:var(--script);font-size:clamp(40px,6vw,62px);
+    color:#fff;
   }
-  .face-svg .zone:nth-of-type(1){animation-delay:2.0s}
-  .face-svg .zone:nth-of-type(2){animation-delay:2.25s}
-  .face-svg .zone:nth-of-type(3){animation-delay:2.5s}
-  .face-svg .pt{fill:var(--gold);opacity:0;animation:fade .5s ease forwards}
-  .face-svg .pt:nth-of-type(4n+1){animation-delay:2.7s}
-  .face-svg .pt:nth-of-type(4n+2){animation-delay:2.85s}
-  .face-svg .pt:nth-of-type(4n+3){animation-delay:3.0s}
-  .face-svg .pt:nth-of-type(4n){animation-delay:3.15s}
-  .face-svg text{
-    font-family:var(--body);font-size:5.2px;letter-spacing:.22em;
-    text-transform:uppercase;fill:var(--gold);opacity:0;
-    animation:fade .8s ease 3.3s forwards;
+  .mark .word sup{
+    font-family:var(--body);font-size:13px;font-weight:400;
+    color:var(--gold);vertical-align:super;margin-left:2px;
   }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
-  .face-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;
-    background:linear-gradient(to top, rgba(36,24,19,.9), transparent);
-    color:var(--sand);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  .mark .line{
+    width:64px;height:1px;background:rgba(230,199,154,.6);
+    margin:20px auto 16px;
+  }
+  .mark .desc{
+    font-family:var(--body);font-size:11px;letter-spacing:.42em;
+    text-transform:uppercase;color:var(--gold-lt);
+  }
+  .mark .years{
+    margin-top:26px;font-family:var(--display);font-style:italic;
+    font-size:19px;color:var(--rose);
+  }
+  .brand-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;z-index:4;
+    background:linear-gradient(to top, rgba(28,8,18,.92), transparent);
+    color:var(--nude);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    text-align:center;
   }
 
   /* ── PILARES ────────────────────────────────── */
-  .pillars{background:var(--choc);color:var(--sand);padding:66px 0}
+  .pillars{background:var(--wine);color:var(--nude);padding:66px 0}
   .pillars-in{
     display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;
   }
   .slogan{
     font-family:var(--display);font-style:italic;font-weight:300;
     font-size:clamp(24px,2.4vw,32px);line-height:1.25;color:var(--gold-lt);
-    max-width:11ch;
+    max-width:12ch;
   }
   .pillar-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .pillar{padding:0 26px;border-left:1px solid rgba(220,185,138,.28)}
+  .pillar{padding:0 26px;border-left:1px solid rgba(230,199,154,.24)}
   .pillar:first-child{padding-left:0;border-left:0}
   .pillar h3{font-size:22px;color:#fff;margin-bottom:8px}
-  .pillar p{font-size:13.5px;line-height:1.55;color:rgba(241,231,222,.6)}
+  .pillar p{font-size:13.5px;line-height:1.55;color:rgba(241,225,214,.62)}
 
   /* ── seções genéricas ───────────────────────── */
   .sec{padding:96px 0}
-  .sec-head{max-width:640px;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(32px,3.8vw,46px);margin:18px 0 0;color:var(--choc)}
-  .sec-head p{margin-top:16px;color:var(--brown);font-size:17px}
+  .sec-head{max-width:660px;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(32px,3.8vw,46px);margin:18px 0 0;color:var(--wine)}
+  .sec-head p{margin-top:16px;color:var(--bord);font-size:17px}
 
-  /* sinais */
-  .signs{background:var(--sand)}
-  .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(185,138,80,.28)}
-  .sign{background:var(--sand);padding:34px 26px}
-  .sign .num{
-    font-family:var(--display);font-size:15px;color:var(--gold);
-    letter-spacing:.1em;margin-bottom:14px;
+  /* manifesto — amor próprio */
+  .manifesto{
+    background:
+      radial-gradient(600px 300px at 50% -10%, rgba(217,106,142,.12), transparent 70%),
+      var(--nude);
+    text-align:center;padding:104px 0;
   }
-  .sign h3{font-size:23px;margin-bottom:9px;color:var(--choc)}
-  .sign p{font-size:14.5px;color:var(--brown);line-height:1.6}
-  .signs-note{
-    margin-top:34px;font-family:var(--display);font-style:italic;
-    font-size:21px;color:var(--brown);
+  .manifesto .eyebrow{justify-content:center}
+  .manifesto blockquote{
+    font-family:var(--display);font-style:italic;font-weight:300;
+    font-size:clamp(28px,4vw,50px);line-height:1.22;color:var(--wine);
+    max-width:16ch;margin:26px auto 0;
+  }
+  .manifesto blockquote em{color:var(--gold);font-style:italic}
+  .manifesto .attr{
+    margin-top:30px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--muted);
   }
 
-  /* tratamentos */
+  /* serviços */
   .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .treat{
-    border:1px solid rgba(185,138,80,.28);padding:32px 28px;
-    background:#fff;transition:border-color .3s, transform .3s;
+    border:1px solid rgba(199,154,91,.28);padding:32px 28px;
+    background:#fff;transition:border-color .3s, transform .3s, box-shadow .3s;
   }
-  .treat:hover{border-color:var(--gold);transform:translateY(-3px)}
+  .treat:hover{border-color:var(--gold);transform:translateY(-3px);
+    box-shadow:0 22px 40px -28px rgba(90,34,56,.5)}
   .treat .tag{
     font-size:10px;letter-spacing:.22em;text-transform:uppercase;
     color:var(--gold);margin-bottom:16px;
   }
-  .treat h3{font-size:25px;margin-bottom:10px;color:var(--choc)}
-  .treat p{font-size:14.5px;color:var(--brown);line-height:1.6}
+  .treat h3{font-size:25px;margin-bottom:10px;color:var(--wine)}
+  .treat p{font-size:14.5px;color:var(--bord);line-height:1.6}
 
   /* sobre */
-  .about{background:var(--choc-2);color:var(--sand)}
+  .about{background:var(--wine-2);color:var(--nude)}
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-  .portrait{
+  .about-visual{
     position:relative;aspect-ratio:3/4;
-    background:linear-gradient(150deg, var(--brown), var(--choc));
-    border:1px solid rgba(220,185,138,.3);
-    overflow:hidden;
+    background:
+      radial-gradient(90% 60% at 30% 20%, rgba(122,52,80,.6), transparent 60%),
+      linear-gradient(150deg, var(--bord), var(--wine));
+    border:1px solid rgba(230,199,154,.30);
+    overflow:hidden;display:grid;place-items:center;
   }
-  .portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:32% 20%;
+  .about-visual .big{
+    font-family:var(--display);font-weight:300;line-height:.9;text-align:center;
+    color:var(--gold-lt);
   }
+  .about-visual .big b{display:block;font-size:clamp(72px,12vw,120px);font-weight:500;color:#fff}
+  .about-visual .big span{
+    display:block;margin-top:10px;font-size:13px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--gold);font-family:var(--body)}
   .about h2{font-size:clamp(30px,3.4vw,44px);color:#fff;margin:18px 0 22px}
-  .about p{color:rgba(241,231,222,.78);margin-bottom:16px;font-size:16.5px}
+  .about p{color:rgba(241,225,214,.80);margin-bottom:16px;font-size:16.5px}
   .about .sig{
-    font-family:var(--script);font-size:44px;color:var(--gold-lt);
+    font-family:var(--script);font-size:52px;color:var(--gold-lt);
     margin-top:26px;line-height:1;
   }
   .about .crd{
     font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:rgba(220,185,138,.6);margin-top:6px;
+    color:rgba(230,199,154,.6);margin-top:6px;
   }
 
   /* depoimentos */
@@ -276,45 +305,45 @@
   }
   .quote p{
     font-family:var(--display);font-size:21px;font-style:italic;
-    line-height:1.42;color:var(--choc);
+    line-height:1.42;color:var(--wine);
   }
   .quote cite{
     display:block;margin-top:16px;font-family:var(--body);font-style:normal;
     font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
   }
   .slot{
-    margin-top:30px;padding:14px 18px;border:1px dashed rgba(185,138,80,.55);
-    font-size:12.5px;letter-spacing:.05em;color:var(--muted);background:rgba(230,192,172,.12);
+    margin-top:30px;padding:14px 18px;border:1px dashed rgba(199,154,91,.55);
+    font-size:12.5px;letter-spacing:.05em;color:var(--muted);background:rgba(231,191,196,.14);
   }
 
   /* CTA final */
   .final{
-    background:var(--choc);color:var(--sand);text-align:center;padding:104px 0;
+    background:var(--wine);color:var(--nude);text-align:center;padding:104px 0;
     position:relative;overflow:hidden;
   }
   .final::before{
     content:"";position:absolute;inset:0;
-    background:radial-gradient(600px 380px at 50% 0%, rgba(185,138,80,.22), transparent 70%);
+    background:radial-gradient(600px 380px at 50% 0%, rgba(199,154,91,.24), transparent 70%);
   }
   .final-in{position:relative;z-index:2}
   .final .eyebrow{justify-content:center}
   .final .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
   .final h2{font-size:clamp(34px,4.4vw,56px);color:#fff;margin:22px 0 18px}
-  .final p{max-width:52ch;margin:0 auto;color:rgba(241,231,222,.7)}
+  .final p{max-width:54ch;margin:0 auto;color:rgba(241,225,214,.72)}
   .final .cta-row{justify-content:center}
   .addr{
-    margin-top:56px;padding-top:30px;border-top:1px solid rgba(220,185,138,.22);
-    display:flex;flex-wrap:wrap;gap:26px 60px;justify-content:center;text-align:left;
+    margin-top:56px;padding-top:30px;border-top:1px solid rgba(230,199,154,.22);
+    display:flex;flex-wrap:wrap;gap:26px 54px;justify-content:center;text-align:left;
   }
-  .addr div{min-width:180px}
+  .addr div{min-width:210px}
   .addr dt{
     font-size:10px;letter-spacing:.24em;text-transform:uppercase;
     color:var(--gold);margin-bottom:7px;
   }
-  .addr dd{font-size:15px;color:rgba(241,231,222,.85);line-height:1.5}
+  .addr dd{font-size:15px;color:rgba(241,225,214,.85);line-height:1.5}
 
   /* footer */
-  footer{background:#1B110D;color:rgba(241,231,222,.45);padding:32px 0;font-size:12.5px}
+  footer{background:#190711;color:rgba(241,225,214,.45);padding:32px 0;font-size:12.5px}
   .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
   footer a:hover{color:var(--gold-lt)}
 
@@ -344,24 +373,22 @@
   @media (prefers-reduced-motion: reduce){
     *{animation:none!important;transition:none!important}
     .rv{opacity:1;transform:none}
-    .face-svg .stroke{stroke-dashoffset:0}
-    .face-svg .zone,.face-svg .pt,.face-svg text{opacity:1}
+    .bokeh{opacity:.4}
   }
 
   /* ── responsivo ─────────────────────────────── */
   @media (max-width:980px){
     .nav-links{display:none}
     .hero-grid{grid-template-columns:1fr;gap:44px}
-    .face-card{max-width:400px;margin:0 auto}
+    .brand-card{max-width:400px;margin:0 auto}
     .pillars-in{grid-template-columns:1fr;gap:34px}
     .slogan{max-width:none}
     .pillar-list{grid-template-columns:repeat(2,1fr);gap:28px 0}
     .pillar{padding:0 22px}
     .pillar:nth-child(3){padding-left:0;border-left:0}
-    .sign-grid{grid-template-columns:repeat(2,1fr)}
     .treat-grid{grid-template-columns:repeat(2,1fr)}
     .about-grid{grid-template-columns:1fr;gap:40px}
-    .portrait{max-width:320px}
+    .about-visual{max-width:320px}
     .quotes{grid-template-columns:1fr;gap:32px}
   }
   @media (max-width:620px){
@@ -369,11 +396,12 @@
     .wrap{padding:0 20px}
     .hero{padding:56px 0 60px}
     .sec{padding:68px 0}
+    .manifesto{padding:76px 0}
     .final{padding:76px 0}
-    .sign-grid,.treat-grid{grid-template-columns:1fr}
+    .treat-grid{grid-template-columns:1fr}
     .pillar-list{grid-template-columns:1fr;gap:24px}
-    .pillar{padding:0 0 0 20px;border-left:1px solid rgba(220,185,138,.28)}
-    .pillar:nth-child(3){padding-left:20px;border-left:1px solid rgba(220,185,138,.28)}
+    .pillar{padding:0 0 0 20px;border-left:1px solid rgba(230,199,154,.24)}
+    .pillar:nth-child(3){padding-left:20px;border-left:1px solid rgba(230,199,154,.24)}
     .cta-row .btn{width:100%}
     .addr{justify-content:flex-start}
   }
@@ -385,54 +413,61 @@
 <nav>
   <div class="wrap nav-in">
     <a href="#top" class="logo">
-      <b>Danielli Vanz</b>
+      <b>Naturale</b>
       <span>Estética Avançada</span>
     </a>
     <div class="nav-links">
-      <a href="#sinais">Sinais</a>
-      <a href="#tratamentos">Tratamentos</a>
+      <a href="#servicos">Serviços</a>
       <a href="#sobre">A clínica</a>
-      <a href="#feedback">Feedback</a>
+      <a href="#depoimentos">Elas falam</a>
+      <a href="#unidades">Unidades</a>
     </div>
-    <a href="#agendar" class="btn btn-gold btn-sm">Agendar avaliação</a>
+    <a href="#agendar" class="btn btn-gold btn-sm">Agendar</a>
   </div>
 </nav>
 
-<!-- ══ HERO — dobra zero (Versão B) ═════════════ -->
+<!-- ══ HERO — dobra zero ════════════════════════ -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
 
     <div>
-      <div class="eyebrow rv">Estética avançada · Centro, Florianópolis</div>
+      <div class="eyebrow rv">Estética avançada · Floripa &amp; Tijucas</div>
 
-      <h1 class="rv">Não são as rugas.<br>É o <em>contorno</em><br>que você perdeu.</h1>
+      <h1 class="rv">O amor mais importante<br>é o amor <em>próprio</em>.</h1>
 
-      <p class="sub rv">A maioria das mulheres percebe que o rosto mudou muito antes de conseguir nomear o quê. A avaliação existe pra dar nome — e dar caminho.</p>
+      <p class="sub rv">Há 16 anos revelando a melhor versão de cada mulher — com inovação, responsabilidade e o carinho de quem entende que autoestima também se cuida.</p>
 
       <ul class="rv">
-        <li><span class="tick"></span>Descubra o que mudou no seu rosto</li>
-        <li><span class="tick"></span>Entenda a causa antes de qualquer aplicação</li>
-        <li><span class="tick"></span>Saia com um plano na ordem certa</li>
+        <li><span class="tick"></span>Avaliação personalizada antes de qualquer procedimento</li>
+        <li><span class="tick"></span>Tecnologia avançada com resultados naturais e precisos</li>
+        <li><span class="tick"></span>Uma experiência premium, do primeiro contato ao resultado</li>
       </ul>
 
       <div class="cta-row rv">
-        <a href="#agendar" class="btn btn-gold">Quero entender meu rosto</a>
-        <a href="#sinais" class="btn btn-line">Ver os sinais mais comuns</a>
+        <a href="#agendar" class="btn btn-gold">Quero me sentir bem comigo</a>
+        <a href="#servicos" class="btn btn-line">Ver os procedimentos</a>
       </div>
-      <p class="microcopy rv"><span class="dot"></span>Avaliação presencial no Centro, sem compromisso de fechar</p>
+      <p class="microcopy rv"><span class="dot"></span>Atendimento no Estreito (Floripa) e em Tijucas · agendamento pelo WhatsApp</p>
 
       <div class="trust rv">
-        <span><b>6 mil</b> mulheres acompanham</span>
-        <span><b>Clínica própria</b> no Centro</span>
-        <span><b>Regen Match</b> · Evo &amp; LMG Aesthetics</span>
+        <span><b>16 anos</b> mudando vidas</span>
+        <span><b>+10 mil</b> mulheres acompanham</span>
+        <span><b>2 unidades</b> em Santa Catarina</span>
       </div>
     </div>
 
-    <!-- retrato da Danielli -->
-    <div class="face-card rv">
-      <img src="img/danielli-hero.jpg" width="667" height="824"
-           alt="Danielli Vanz na clínica de estética avançada, diante do painel dourado DV com parede de flores">
-      <div class="face-cap">O rosto inteiro, antes de qualquer aplicação</div>
+    <!-- cartão da marca -->
+    <div class="brand-card rv" aria-hidden="true">
+      <span class="bokeh"></span><span class="bokeh"></span>
+      <span class="bokeh"></span><span class="bokeh"></span>
+      <div class="mark">
+        <div class="mono">N</div>
+        <div class="word">Naturale<sup>®</sup></div>
+        <div class="line"></div>
+        <div class="desc">Estética Avançada</div>
+        <div class="years">16 anos de beleza &amp; confiança</div>
+      </div>
+      <div class="brand-cap">Inovação e beleza ao seu alcance</div>
     </div>
 
   </div>
@@ -441,118 +476,76 @@
 <!-- ══ PILARES ══════════════════════════════════ -->
 <section class="pillars">
   <div class="wrap pillars-in">
-    <p class="slogan rv">Realce sua essência. Revele sua confiança.</p>
+    <p class="slogan rv">Beleza que nasce do amor próprio.</p>
     <div class="pillar-list">
       <div class="pillar rv">
-        <h3>Ciência</h3>
-        <p>Indicação baseada em evidência, não em tendência de rede social.</p>
+        <h3>Inovação</h3>
+        <p>Técnicas e tecnologia avançadas para colocar a beleza ao seu alcance.</p>
       </div>
       <div class="pillar rv">
-        <h3>Técnica</h3>
-        <p>Protocolos avançados e atualização constante em estética regenerativa.</p>
+        <h3>Responsabilidade</h3>
+        <p>16 anos de mercado com ética, segurança e resultado que se sustenta.</p>
       </div>
       <div class="pillar rv">
-        <h3>Naturalidade</h3>
-        <p>O objetivo é você parecer descansada, não parecer procedimento.</p>
+        <h3>Carinho</h3>
+        <p>Acolhimento em cada etapa — porque cada história merece cuidado.</p>
       </div>
       <div class="pillar rv">
-        <h3>Confiança</h3>
-        <p>Você entende cada etapa antes de aceitar qualquer uma delas.</p>
+        <h3>Sofisticação</h3>
+        <p>Uma experiência premium, pensada nos detalhes que fazem diferença.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SINAIS ═══════════════════════════════════ -->
-<section class="sec signs" id="sinais">
+<!-- ══ MANIFESTO — amor próprio ═════════════════ -->
+<section class="manifesto">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que costuma passar despercebido</div>
-      <h2>O rosto não envelhece com rugas. Envelhece com estrutura.</h2>
-      <p>Quatro sinais que aparecem antes das linhas de expressão — e que quase ninguém sabe nomear.</p>
-    </div>
-
-    <div class="sign-grid">
-      <div class="sign rv">
-        <div class="num">I</div>
-        <h3>Contorno</h3>
-        <p>A linha da mandíbula perde definição e o rosto parece "cair" na foto de perfil.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">II</div>
-        <h3>Volume</h3>
-        <p>A maçã do rosto esvazia. O olhar fica cansado mesmo depois de dormir bem.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">III</div>
-        <h3>Firmeza</h3>
-        <p>A pele responde menos ao toque e a maquiagem começa a marcar onde não marcava.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">IV</div>
-        <h3>Qualidade da pele</h3>
-        <p>Textura irregular, poro aparente e perda de viço, mesmo com skincare em dia.</p>
-      </div>
-    </div>
-
-    <p class="signs-note rv">Tratar um sinal isolado é o que produz resultado artificial. Por isso a avaliação vem antes.</p>
+    <div class="eyebrow rv">Antes de tudo, você</div>
+    <blockquote class="rv">Olhe no espelho e se apaixone pela sua <em>melhor versão</em>.</blockquote>
+    <p class="attr rv">Naturale · Estética Avançada</p>
   </div>
 </section>
 
-<!-- ══ TRATAMENTOS ══════════════════════════════ -->
-<section class="sec" id="tratamentos">
+<!-- ══ SERVIÇOS ═════════════════════════════════ -->
+<section class="sec" id="servicos">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">O que é feito na clínica</div>
-      <h2>Tratamentos faciais, corporais e regenerativos</h2>
-      <p>A indicação sai da avaliação. Nada aqui é vendido como pacote fechado antes de olhar o seu rosto.</p>
+      <div class="eyebrow">O que fazemos por você</div>
+      <h2>Procedimentos que realçam quem você já é</h2>
+      <p>Cada indicação nasce de uma avaliação individual. Aqui, naturalidade não é detalhe — é o objetivo.</p>
     </div>
 
     <div class="treat-grid">
       <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Harmonização facial</h3>
-        <p>Reposição de volume e reequilíbrio de proporções, com leitura do rosto inteiro antes da primeira aplicação.</p>
+        <div class="tag">Corporal</div>
+        <h3>Modelagem de Glúteos</h3>
+        <p>Contorno e projeção com técnica avançada, respeitando a harmonia do seu corpo e o resultado que é seu.</p>
       </div>
       <div class="treat rv">
         <div class="tag">Facial</div>
-        <h3>Toxina botulínica</h3>
-        <p>Suavização de linhas de expressão preservando a movimentação natural do rosto.</p>
+        <h3>Face Magic</h3>
+        <p>Harmonização e rejuvenescimento facial que revelam a sua melhor versão, sem apagar quem você é.</p>
       </div>
       <div class="treat rv">
         <div class="tag">Facial</div>
-        <h3>Bioestimuladores de colágeno</h3>
-        <p>Recuperação de firmeza e sustentação a partir do estímulo do próprio colágeno.</p>
+        <h3>Preenchimento Labial</h3>
+        <p>Volume, contorno e definição naturais para um sorriso que combina com o seu rosto.</p>
+      </div>
+      <div class="treat rv">
+        <div class="tag">Facial</div>
+        <h3>Toxina Botulínica</h3>
+        <p>Suavização de linhas de expressão preservando a leveza e a naturalidade do olhar.</p>
       </div>
       <div class="treat rv">
         <div class="tag">Regenerativo</div>
-        <h3>REGEN-HK e HIPRO</h3>
-        <p>Tecnologias de estética regenerativa para qualidade de pele e sustentação profunda.</p>
+        <h3>Bioestimulador de Colágeno</h3>
+        <p>Firmeza e sustentação que nascem do estímulo do seu próprio colágeno, com resultado que evolui no tempo.</p>
       </div>
       <div class="treat rv">
-        <div class="tag">Pele</div>
-        <h3>LHA LA Peel</h3>
-        <p>Peeling de quarta geração, sem descamação, com efeito de pele lisa e uniforme.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Criolipólise da Pri</h3>
-        <p>Redução de gordura localizada por resfriamento controlado, com protocolo individual.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Diástase PH</h3>
-        <p>Protocolo para afastamento dos músculos abdominais, comum no pós-parto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Manutenção</div>
-        <h3>Tratamentos faciais</h3>
-        <p>Limpeza, hidratação e protocolos de rotina que sustentam o resultado dos procedimentos.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Rotina</div>
-        <h3>Skincare e home care</h3>
-        <p>Prescrição de cuidado diário, porque metade do resultado acontece fora da clínica.</p>
+        <div class="tag">Tecnologia</div>
+        <h3>Estética Avançada</h3>
+        <p>Protocolos personalizados com tecnologia de ponta para resultados precisos, seguros e naturais.</p>
       </div>
     </div>
   </div>
@@ -561,73 +554,72 @@
 <!-- ══ SOBRE ════════════════════════════════════ -->
 <section class="sec about" id="sobre">
   <div class="wrap about-grid">
-    <div class="portrait rv">
-      <img src="img/danielli-clinica.jpg" width="683" height="821"
-           alt="Danielli Vanz na clínica, com equipamento de estética avançada">
+    <div class="about-visual rv" aria-hidden="true">
+      <div class="big"><b>16</b><span>anos mudando vidas</span></div>
     </div>
     <div>
-      <div class="eyebrow rv">A profissional</div>
-      <h2 class="rv">Estratégia, não excesso.</h2>
-      <p class="rv">Danielli Cássia Vanz atua há anos na estética avançada em Florianópolis. Antes de abrir a clínica própria no Centro, foi sócia-proprietária da +Top Estética, onde construiu a base técnica que hoje sustenta os protocolos da Danielli Vanz Estética Avançada.</p>
-      <p class="rv">Em 2026 foi convidada pela Evo e pela LMG Aesthetics para o Regen Match, encontro fechado de estética regenerativa — o tipo de reconhecimento que vem de pares, não de anúncio.</p>
-      <p class="rv">A clínica funciona sobre uma regra simples: o rosto é avaliado por inteiro antes de qualquer aplicação. Cada área tem uma função, e tratar uma sozinha é exatamente o que gera aquele resultado que todo mundo percebe.</p>
-      <div class="sig rv">Danielli Vanz</div>
-      <div class="crd rv">Estética Avançada · Florianópolis, SC</div>
+      <div class="eyebrow rv">A clínica</div>
+      <h2 class="rv">16 anos mudando vidas, com responsabilidade e carinho.</h2>
+      <p class="rv">A Naturale é uma clínica de estética avançada consolidada em Santa Catarina, referência em unir tecnologia, técnica apurada e um cuidado que acolhe. Ao longo de 16 anos, construiu uma comunidade de mais de 10 mil mulheres que acompanham cada resultado.</p>
+      <p class="rv">Nossa filosofia é simples: beleza de verdade começa no amor próprio. Por isso, cada procedimento parte de uma avaliação individual — para realçar a sua essência, nunca para transformá-la em outra pessoa.</p>
+      <p class="rv">Hoje somos duas unidades, no Estreito (Florianópolis) e em Tijucas, sempre com o mesmo compromisso: inovação e beleza ao seu alcance.</p>
+      <div class="sig rv">Naturale</div>
+      <div class="crd rv">Estética Avançada · Florianópolis &amp; Tijucas, SC</div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEEDBACK ═════════════════════════════════ -->
-<section class="sec" id="feedback">
+<!-- ══ DEPOIMENTOS ══════════════════════════════ -->
+<section class="sec" id="depoimentos">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">Feedback</div>
-      <h2>O que dizem quem já sentou na cadeira</h2>
+      <div class="eyebrow">Elas falam</div>
+      <h2>Histórias de quem se reencontrou no espelho</h2>
     </div>
 
     <div class="quotes">
       <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
+        <p>[ Depoimento real da cliente — substituir pelo texto do Direct ou do Google. ]</p>
         <cite>Nome · procedimento · Florianópolis</cite>
       </blockquote>
       <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
+        <p>[ Depoimento real da cliente — substituir pelo texto do Direct ou do Google. ]</p>
+        <cite>Nome · procedimento · Tijucas</cite>
       </blockquote>
       <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
+        <p>[ Depoimento real da cliente — substituir pelo texto do Direct ou do Google. ]</p>
+        <cite>Nome · procedimento · Santa Catarina</cite>
       </blockquote>
     </div>
 
-    <p class="slot rv">Espaços reservados: 3 depoimentos reais (destaque "Feedback" do Instagram) + 1 par de antes/depois na dobra, se houver autorização de uso de imagem assinada.</p>
+    <p class="slot rv">Espaços reservados: 3 depoimentos reais (destaque "Elas falam…" do Instagram) + 1 par de antes/depois na dobra, com autorização de uso de imagem assinada.</p>
   </div>
 </section>
 
-<!-- ══ CTA FINAL ════════════════════════════════ -->
+<!-- ══ CTA FINAL / UNIDADES ═════════════════════ -->
 <section class="final" id="agendar">
   <div class="wrap final-in">
     <div class="eyebrow rv">Agende sua avaliação</div>
-    <h2 class="rv">Uma hora para entender o seu rosto.</h2>
-    <p class="rv">Você sai da avaliação sabendo o que mudou, por que mudou e qual a ordem certa de tratar. Sem pacote empurrado, sem promessa que a pele não sustenta.</p>
+    <h2 class="rv">Sua melhor versão começa com um sim.</h2>
+    <p class="rv">Fale com a Naturale pelo WhatsApp e agende uma avaliação. Sem promessa que a pele não sustenta — só o cuidado, a técnica e o carinho que já mudaram milhares de histórias.</p>
 
     <div class="cta-row rv">
-      <a href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-gold" id="cta-wa">Chamar no WhatsApp</a>
-      <a href="https://instagram.com/daniellivanzestetica" target="_blank" rel="noopener" class="btn btn-ghost-lt">Ver o Instagram</a>
+      <a href="https://wa.me/554899566821?text=Oi%2C%20Naturale.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-gold" id="cta-wa">Chamar no WhatsApp</a>
+      <a href="https://instagram.com/naturaleclinicaestetica" target="_blank" rel="noopener" class="btn btn-ghost-lt">Ver o Instagram</a>
     </div>
 
-    <dl class="addr rv">
+    <dl class="addr rv" id="unidades">
       <div>
-        <dt>Endereço</dt>
-        <dd>Rua Cruz e Sousa, 57 — sala 1201<br>Centro · Florianópolis, SC</dd>
+        <dt>Unidade Florianópolis</dt>
+        <dd>Rua Belmira Isabel Martins, 62<br>Ed. Osni Regis, sala 212 — Estreito<br>Florianópolis/SC · 88075-145</dd>
       </div>
       <div>
-        <dt>WhatsApp</dt>
-        <dd>Resposta em até 24h<br>Segunda a sexta</dd>
+        <dt>Unidade Tijucas</dt>
+        <dd>Tijucas/SC<br>Endereço completo no WhatsApp</dd>
       </div>
       <div>
-        <dt>Instagram</dt>
-        <dd>@daniellivanzestetica</dd>
+        <dt>Contato</dt>
+        <dd><a href="https://wa.me/554899566821?text=Oi%2C%20Naturale.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o.">WhatsApp +55 (48) 9956-6821</a><br>@naturaleclinicaestetica</dd>
       </div>
     </dl>
   </div>
@@ -636,14 +628,14 @@
 <!-- ══ FOOTER ═══════════════════════════════════ -->
 <footer>
   <div class="wrap foot-in">
-    <span>© 2026 Danielli Vanz Estética Avançada · Florianópolis, SC</span>
+    <span>© 2026 Naturale Estética Avançada · Florianópolis &amp; Tijucas, SC</span>
     <span>Resultados variam conforme avaliação individual.</span>
   </div>
 </footer>
 
 <!-- ══ WHATSAPP FLUTUANTE ═══════════════════════ -->
 <a class="wa" id="wa-float"
-   href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+   href="https://wa.me/554899566821?text=Oi%2C%20Naturale.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
    target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 32 32" aria-hidden="true">
     <path d="M16.04 3C8.86 3 3.02 8.84 3.02 16.02c0 2.29.6 4.53 1.75 6.5L3 29l6.65-1.74a13 13 0 0 0 6.39 1.66h.01c7.18 0 13.02-5.84 13.02-13.02C29.07 8.84 23.22 3 16.04 3zm0 23.69h-.01a10.8 10.8 0 0 1-5.5-1.51l-.4-.23-4.09 1.07 1.09-3.99-.26-.41a10.77 10.77 0 0 1-1.65-5.76c0-5.97 4.86-10.83 10.83-10.83 2.89 0 5.61 1.13 7.65 3.18a10.75 10.75 0 0 1 3.17 7.66c0 5.97-4.86 10.82-10.83 10.82zm5.94-8.11c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.62-1.61-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.41-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.33c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
