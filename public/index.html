@@ -258,20 +258,21 @@
 
   /* ── location ───────────────────────────── */
   .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-  .loc h2{font-size:clamp(28px,4vw,44px);color:var(--graphite);margin:14px 0 18px}
-  .loc .rowitem{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
-  .loc .rowitem svg{width:20px;height:20px;color:var(--teal-deep);flex:none;margin-top:3px}
-  .loc .rowitem b{display:block;font-family:var(--body);font-weight:500;color:var(--graphite);font-size:15px}
-  .loc .rowitem span{font-size:14.5px;color:var(--muted)}
-  .loc .card{
+  .loc-grid h2{font-size:clamp(28px,4vw,44px);color:var(--graphite);margin:14px 0 22px}
+  .loc-grid .rowitem{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+  .loc-grid .rowitem .ib{width:44px;height:44px;flex:none;border-radius:12px;background:var(--mint);display:grid;place-items:center}
+  .loc-grid .rowitem .ib svg{width:20px;height:20px;color:var(--teal-deep)}
+  .loc-grid .rowitem b{display:block;font-family:var(--body);font-weight:500;color:var(--graphite);font-size:15px}
+  .loc-grid .rowitem span{font-size:14px;color:var(--muted)}
+  .loc-grid .card{
     aspect-ratio:1/.82;border-radius:24px;background:
       radial-gradient(circle at 80% 15%, rgba(234,195,206,.55), transparent 45%),
       linear-gradient(150deg,var(--mint),#DAF2EE);
     border:1px solid rgba(46,140,130,.15);display:grid;place-items:center;text-align:center;padding:30px;
   }
-  .loc .card .hex{width:80px;height:88px;margin:0 auto 16px}
-  .loc .card b{font-family:var(--display);font-size:26px;color:var(--teal-ink);display:block}
-  .loc .card span{font-size:13px;color:var(--teal-deep);letter-spacing:.2em;text-transform:uppercase}
+  .loc-grid .card .hex{width:72px;height:80px;margin:0 auto 16px}
+  .loc-grid .card b{font-family:var(--display);font-size:26px;color:var(--teal-ink);display:block}
+  .loc-grid .card span{font-size:13px;color:var(--teal-deep);letter-spacing:.2em;text-transform:uppercase}
   @media(max-width:760px){.loc-grid{grid-template-columns:1fr;gap:30px}}
 
   /* ── footer ─────────────────────────────── */
@@ -392,32 +393,32 @@
     </div>
     <div class="svc-grid">
       <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-1 3-3 4-3 8a3 3 0 006 0c0-4-2-5-3-8z"/><path d="M6 21h12"/><path d="M9 21v-3M15 21v-3"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="9" width="7" height="11" rx="2"/><path d="M9.5 9V6.5h5V9"/><path d="M11 6.5V4h2v2.5"/><path d="M8.5 13h7"/></svg></div>
         <h3>Esmalteria</h3>
         <p>Manicure e pedicure com acabamento impecável, higiene rigorosa e aquele capricho que faz diferença.</p>
       </article>
       <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 21c0-4 1-9 5-13 3 3 3 8 3 13"/><path d="M9 21h8"/><path d="M14 4l3-2"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c3 3.5 5 6 5 8.5a5 5 0 01-10 0c0-2.5 2-5 5-8.5z"/><path d="M9.7 12.5a2.3 2.3 0 002.3 2.3"/></svg></div>
         <h3>Alongamento em Gel</h3>
         <p>Unhas alongadas com técnica e resistência natural, no formato e comprimento que combinam com você.</p>
       </article>
       <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 15.8 7 18.2l1-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3l1.7 4.3L16 9l-4.3 1.7L10 15l-1.7-4.3L4 9l4.3-1.7z"/><path d="M18 13.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
         <h3>Nail Art</h3>
         <p>Unhas decoradas e personalizadas — do minimalista ao statement, traduzindo o seu estilo em cada detalhe.</p>
       </article>
       <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 14c3-4 15-4 18 0"/><path d="M5 12c2.5 2.5 11.5 2.5 14 0"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 8c3-1.6 12-1.6 15 0"/><path d="M3.5 14s3.4-4.5 8.5-4.5S20.5 14 20.5 14s-3.4 4.5-8.5 4.5S3.5 14 3.5 14z"/><circle cx="12" cy="14" r="2.2"/></svg></div>
         <h3>Design de Sobrancelhas</h3>
         <p>Design e micropigmentação que valorizam o seu olhar e realçam a expressão do rosto com naturalidade.</p>
       </article>
       <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.5 1.2 4.5 1.2 6 0"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9 10.5h.01M15 10.5h.01"/><path d="M8.8 14.6c1.6 1.4 4.8 1.4 6.4 0"/><path d="M18.5 4.5l.5 1.3 1.3.5-1.3.5-.5 1.3-.5-1.3-1.3-.5 1.3-.5z"/></svg></div>
         <h3>Limpeza de Pele</h3>
         <p>Remove cravos, controla a oleosidade e melhora a textura — pele renovada e um cuidado que se sente.</p>
       </article>
       <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15c2-1 5-1 8 0s6 1 8 0"/><path d="M6 11c2-1 4-1 6 0s4 1 6 0"/><circle cx="12" cy="5" r="2"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c-4.4 0-8-2.5-8-5.8 2.3 0 4 .7 5 1.9-.6-2.4.5-4.9 3-6.8 2.5 1.9 3.6 4.4 3 6.8 1-1.2 2.7-1.9 5-1.9 0 3.3-3.6 5.8-8 5.8z"/><path d="M12 9.3V6.5"/></svg></div>
         <h3>Massagem Relaxante</h3>
         <p>Massagem terapêutica e relaxante para trazer calmaria ao corpo e à mente — o inverno pede aconchego.</p>
       </article>
@@ -529,15 +530,15 @@
       <span class="eyebrow">Onde nos encontrar</span>
       <h2>Um cantinho de calmaria em Florianópolis</h2>
       <div class="rowitem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
         <div><b>Florianópolis · SC</b><span>Atendimento em toda a Grande Florianópolis (DDD 48)</span></div>
       </div>
       <div class="rowitem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.94.36 1.86.68 2.75a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0122 16.92z"/></svg>
+        <span class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.94.36 1.86.68 2.75a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0122 16.92z"/></svg></span>
         <div><b>WhatsApp · (48) 98839-9774</b><span>Marcação de horários pelo link, com resposta rápida</span></div>
       </div>
       <div class="rowitem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        <span class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
         <div><b>@esmalteriaspindola</b><span>Acompanhe bastidores, novidades e nail art no Instagram</span></div>
       </div>
       <a class="btn" style="margin-top:14px" href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener">Agendar horário</a>
