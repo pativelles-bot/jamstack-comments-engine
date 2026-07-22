@@ -191,19 +191,6 @@
   .philo .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
   .pill{font-size:12.5px;letter-spacing:.05em;color:var(--teal-dp);background:var(--teal-wash);padding:9px 16px;border-radius:30px}
 
-  /* ── ambiente / mediterrâneo ───────────────── */
-  .amb{background:linear-gradient(180deg,var(--marble),var(--off))}
-  .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
-  .room{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:26px}
-  .room::before{content:"";position:absolute;inset:0;z-index:0}
-  .room:nth-child(1)::before{background:linear-gradient(160deg,#4aa79f,#245f5a)}
-  .room:nth-child(2)::before{background:linear-gradient(160deg,var(--gold-lt),var(--terra))}
-  .room:nth-child(3)::before{background:linear-gradient(160deg,var(--nude),#b79877)}
-  .room .arch{position:absolute;inset:0;z-index:1;opacity:.5}
-  .room .r-txt{position:relative;z-index:2}
-  .room .r-txt b{font-family:var(--display);font-size:27px;font-weight:500;display:block}
-  .room .r-txt span{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.9}
-
   /* ── responsável técnica ───────────────────── */
   .rt{background:var(--teal-dp);color:#fff}
   .rt-in{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
@@ -250,8 +237,6 @@
   @media(max-width:1000px){
     .grid{grid-template-columns:repeat(2,1fr)}
     .card.wide{grid-column:span 2}
-    .rooms{grid-template-columns:1fr}
-    .room{aspect-ratio:16/9}
   }
   @media(max-width:860px){
     .nav-links{display:none}
@@ -283,7 +268,6 @@
     <div class="nav-links">
       <a href="#especialidades">Especialidades</a>
       <a href="#filosofia">Filosofia</a>
-      <a href="#ambiente">A clínica</a>
       <a href="#equipe">Corpo clínico</a>
       <a href="#contato">Contato</a>
     </div>
@@ -416,31 +400,6 @@
         <span class="pill">Responsabilidade</span>
         <span class="pill">Ciência & tecnologia</span>
         <span class="pill">Acolhimento</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AMBIENTE -->
-<section class="amb" id="ambiente">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow center">A clínica</span>
-      <h2>Um refúgio de inspiração mediterrânea</h2>
-      <p>Arcos, mármore, curvas e materiais naturais na Estação Milano, no coração de Florianópolis. Ambientes que traduzem calma, refinamento e bem-estar.</p>
-    </div>
-    <div class="rooms">
-      <div class="room">
-        <svg class="arch" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5" opacity=".4"><path d="M70 400 V180 a80 80 0 0 1 160 0 V400"/><path d="M110 400 V210 a40 40 0 0 1 80 0 V400"/></g></svg>
-        <div class="r-txt"><b>Sala Amalfi</b><span>Atendimento</span></div>
-      </div>
-      <div class="room">
-        <svg class="arch" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5" opacity=".4"><circle cx="150" cy="150" r="80"/><path d="M70 400 V200 a80 80 0 0 1 160 0 V400"/></g></svg>
-        <div class="r-txt"><b>Sala Mykonos</b><span>Procedimentos</span></div>
-      </div>
-      <div class="room">
-        <svg class="arch" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5" opacity=".45"><path d="M60 400 V160 a90 90 0 0 1 180 0 V400"/></g></svg>
-        <div class="r-txt"><b>Pátio Milano</b><span>Recepção & espera</span></div>
       </div>
     </div>
   </div>
