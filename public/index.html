@@ -3,29 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danielli Vanz — Estética Avançada | Florianópolis</title>
-<meta name="description" content="Clínica de estética avançada no Centro de Florianópolis. Harmonização facial, toxina botulínica, bioestimuladores e protocolos regenerativos. Avaliação do rosto inteiro antes de qualquer aplicação.">
+<title>AMIRA saúde e beleza — Clínica Médica Multiprofissional | Florianópolis</title>
+<meta name="description" content="Clínica médica multiprofissional no Centro de Florianópolis. Dermatologia, Ginecologia, Nutrologia, Urologia, Fisioterapia Pélvica, Proctologia e Medicina Regenerativa. Ressignificando a beleza através da saúde.">
+<meta name="theme-color" content="#3E9A93">
+<meta property="og:title" content="AMIRA saúde e beleza — Florianópolis">
+<meta property="og:description" content="Ressignificando a beleza através da saúde. Clínica médica multiprofissional no Centro de Florianópolis.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F3EBE2'/%3E%3Cpath d='M50 78 C30 78 18 60 18 42 C18 40 20 39 22 40 L48 55 L46 30 C46 28 48 27 50 27 C52 27 54 28 54 30 L52 55 L78 40 C80 39 82 40 82 42 C82 60 70 78 50 78 Z' fill='none' stroke='%233E9A93' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
   :root{
-    --choc:#241813;
-    --choc-2:#3A281F;
-    --brown:#5A4034;
-    --gold:#B98A50;
-    --gold-lt:#DCB98A;
-    --rose:#E6C0AC;
-    --sand:#F1E7DE;
-    --off:#FBF8F5;
-    --ink:#2C1F19;
-    --muted:#8A7566;
+    /* brand teal / verde-água */
+    --teal:#3E9A93;
+    --teal-dp:#2C7A74;
+    --teal-lt:#7FBFB8;
+    --teal-wash:#E4F0EE;
+    /* warm neutrals — nude, bege, creme, mármore */
+    --nude:#E8D9CB;
+    --sand:#F0E6DB;
+    --cream:#F7F1E9;
+    --off:#FBF7F2;
+    --marble:#F4EFE8;
+    /* accents */
+    --gold:#B99457;
+    --gold-lt:#D8BC8C;
+    --terra:#C08464;
+    /* ink */
+    --ink:#2A2622;
+    --soft:#5C5750;
+    --muted:#8C8378;
 
-    --display:'Cormorant Garamond', Georgia, serif;
-    --body:'Jost', system-ui, -apple-system, sans-serif;
-    --script:'Sacramento', cursive;
+    --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --body:'Jost', system-ui, -apple-system, Segoe UI, sans-serif;
 
-    --w:1180px;
+    --w:1160px;
   }
 
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -36,631 +50,493 @@
     font-family:var(--body);
     font-weight:300;
     font-size:17px;
-    line-height:1.65;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  ::selection{background:var(--teal-wash);color:var(--teal-dp)}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
 
   .wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 28px}
 
-  /* ── eyebrow / labels ───────────────────────── */
+  h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+
   .eyebrow{
     font-family:var(--body);
-    font-size:11px;
-    font-weight:400;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex;align-items:center;gap:12px;
+    font-size:11px;font-weight:400;
+    letter-spacing:.32em;text-transform:uppercase;
+    color:var(--teal);
+    display:inline-flex;align-items:center;gap:12px;
   }
-  .eyebrow::before{
-    content:"";width:28px;height:1px;background:var(--gold);flex:none;
-  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);flex:none}
+  .eyebrow.center{justify-content:center}
+  .eyebrow.center::after{content:"";width:26px;height:1px;background:var(--teal);flex:none}
 
-  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+  /* ── logo mark ─────────────────────────────── */
+  .mark{display:flex;flex-direction:column;align-items:center;line-height:1}
+  .mark svg{width:26px;height:26px}
+  .mark .word{font-family:var(--display);font-weight:500;font-size:23px;letter-spacing:.42em;color:var(--teal-dp);margin:5px 0 0 .42em;text-transform:uppercase}
+  .mark .sub{font-family:var(--body);font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-top:3px}
 
-  /* ── nav ────────────────────────────────────── */
+  /* ── nav ───────────────────────────────────── */
   nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(251,248,245,.88);
+    position:sticky;top:0;z-index:60;
+    background:rgba(251,247,242,.86);
     backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(185,138,80,.18);
+    border-bottom:1px solid rgba(62,154,147,.16);
   }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{display:flex;flex-direction:column;line-height:1}
-  .logo b{font-family:var(--script);font-size:32px;font-weight:400;color:var(--brown)}
-  .logo span{
-    font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--gold);margin-top:2px;margin-left:3px;
-  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
   .nav-links{display:flex;gap:34px;align-items:center}
-  .nav-links a{
-    font-size:13px;letter-spacing:.06em;color:var(--brown);
-    transition:color .25s;
-  }
-  .nav-links a:hover{color:var(--gold)}
-
-  /* ── buttons ────────────────────────────────── */
+  .nav-links a{font-size:13px;letter-spacing:.06em;color:var(--soft);transition:color .25s}
+  .nav-links a:hover{color:var(--teal-dp)}
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:var(--body);font-size:13.5px;font-weight:400;
-    letter-spacing:.09em;text-transform:uppercase;
-    padding:15px 30px;border:1px solid transparent;cursor:pointer;
-    transition:background .3s, color .3s, border-color .3s, transform .2s;
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--body);font-size:12.5px;font-weight:400;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:13px 26px;border-radius:40px;
+    background:var(--teal);color:#fff;
+    border:1px solid var(--teal);
+    transition:all .28s ease;cursor:pointer;
   }
-  .btn-gold{background:var(--gold);color:#fff}
-  .btn-gold:hover{background:var(--brown);transform:translateY(-1px)}
-  .btn-line{background:transparent;color:var(--brown);border-color:rgba(185,138,80,.5)}
-  .btn-line:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-ghost-lt{background:transparent;color:var(--sand);border-color:rgba(220,185,138,.4)}
-  .btn-ghost-lt:hover{background:var(--gold);border-color:var(--gold);color:#fff}
-  .btn-sm{padding:11px 20px;font-size:11.5px}
+  .btn:hover{background:var(--teal-dp);border-color:var(--teal-dp);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--teal-dp);border-color:rgba(62,154,147,.4)}
+  .btn.ghost:hover{background:var(--teal-wash);transform:translateY(-1px)}
+  .btn.gold{background:var(--gold);border-color:var(--gold)}
+  .btn.gold:hover{background:#a5813f;border-color:#a5813f}
+  .nav-cta{display:flex;gap:14px;align-items:center}
 
-  /* ── HERO ───────────────────────────────────── */
-  .hero{position:relative;padding:88px 0 78px;overflow:hidden}
-  .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(720px 500px at 78% 30%, rgba(230,192,172,.28), transparent 65%);
+  /* ── hero ──────────────────────────────────── */
+  .hero{position:relative;padding:96px 0 104px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(120% 90% at 82% 8%, var(--teal-wash) 0%, transparent 46%),
+      radial-gradient(90% 80% at 8% 100%, var(--nude) 0%, transparent 52%),
+      linear-gradient(160deg,var(--cream),var(--off) 60%);
   }
-  .hero-grid{
-    position:relative;z-index:2;
-    display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;
-  }
-  .hero h1{
-    font-size:clamp(40px,5.4vw,68px);
-    margin:22px 0 0;
-    color:var(--choc);
-  }
-  .hero h1 em{
-    font-style:italic;font-weight:300;color:var(--gold);
-  }
-  .hero .sub{
-    margin-top:24px;max-width:44ch;font-size:18px;color:var(--brown);
-  }
-  .hero ul{list-style:none;margin:32px 0 0;display:flex;flex-direction:column;gap:11px}
-  .hero ul li{
-    display:flex;align-items:flex-start;gap:12px;
-    font-size:15.5px;color:var(--ink);
-  }
-  .tick{
-    flex:none;margin-top:6px;width:16px;height:1px;background:var(--gold);
-  }
-  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:38px}
-  .microcopy{
-    margin-top:14px;font-size:12.5px;letter-spacing:.05em;color:var(--muted);
-    display:flex;align-items:center;gap:8px;
-  }
-  .dot{width:5px;height:5px;border-radius:50%;background:#5BAA6E;flex:none;
-       box-shadow:0 0 0 0 rgba(91,170,110,.6);animation:pulse 2.4s infinite}
-  @keyframes pulse{
-    70%{box-shadow:0 0 0 7px rgba(91,170,110,0)}
-    100%{box-shadow:0 0 0 0 rgba(91,170,110,0)}
-  }
-  .trust{
-    margin-top:44px;padding-top:22px;border-top:1px solid rgba(185,138,80,.25);
-    display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
-    font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
-  }
-  .trust b{color:var(--brown);font-weight:500}
+  /* soft mediterranean arches, drawn in CSS */
+  .arches{position:absolute;top:0;right:0;height:100%;width:44%;z-index:-1;opacity:.9;pointer-events:none}
+  .hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(46px,6vw,80px);color:var(--ink);margin:22px 0 8px}
+  .hero h1 em{font-style:italic;color:var(--teal-dp)}
+  .hero .lede{font-size:19px;color:var(--soft);max-width:30ch;margin:18px 0 30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-meta{display:flex;gap:30px;margin-top:38px;padding-top:26px;border-top:1px solid rgba(62,154,147,.16)}
+  .hero-meta .n{font-family:var(--display);font-size:32px;color:var(--teal-dp);line-height:1}
+  .hero-meta .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
-  /* ── SIGNATURE: mapa facial ─────────────────── */
-  .face-card{
-    position:relative;aspect-ratio:4/5;
-    background:linear-gradient(160deg,#FDFAF7 0%, var(--sand) 55%, var(--rose) 100%);
-    border:1px solid rgba(185,138,80,.3);
-    display:grid;place-items:center;overflow:hidden;
-  }
-  .face-card::before{
-    content:"";position:absolute;inset:14px;border:1px solid rgba(185,138,80,.22);
-    pointer-events:none;z-index:2;
-  }
-  .face-card img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:50% 32%;
-  }
-  .face-svg{width:74%;height:auto;overflow:visible}
-  .face-svg .stroke{
-    fill:none;stroke:var(--brown);stroke-width:1.1;
-    stroke-linecap:round;stroke-linejoin:round;opacity:.55;
-    stroke-dasharray:1400;stroke-dashoffset:1400;
-    animation:draw 2.6s cubic-bezier(.25,.8,.3,1) .3s forwards;
-  }
-  .face-svg .zone{
-    fill:none;stroke:var(--gold);stroke-width:.9;
-    stroke-dasharray:4 4;opacity:0;
-    animation:fade .9s ease forwards;
-  }
-  .face-svg .zone:nth-of-type(1){animation-delay:2.0s}
-  .face-svg .zone:nth-of-type(2){animation-delay:2.25s}
-  .face-svg .zone:nth-of-type(3){animation-delay:2.5s}
-  .face-svg .pt{fill:var(--gold);opacity:0;animation:fade .5s ease forwards}
-  .face-svg .pt:nth-of-type(4n+1){animation-delay:2.7s}
-  .face-svg .pt:nth-of-type(4n+2){animation-delay:2.85s}
-  .face-svg .pt:nth-of-type(4n+3){animation-delay:3.0s}
-  .face-svg .pt:nth-of-type(4n){animation-delay:3.15s}
-  .face-svg text{
-    font-family:var(--body);font-size:5.2px;letter-spacing:.22em;
-    text-transform:uppercase;fill:var(--gold);opacity:0;
-    animation:fade .8s ease 3.3s forwards;
-  }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
-  .face-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;
-    background:linear-gradient(to top, rgba(36,24,19,.9), transparent);
-    color:var(--sand);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  }
+  /* hero visual — layered "boutique" card */
+  .hero-visual{position:relative;aspect-ratio:4/5;border-radius:200px 200px 22px 22px;overflow:hidden;
+    background:linear-gradient(155deg,var(--teal) 0%,var(--teal-dp) 55%,#245f5a 100%);
+    box-shadow:0 40px 90px -40px rgba(44,122,116,.6);}
+  .hero-visual .veil{position:absolute;inset:0;background:
+    radial-gradient(70% 50% at 50% 12%, rgba(255,255,255,.16),transparent 60%),
+    radial-gradient(80% 60% at 80% 100%, rgba(0,0,0,.18),transparent 60%);}
+  .hero-visual .shell{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);width:58%;opacity:.9}
+  .hero-visual .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 28px 30px;color:#fff;
+    background:linear-gradient(to top,rgba(28,72,68,.72),transparent);}
+  .hero-visual .cap b{font-family:var(--display);font-size:24px;font-weight:500;display:block}
+  .hero-visual .cap span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+  .float-badge{position:absolute;left:-22px;bottom:64px;background:#fff;border-radius:16px;
+    padding:16px 20px;box-shadow:0 22px 50px -22px rgba(44,38,34,.4);display:flex;gap:13px;align-items:center;max-width:230px}
+  .float-badge .dot{width:38px;height:38px;border-radius:50%;background:var(--teal-wash);display:grid;place-items:center;flex:none}
+  .float-badge .dot svg{width:20px;height:20px}
+  .float-badge b{font-family:var(--body);font-weight:400;font-size:13px;color:var(--ink);line-height:1.35;display:block}
+  .float-badge small{font-size:11px;color:var(--muted);letter-spacing:.04em}
 
-  /* ── PILARES ────────────────────────────────── */
-  .pillars{background:var(--choc);color:var(--sand);padding:66px 0}
-  .pillars-in{
-    display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;
-  }
-  .slogan{
-    font-family:var(--display);font-style:italic;font-weight:300;
-    font-size:clamp(24px,2.4vw,32px);line-height:1.25;color:var(--gold-lt);
-    max-width:11ch;
-  }
-  .pillar-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .pillar{padding:0 26px;border-left:1px solid rgba(220,185,138,.28)}
-  .pillar:first-child{padding-left:0;border-left:0}
-  .pillar h3{font-size:22px;color:#fff;margin-bottom:8px}
-  .pillar p{font-size:13.5px;line-height:1.55;color:rgba(241,231,222,.6)}
+  /* ── tagline strip ─────────────────────────── */
+  .strip{background:var(--teal-dp);color:#fff;text-align:center;padding:56px 0}
+  .strip .q{font-family:var(--display);font-style:italic;font-size:clamp(26px,3.6vw,42px);font-weight:300;line-height:1.25;max-width:20ch;margin:0 auto;color:var(--cream)}
+  .strip .who{margin-top:20px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-lt)}
 
-  /* ── seções genéricas ───────────────────────── */
-  .sec{padding:96px 0}
-  .sec-head{max-width:640px;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(32px,3.8vw,46px);margin:18px 0 0;color:var(--choc)}
-  .sec-head p{margin-top:16px;color:var(--brown);font-size:17px}
+  /* ── section shell ─────────────────────────── */
+  section{padding:96px 0}
+  .sec-head{max-width:640px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head h2{font-size:clamp(34px,4.4vw,52px);margin:18px 0 14px;color:var(--ink)}
+  .sec-head p{color:var(--soft);font-size:18px}
 
-  /* sinais */
-  .signs{background:var(--sand)}
-  .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(185,138,80,.28)}
-  .sign{background:var(--sand);padding:34px 26px}
-  .sign .num{
-    font-family:var(--display);font-size:15px;color:var(--gold);
-    letter-spacing:.1em;margin-bottom:14px;
+  /* ── especialidades ────────────────────────── */
+  .esp{background:linear-gradient(180deg,var(--off),var(--marble))}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:52px}
+  .card{
+    background:#fff;border:1px solid rgba(62,154,147,.14);border-radius:20px;
+    padding:30px 26px 32px;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
   }
-  .sign h3{font-size:23px;margin-bottom:9px;color:var(--choc)}
-  .sign p{font-size:14.5px;color:var(--brown);line-height:1.6}
-  .signs-note{
-    margin-top:34px;font-family:var(--display);font-style:italic;
-    font-size:21px;color:var(--brown);
-  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 26px 54px -30px rgba(44,122,116,.42);border-color:rgba(62,154,147,.32)}
+  .card .ico{width:52px;height:52px;border-radius:14px;background:var(--teal-wash);display:grid;place-items:center;margin-bottom:20px}
+  .card .ico svg{width:26px;height:26px;stroke:var(--teal-dp)}
+  .card h3{font-size:24px;color:var(--teal-dp);margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--soft);line-height:1.6}
+  .card.wide{grid-column:span 2;background:linear-gradient(150deg,var(--teal) 0%,var(--teal-dp) 100%);border:none;color:#fff;display:flex;flex-direction:column;justify-content:center}
+  .card.wide .ico{background:rgba(255,255,255,.16)}
+  .card.wide .ico svg{stroke:#fff}
+  .card.wide h3{color:#fff}
+  .card.wide p{color:rgba(255,255,255,.86)}
+  .card.wide .tag{align-self:flex-start;margin-bottom:16px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);border:1px solid rgba(216,188,140,.5);padding:5px 12px;border-radius:30px}
 
-  /* tratamentos */
-  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .treat{
-    border:1px solid rgba(185,138,80,.28);padding:32px 28px;
-    background:#fff;transition:border-color .3s, transform .3s;
-  }
-  .treat:hover{border-color:var(--gold);transform:translateY(-3px)}
-  .treat .tag{
-    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
-  }
-  .treat h3{font-size:25px;margin-bottom:10px;color:var(--choc)}
-  .treat p{font-size:14.5px;color:var(--brown);line-height:1.6}
+  /* ── filosofia (saúde antes da estética) ───── */
+  .philo{background:var(--cream)}
+  .philo-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .philo-art{position:relative;aspect-ratio:1/1;border-radius:24px;overflow:hidden;
+    background:radial-gradient(120% 120% at 20% 10%,var(--sand),var(--nude) 70%);
+    box-shadow:inset 0 0 0 1px rgba(185,148,87,.25);display:grid;place-items:center}
+  .philo-art .ring{position:absolute;width:70%;aspect-ratio:1;border:1px solid rgba(62,154,147,.35);border-radius:50%}
+  .philo-art .ring.two{width:88%;border-style:dashed;opacity:.5}
+  .philo-art .shell-lg{width:46%;opacity:.92}
+  .philo h2{font-size:clamp(32px,4.2vw,48px);color:var(--ink);margin:16px 0 18px}
+  .philo p{color:var(--soft);margin-bottom:16px}
+  .philo .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .pill{font-size:12.5px;letter-spacing:.05em;color:var(--teal-dp);background:var(--teal-wash);padding:9px 16px;border-radius:30px}
 
-  /* sobre */
-  .about{background:var(--choc-2);color:var(--sand)}
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-  .portrait{
-    position:relative;aspect-ratio:3/4;
-    background:linear-gradient(150deg, var(--brown), var(--choc));
-    border:1px solid rgba(220,185,138,.3);
-    overflow:hidden;
-  }
-  .portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:32% 20%;
-  }
-  .about h2{font-size:clamp(30px,3.4vw,44px);color:#fff;margin:18px 0 22px}
-  .about p{color:rgba(241,231,222,.78);margin-bottom:16px;font-size:16.5px}
-  .about .sig{
-    font-family:var(--script);font-size:44px;color:var(--gold-lt);
-    margin-top:26px;line-height:1;
-  }
-  .about .crd{
-    font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:rgba(220,185,138,.6);margin-top:6px;
-  }
+  /* ── ambiente / mediterrâneo ───────────────── */
+  .amb{background:linear-gradient(180deg,var(--marble),var(--off))}
+  .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+  .room{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:26px}
+  .room::before{content:"";position:absolute;inset:0;z-index:0}
+  .room:nth-child(1)::before{background:linear-gradient(160deg,#4aa79f,#245f5a)}
+  .room:nth-child(2)::before{background:linear-gradient(160deg,var(--gold-lt),var(--terra))}
+  .room:nth-child(3)::before{background:linear-gradient(160deg,var(--nude),#b79877)}
+  .room .arch{position:absolute;inset:0;z-index:1;opacity:.5}
+  .room .r-txt{position:relative;z-index:2}
+  .room .r-txt b{font-family:var(--display);font-size:27px;font-weight:500;display:block}
+  .room .r-txt span{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.9}
 
-  /* depoimentos */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .quote{
-    border-left:2px solid var(--gold);padding:6px 0 6px 24px;
-  }
-  .quote p{
-    font-family:var(--display);font-size:21px;font-style:italic;
-    line-height:1.42;color:var(--choc);
-  }
-  .quote cite{
-    display:block;margin-top:16px;font-family:var(--body);font-style:normal;
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  }
-  .slot{
-    margin-top:30px;padding:14px 18px;border:1px dashed rgba(185,138,80,.55);
-    font-size:12.5px;letter-spacing:.05em;color:var(--muted);background:rgba(230,192,172,.12);
-  }
+  /* ── responsável técnica ───────────────────── */
+  .rt{background:var(--teal-dp);color:#fff}
+  .rt-in{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
+  .rt-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:38px 34px;text-align:center}
+  .rt-card .av{width:96px;height:96px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(150deg,var(--teal-lt),var(--gold-lt));display:grid;place-items:center;font-family:var(--display);font-size:38px;color:#fff}
+  .rt-card b{font-family:var(--display);font-size:26px;font-weight:500;display:block}
+  .rt-card .crm{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-lt);margin-top:6px}
+  .rt-card .role{font-size:13.5px;color:rgba(255,255,255,.78);margin-top:14px}
+  .rt h2{font-size:clamp(30px,4vw,46px);color:#fff;margin:14px 0 18px}
+  .rt p{color:rgba(255,255,255,.82);margin-bottom:16px}
+  .rt .eyebrow{color:var(--teal-lt)}
+  .rt .eyebrow::before{background:var(--teal-lt)}
 
-  /* CTA final */
-  .final{
-    background:var(--choc);color:var(--sand);text-align:center;padding:104px 0;
-    position:relative;overflow:hidden;
+  /* ── contato / cta ─────────────────────────── */
+  .contato{background:var(--off)}
+  .cta-box{
+    background:linear-gradient(150deg,var(--cream),var(--sand));
+    border:1px solid rgba(185,148,87,.24);border-radius:28px;
+    padding:64px 56px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;
+    box-shadow:0 40px 90px -50px rgba(44,38,34,.3);
   }
-  .final::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(600px 380px at 50% 0%, rgba(185,138,80,.22), transparent 70%);
-  }
-  .final-in{position:relative;z-index:2}
-  .final .eyebrow{justify-content:center}
-  .final .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
-  .final h2{font-size:clamp(34px,4.4vw,56px);color:#fff;margin:22px 0 18px}
-  .final p{max-width:52ch;margin:0 auto;color:rgba(241,231,222,.7)}
-  .final .cta-row{justify-content:center}
-  .addr{
-    margin-top:56px;padding-top:30px;border-top:1px solid rgba(220,185,138,.22);
-    display:flex;flex-wrap:wrap;gap:26px 60px;justify-content:center;text-align:left;
-  }
-  .addr div{min-width:180px}
-  .addr dt{
-    font-size:10px;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:7px;
-  }
-  .addr dd{font-size:15px;color:rgba(241,231,222,.85);line-height:1.5}
+  .cta-box h2{font-size:clamp(32px,4vw,46px);color:var(--ink);margin:14px 0 16px}
+  .cta-box p{color:var(--soft);margin-bottom:26px}
+  .info-list{display:flex;flex-direction:column;gap:20px}
+  .info{display:flex;gap:16px;align-items:flex-start}
+  .info .ico{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 10px 24px -14px rgba(44,38,34,.4)}
+  .info .ico svg{width:20px;height:20px;stroke:var(--teal-dp)}
+  .info b{font-family:var(--body);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+  .info span{font-size:16px;color:var(--ink)}
+  .cta-actions{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+  .cta-actions .btn{justify-content:center;width:100%}
 
-  /* footer */
-  footer{background:#1B110D;color:rgba(241,231,222,.45);padding:32px 0;font-size:12.5px}
-  .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  footer a:hover{color:var(--gold-lt)}
+  /* ── footer ────────────────────────────────── */
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 34px}
+  .foot-in{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  footer .mark .word{color:#fff}
+  footer .mark svg path{stroke:var(--teal-lt)}
+  .foot-col h4{font-family:var(--body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:14px;font-weight:400}
+  .foot-col a,.foot-col p{display:block;font-size:14px;color:rgba(255,255,255,.66);margin-bottom:9px;transition:color .2s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:rgba(255,255,255,.5)}
 
-  /* whatsapp float */
-  .wa{
-    position:fixed;right:22px;bottom:22px;z-index:90;
-    width:58px;height:58px;border-radius:50%;
-    background:#25D366;display:grid;place-items:center;
-    box-shadow:0 8px 26px rgba(37,211,102,.42);
-    transition:transform .25s, box-shadow .25s;
+  /* ── responsive ────────────────────────────── */
+  @media(max-width:1000px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .card.wide{grid-column:span 2}
+    .rooms{grid-template-columns:1fr}
+    .room{aspect-ratio:16/9}
   }
-  .wa:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(37,211,102,.6)}
-  .wa svg{width:30px;height:30px;fill:#fff}
-  .wa::after{
-    content:"";position:absolute;inset:0;border-radius:50%;
-    border:2px solid rgba(37,211,102,.5);animation:ring 2.6s ease-out infinite;
-  }
-  @keyframes ring{
-    0%{transform:scale(1);opacity:.8}
-    100%{transform:scale(1.55);opacity:0}
-  }
-
-  /* reveal */
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
-  .rv.in{opacity:1;transform:none}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition:none!important}
-    .rv{opacity:1;transform:none}
-    .face-svg .stroke{stroke-dashoffset:0}
-    .face-svg .zone,.face-svg .pt,.face-svg text{opacity:1}
-  }
-
-  /* ── responsivo ─────────────────────────────── */
-  @media (max-width:980px){
+  @media(max-width:860px){
     .nav-links{display:none}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .face-card{max-width:400px;margin:0 auto}
-    .pillars-in{grid-template-columns:1fr;gap:34px}
-    .slogan{max-width:none}
-    .pillar-list{grid-template-columns:repeat(2,1fr);gap:28px 0}
-    .pillar{padding:0 22px}
-    .pillar:nth-child(3){padding-left:0;border-left:0}
-    .sign-grid{grid-template-columns:repeat(2,1fr)}
-    .treat-grid{grid-template-columns:repeat(2,1fr)}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    .portrait{max-width:320px}
-    .quotes{grid-template-columns:1fr;gap:32px}
+    .hero-in,.philo-in,.rt-in,.cta-box{grid-template-columns:1fr;gap:44px}
+    .arches{display:none}
+    .hero{padding:60px 0 72px}
+    .float-badge{left:auto;right:16px;bottom:16px}
+    section{padding:72px 0}
+    .cta-box{padding:44px 30px}
   }
-  @media (max-width:620px){
-    body{font-size:16px}
-    .wrap{padding:0 20px}
-    .hero{padding:56px 0 60px}
-    .sec{padding:68px 0}
-    .final{padding:76px 0}
-    .sign-grid,.treat-grid{grid-template-columns:1fr}
-    .pillar-list{grid-template-columns:1fr;gap:24px}
-    .pillar{padding:0 0 0 20px;border-left:1px solid rgba(220,185,138,.28)}
-    .pillar:nth-child(3){padding-left:20px;border-left:1px solid rgba(220,185,138,.28)}
-    .cta-row .btn{width:100%}
-    .addr{justify-content:flex-start}
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .card.wide{grid-column:span 1}
+    .hero-meta{flex-wrap:wrap;gap:22px}
+    .nav-cta .btn.ghost{display:none}
   }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══════════════════════════════════════ -->
+<!-- NAV -->
 <nav>
   <div class="wrap nav-in">
-    <a href="#top" class="logo">
-      <b>Danielli Vanz</b>
-      <span>Estética Avançada</span>
+    <a href="#top" class="mark" aria-label="AMIRA saúde e beleza">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 78 C30 78 18 60 18 42 C18 40 20 39 22 40 L48 55 L46 30 C46 28 48 27 50 27 C52 27 54 28 54 30 L52 55 L78 40 C80 39 82 40 82 42 C82 60 70 78 50 78 Z" fill="none" stroke="#2C7A74" stroke-width="3" stroke-linejoin="round"/></svg>
+      <span class="word">Amira</span>
+      <span class="sub">saúde e beleza</span>
     </a>
     <div class="nav-links">
-      <a href="#sinais">Sinais</a>
-      <a href="#tratamentos">Tratamentos</a>
-      <a href="#sobre">A clínica</a>
-      <a href="#feedback">Feedback</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#filosofia">Filosofia</a>
+      <a href="#ambiente">A clínica</a>
+      <a href="#equipe">Corpo clínico</a>
+      <a href="#contato">Contato</a>
     </div>
-    <a href="#agendar" class="btn btn-gold btn-sm">Agendar avaliação</a>
+    <div class="nav-cta">
+      <a href="tel:+554830243698" class="btn ghost">(48) 3024-3698</a>
+      <a href="#contato" class="btn">Agendar</a>
+    </div>
   </div>
 </nav>
 
-<!-- ══ HERO — dobra zero (Versão B) ═════════════ -->
+<!-- HERO -->
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
-
-    <div>
-      <div class="eyebrow rv">Estética avançada · Centro, Florianópolis</div>
-
-      <h1 class="rv">Não são as rugas.<br>É o <em>contorno</em><br>que você perdeu.</h1>
-
-      <p class="sub rv">A maioria das mulheres percebe que o rosto mudou muito antes de conseguir nomear o quê. A avaliação existe pra dar nome — e dar caminho.</p>
-
-      <ul class="rv">
-        <li><span class="tick"></span>Descubra o que mudou no seu rosto</li>
-        <li><span class="tick"></span>Entenda a causa antes de qualquer aplicação</li>
-        <li><span class="tick"></span>Saia com um plano na ordem certa</li>
-      </ul>
-
-      <div class="cta-row rv">
-        <a href="#agendar" class="btn btn-gold">Quero entender meu rosto</a>
-        <a href="#sinais" class="btn btn-line">Ver os sinais mais comuns</a>
+  <svg class="arches" viewBox="0 0 400 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#3E9A93" stroke-width="1.4" opacity="0.28">
+      <path d="M120 700 V300 a120 120 0 0 1 240 0 V700"/>
+      <path d="M180 700 V360 a60 60 0 0 1 120 0 V700"/>
+      <circle cx="240" cy="150" r="70"/>
+    </g>
+  </svg>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">Clínica médica multiprofissional · Florianópolis</span>
+      <h1>Ressignificando a beleza <em>através da saúde</em></h1>
+      <p class="lede">Especialidades médicas reunidas em um só lugar, com avaliação individual e responsabilidade antes de qualquer procedimento.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn">Marcar avaliação</a>
+        <a href="#especialidades" class="btn ghost">Conhecer especialidades</a>
       </div>
-      <p class="microcopy rv"><span class="dot"></span>Avaliação presencial no Centro, sem compromisso de fechar</p>
-
-      <div class="trust rv">
-        <span><b>6 mil</b> mulheres acompanham</span>
-        <span><b>Clínica própria</b> no Centro</span>
-        <span><b>Regen Match</b> · Evo &amp; LMG Aesthetics</span>
+      <div class="hero-meta">
+        <div><div class="n">7+</div><div class="l">Especialidades</div></div>
+        <div><div class="n">100%</div><div class="l">Plano individual</div></div>
+        <div><div class="n">Centro</div><div class="l">Estação Milano</div></div>
       </div>
     </div>
-
-    <!-- retrato da Danielli -->
-    <div class="face-card rv">
-      <img src="img/danielli-hero.jpg" width="667" height="824"
-           alt="Danielli Vanz na clínica de estética avançada, diante do painel dourado DV com parede de flores">
-      <div class="face-cap">O rosto inteiro, antes de qualquer aplicação</div>
+    <div class="hero-figure" style="position:relative">
+      <div class="hero-visual">
+        <div class="veil"></div>
+        <svg class="shell" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 82 C26 82 14 60 14 40 C14 37 16.5 35.5 19 37 L47 54 L45 26 C45 23.5 47 22 50 22 C53 22 55 23.5 55 26 L53 54 L81 37 C83.5 35.5 86 37 86 40 C86 60 74 82 50 82 Z" fill="none" stroke="#F7F1E9" stroke-width="2" stroke-linejoin="round" opacity="0.9"/><path d="M50 54 L50 22 M42 51 L38 30 M58 51 L62 30 M34 47 L27 34 M66 47 L73 34" stroke="#F7F1E9" stroke-width="1" opacity="0.55"/></svg>
+        <div class="cap">
+          <b>Estética & Saúde</b>
+          <span>naturalidade · ciência · cuidado</span>
+        </div>
+      </div>
+      <div class="float-badge">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#2C7A74" stroke-width="1.6"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.5 2.5 6 6 6c2 0 3.2 1.2 4 2.3C10.8 7.2 12 6 14 6c3.5 0 5.1 3.5 3.5 6.5C19 16.65 12 21 12 21z"/></svg></div>
+        <div><b>Saúde antes da estética</b><small>avaliação médica responsável</small></div>
+      </div>
     </div>
-
   </div>
 </header>
 
-<!-- ══ PILARES ══════════════════════════════════ -->
-<section class="pillars">
-  <div class="wrap pillars-in">
-    <p class="slogan rv">Realce sua essência. Revele sua confiança.</p>
-    <div class="pillar-list">
-      <div class="pillar rv">
-        <h3>Ciência</h3>
-        <p>Indicação baseada em evidência, não em tendência de rede social.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Técnica</h3>
-        <p>Protocolos avançados e atualização constante em estética regenerativa.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Naturalidade</h3>
-        <p>O objetivo é você parecer descansada, não parecer procedimento.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Confiança</h3>
-        <p>Você entende cada etapa antes de aceitar qualquer uma delas.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SINAIS ═══════════════════════════════════ -->
-<section class="sec signs" id="sinais">
+<!-- TAGLINE STRIP -->
+<div class="strip">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que costuma passar despercebido</div>
-      <h2>O rosto não envelhece com rugas. Envelhece com estrutura.</h2>
-      <p>Quatro sinais que aparecem antes das linhas de expressão — e que quase ninguém sabe nomear.</p>
-    </div>
-
-    <div class="sign-grid">
-      <div class="sign rv">
-        <div class="num">I</div>
-        <h3>Contorno</h3>
-        <p>A linha da mandíbula perde definição e o rosto parece "cair" na foto de perfil.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">II</div>
-        <h3>Volume</h3>
-        <p>A maçã do rosto esvazia. O olhar fica cansado mesmo depois de dormir bem.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">III</div>
-        <h3>Firmeza</h3>
-        <p>A pele responde menos ao toque e a maquiagem começa a marcar onde não marcava.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">IV</div>
-        <h3>Qualidade da pele</h3>
-        <p>Textura irregular, poro aparente e perda de viço, mesmo com skincare em dia.</p>
-      </div>
-    </div>
-
-    <p class="signs-note rv">Tratar um sinal isolado é o que produz resultado artificial. Por isso a avaliação vem antes.</p>
+    <p class="q">“A beleza que dura é aquela construída sobre a saúde.”</p>
+    <div class="who">AMIRA · saúde e beleza</div>
   </div>
-</section>
+</div>
 
-<!-- ══ TRATAMENTOS ══════════════════════════════ -->
-<section class="sec" id="tratamentos">
+<!-- ESPECIALIDADES -->
+<section class="esp" id="especialidades">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que é feito na clínica</div>
-      <h2>Tratamentos faciais, corporais e regenerativos</h2>
-      <p>A indicação sai da avaliação. Nada aqui é vendido como pacote fechado antes de olhar o seu rosto.</p>
+    <div class="sec-head center">
+      <span class="eyebrow center">Corpo clínico</span>
+      <h2>Especialidades reunidas em um só lugar</h2>
+      <p>Uma clínica multiprofissional pensada para cuidar da mulher e do homem de forma integral — da saúde funcional à estética, sempre com avaliação individual.</p>
     </div>
-
-    <div class="treat-grid">
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Harmonização facial</h3>
-        <p>Reposição de volume e reequilíbrio de proporções, com leitura do rosto inteiro antes da primeira aplicação.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 13c1.5 1.5 4 2 6-.5"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg></div>
+        <h3>Dermatologia</h3>
+        <p>Estética e clínica: acne, psoríase, dermatites, câncer de pele, biópsias, cirurgia dermatológica e remoção de lesões.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Toxina botulínica</h3>
-        <p>Suavização de linhas de expressão preservando a movimentação natural do rosto.</p>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 21V9"/><circle cx="12" cy="6" r="3"/><path d="M8 15h8M9.5 21h5"/></svg></div>
+        <h3>Ginecologia</h3>
+        <p>Saúde íntima da mulher, tecnologias e estética íntima com responsabilidade — respeitando primeiro a função.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Bioestimuladores de colágeno</h3>
-        <p>Recuperação de firmeza e sustentação a partir do estímulo do próprio colágeno.</p>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 3h12l-1 6a5 5 0 0 1-10 0z"/><path d="M9 15v3a3 3 0 0 0 6 0v-3"/></svg></div>
+        <h3>Nutrologia</h3>
+        <p>Cuidado da saúde a partir da nutrição, com foco em equilíbrio, bem-estar e prevenção.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Regenerativo</div>
-        <h3>REGEN-HK e HIPRO</h3>
-        <p>Tecnologias de estética regenerativa para qualidade de pele e sustentação profunda.</p>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 3c3 4 5 6.5 5 9.5a5 5 0 0 1-10 0C7 9.5 9 7 12 3z"/></svg></div>
+        <h3>Urologia</h3>
+        <p>Saúde urológica e do trato urinário, com atendimento humano e diagnóstico cuidadoso.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Pele</div>
-        <h3>LHA LA Peel</h3>
-        <p>Peeling de quarta geração, sem descamação, com efeito de pele lisa e uniforme.</p>
+      <div class="card wide">
+        <span class="tag">Medicina Regenerativa</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.5 2.5 6 6 6c2 0 3.2 1.2 4 2.3C10.8 7.2 12 6 14 6c3.5 0 5.1 3.5 3.5 6.5C19 16.65 12 21 12 21z"/></svg></div>
+        <h3>O seu próprio corpo a favor da sua pele</h3>
+        <p>Tratamentos que utilizam o próprio sangue do paciente para melasma, manchas, rugas, textura da pele, queda de cabelo e cicatrizes — resultado natural e biológico.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Criolipólise da Pri</h3>
-        <p>Redução de gordura localizada por resfriamento controlado, com protocolo individual.</p>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 4v7a5 5 0 0 0 10 0V4"/><path d="M7 20h10M12 16v4"/></svg></div>
+        <h3>Fisioterapia Pélvica</h3>
+        <p>Reabilitação e cuidado do assoalho pélvico, incontinência e queixas urinárias, com orientação profissional.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Diástase PH</h3>
-        <p>Protocolo para afastamento dos músculos abdominais, comum no pós-parto.</p>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6M12 9v6"/></svg></div>
+        <h3>Proctologia</h3>
+        <p>Diagnóstico e tratamento das doenças da região anorretal, com discrição e acolhimento.</p>
       </div>
-      <div class="treat rv">
-        <div class="tag">Manutenção</div>
-        <h3>Tratamentos faciais</h3>
-        <p>Limpeza, hidratação e protocolos de rotina que sustentam o resultado dos procedimentos.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Rotina</div>
-        <h3>Skincare e home care</h3>
-        <p>Prescrição de cuidado diário, porque metade do resultado acontece fora da clínica.</p>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 12h4l2 5 3-10 2 5h5"/></svg></div>
+        <h3>Clínica Médica</h3>
+        <p>Avaliação geral da saúde, acompanhamento e encaminhamento entre as especialidades da casa.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SOBRE ════════════════════════════════════ -->
-<section class="sec about" id="sobre">
-  <div class="wrap about-grid">
-    <div class="portrait rv">
-      <img src="img/danielli-clinica.jpg" width="683" height="821"
-           alt="Danielli Vanz na clínica, com equipamento de estética avançada">
+<!-- FILOSOFIA -->
+<section class="philo" id="filosofia">
+  <div class="wrap philo-in">
+    <div class="philo-art">
+      <div class="ring two"></div>
+      <div class="ring"></div>
+      <svg class="shell-lg" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 82 C26 82 14 60 14 40 C14 37 16.5 35.5 19 37 L47 54 L45 26 C45 23.5 47 22 50 22 C53 22 55 23.5 55 26 L53 54 L81 37 C83.5 35.5 86 37 86 40 C86 60 74 82 50 82 Z" fill="none" stroke="#2C7A74" stroke-width="2" stroke-linejoin="round"/><path d="M50 54 L50 22 M42 51 L38 30 M58 51 L62 30 M34 47 L27 34 M66 47 L73 34" stroke="#B99457" stroke-width="1" opacity="0.7"/></svg>
     </div>
-    <div>
-      <div class="eyebrow rv">A profissional</div>
-      <h2 class="rv">Estratégia, não excesso.</h2>
-      <p class="rv">Danielli Cássia Vanz atua há anos na estética avançada em Florianópolis. Antes de abrir a clínica própria no Centro, foi sócia-proprietária da +Top Estética, onde construiu a base técnica que hoje sustenta os protocolos da Danielli Vanz Estética Avançada.</p>
-      <p class="rv">Em 2026 foi convidada pela Evo e pela LMG Aesthetics para o Regen Match, encontro fechado de estética regenerativa — o tipo de reconhecimento que vem de pares, não de anúncio.</p>
-      <p class="rv">A clínica funciona sobre uma regra simples: o rosto é avaliado por inteiro antes de qualquer aplicação. Cada área tem uma função, e tratar uma sozinha é exatamente o que gera aquele resultado que todo mundo percebe.</p>
-      <div class="sig rv">Danielli Vanz</div>
-      <div class="crd rv">Estética Avançada · Florianópolis, SC</div>
+    <div class="philo-copy">
+      <span class="eyebrow">Nossa filosofia</span>
+      <h2>Saúde antes da estética, sempre</h2>
+      <p>Na Amira, acreditamos que a beleza é consequência do cuidado. Antes de qualquer procedimento estético, avaliamos a função, a saúde e a individualidade de cada pessoa — sem exageros e sem banalização.</p>
+      <p>Cada plano de tratamento é construído de forma individual, unindo ciência, tecnologia e uma escuta próxima. Ensinamos o paciente sobre o próprio corpo, para que cada escolha seja consciente e natural.</p>
+      <div class="pill-row">
+        <span class="pill">Avaliação individual</span>
+        <span class="pill">Naturalidade</span>
+        <span class="pill">Responsabilidade</span>
+        <span class="pill">Ciência & tecnologia</span>
+        <span class="pill">Acolhimento</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEEDBACK ═════════════════════════════════ -->
-<section class="sec" id="feedback">
+<!-- AMBIENTE -->
+<section class="amb" id="ambiente">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Feedback</div>
-      <h2>O que dizem quem já sentou na cadeira</h2>
+    <div class="sec-head center">
+      <span class="eyebrow center">A clínica</span>
+      <h2>Um refúgio de inspiração mediterrânea</h2>
+      <p>Arcos, mármore, curvas e materiais naturais na Estação Milano, no coração de Florianópolis. Ambientes que traduzem calma, refinamento e bem-estar.</p>
     </div>
-
-    <div class="quotes">
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
+    <div class="rooms">
+      <div class="room">
+        <svg class="arch" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5" opacity=".4"><path d="M70 400 V180 a80 80 0 0 1 160 0 V400"/><path d="M110 400 V210 a40 40 0 0 1 80 0 V400"/></g></svg>
+        <div class="r-txt"><b>Sala Amalfi</b><span>Atendimento</span></div>
+      </div>
+      <div class="room">
+        <svg class="arch" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5" opacity=".4"><circle cx="150" cy="150" r="80"/><path d="M70 400 V200 a80 80 0 0 1 160 0 V400"/></g></svg>
+        <div class="r-txt"><b>Sala Mykonos</b><span>Procedimentos</span></div>
+      </div>
+      <div class="room">
+        <svg class="arch" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5" opacity=".45"><path d="M60 400 V160 a90 90 0 0 1 180 0 V400"/></g></svg>
+        <div class="r-txt"><b>Pátio Milano</b><span>Recepção & espera</span></div>
+      </div>
     </div>
-
-    <p class="slot rv">Espaços reservados: 3 depoimentos reais (destaque "Feedback" do Instagram) + 1 par de antes/depois na dobra, se houver autorização de uso de imagem assinada.</p>
   </div>
 </section>
 
-<!-- ══ CTA FINAL ════════════════════════════════ -->
-<section class="final" id="agendar">
-  <div class="wrap final-in">
-    <div class="eyebrow rv">Agende sua avaliação</div>
-    <h2 class="rv">Uma hora para entender o seu rosto.</h2>
-    <p class="rv">Você sai da avaliação sabendo o que mudou, por que mudou e qual a ordem certa de tratar. Sem pacote empurrado, sem promessa que a pele não sustenta.</p>
-
-    <div class="cta-row rv">
-      <a href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-gold" id="cta-wa">Chamar no WhatsApp</a>
-      <a href="https://instagram.com/daniellivanzestetica" target="_blank" rel="noopener" class="btn btn-ghost-lt">Ver o Instagram</a>
+<!-- RESPONSÁVEL TÉCNICA -->
+<section class="rt" id="equipe">
+  <div class="wrap rt-in">
+    <div class="rt-card">
+      <div class="av">M</div>
+      <b>Dra. Margel P. Cantarelli</b>
+      <div class="crm">Ginecologia · CRM-SC 23391</div>
+      <div class="role">Responsável técnica da Amira. Une ciência e tecnologia para um cuidado íntimo feminino sério e humano.</div>
     </div>
-
-    <dl class="addr rv">
-      <div>
-        <dt>Endereço</dt>
-        <dd>Rua Cruz e Sousa, 57 — sala 1201<br>Centro · Florianópolis, SC</dd>
-      </div>
-      <div>
-        <dt>WhatsApp</dt>
-        <dd>Resposta em até 24h<br>Segunda a sexta</dd>
-      </div>
-      <div>
-        <dt>Instagram</dt>
-        <dd>@daniellivanzestetica</dd>
-      </div>
-    </dl>
+    <div class="rt-copy">
+      <span class="eyebrow">Corpo clínico</span>
+      <h2>Autoridade médica, cuidado humano</h2>
+      <p>A Amira reúne especialistas dedicados a ensinar e acompanhar cada paciente — dermatologistas, ginecologista, nutróloga, urologista, fisioterapeuta pélvica e proctologia trabalhando de forma integrada.</p>
+      <p>Todo conteúdo e cada procedimento é assinado por quem tem título e responsabilidade para isso. Aqui, estética séria começa com um diagnóstico de verdade.</p>
+    </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════ -->
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cta-copy">
+        <span class="eyebrow">Agende sua avaliação</span>
+        <h2>Vamos cuidar de você com responsabilidade</h2>
+        <p>Marque uma avaliação e receba um plano individual, pensado a partir da sua saúde. Atendimento presencial no Centro de Florianópolis.</p>
+        <div class="info-list">
+          <div class="info">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><b>Endereço</b><span>Rua Ângelo La Porta, 53 — Sala 1202<br>Estação Milano · Centro, Florianópolis/SC · 88020-600</span></div>
+          </div>
+          <div class="info">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div><b>Telefone</b><span>(48) 3024-3698</span></div>
+          </div>
+          <div class="info">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <div><b>Links & redes</b><span>@amira.clinica · linktr.ee/amira.clinica</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-side">
+        <div class="cta-actions">
+          <a href="tel:+554830243698" class="btn">Ligar: (48) 3024-3698</a>
+          <a href="https://www.instagram.com/amira.clinica" class="btn ghost" rel="noopener" target="_blank">Instagram @amira.clinica</a>
+          <a href="https://linktr.ee/amira.clinica" class="btn gold" rel="noopener" target="_blank">Todos os links · Linktree</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Danielli Vanz Estética Avançada · Florianópolis, SC</span>
-    <span>Resultados variam conforme avaliação individual.</span>
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-col" style="max-width:280px">
+        <div class="mark" style="align-items:flex-start">
+          <svg viewBox="0 0 100 100" style="width:24px;height:24px" aria-hidden="true"><path d="M50 78 C30 78 18 60 18 42 C18 40 20 39 22 40 L48 55 L46 30 C46 28 48 27 50 27 C52 27 54 28 54 30 L52 55 L78 40 C80 39 82 40 82 42 C82 60 70 78 50 78 Z" fill="none" stroke="#7FBFB8" stroke-width="3" stroke-linejoin="round"/></svg>
+          <span class="word" style="margin-left:.42em">Amira</span>
+          <span class="sub">saúde e beleza</span>
+        </div>
+        <p style="margin-top:18px">Ressignificando a beleza através da saúde. Clínica médica multiprofissional em Florianópolis.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Especialidades</h4>
+        <a href="#especialidades">Dermatologia</a>
+        <a href="#especialidades">Ginecologia</a>
+        <a href="#especialidades">Nutrologia · Urologia</a>
+        <a href="#especialidades">Fisioterapia Pélvica</a>
+        <a href="#especialidades">Medicina Regenerativa</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="tel:+554830243698">(48) 3024-3698</a>
+        <p>Rua Ângelo La Porta, 53 · Sala 1202</p>
+        <p>Estação Milano · Centro</p>
+        <p>Florianópolis/SC · 88020-600</p>
+      </div>
+      <div class="foot-col">
+        <h4>Redes</h4>
+        <a href="https://www.instagram.com/amira.clinica" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://linktr.ee/amira.clinica" target="_blank" rel="noopener">Linktree</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AMIRA saúde e beleza · Todos os direitos reservados</span>
+      <span>Responsável técnica: Dra. Margel P. Cantarelli · CRM-SC 23391</span>
+    </div>
   </div>
 </footer>
-
-<!-- ══ WHATSAPP FLUTUANTE ═══════════════════════ -->
-<a class="wa" id="wa-float"
-   href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
-   target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.04 3C8.86 3 3.02 8.84 3.02 16.02c0 2.29.6 4.53 1.75 6.5L3 29l6.65-1.74a13 13 0 0 0 6.39 1.66h.01c7.18 0 13.02-5.84 13.02-13.02C29.07 8.84 23.22 3 16.04 3zm0 23.69h-.01a10.8 10.8 0 0 1-5.5-1.51l-.4-.23-4.09 1.07 1.09-3.99-.26-.41a10.77 10.77 0 0 1-1.65-5.76c0-5.97 4.86-10.83 10.83-10.83 2.89 0 5.61 1.13 7.65 3.18a10.75 10.75 0 0 1 3.17 7.66c0 5.97-4.86 10.82-10.83 10.82zm5.94-8.11c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.62-1.61-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.41-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.33c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
-  </svg>
-</a>
-
-<script>
-  // reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.rv').forEach((el, i) => {
-    el.style.transitionDelay = (Math.min(i % 6, 5) * 70) + 'ms';
-    io.observe(el);
-  });
-</script>
 
 </body>
 </html>
