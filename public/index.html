@@ -3,29 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danielli Vanz — Estética Avançada | Florianópolis</title>
-<meta name="description" content="Clínica de estética avançada no Centro de Florianópolis. Harmonização facial, toxina botulínica, bioestimuladores e protocolos regenerativos. Avaliação do rosto inteiro antes de qualquer aplicação.">
+<title>Esmalteria Spindola — Nails Bar & Estética | Florianópolis</title>
+<meta name="description" content="Esmalteria, alongamento de unhas em gel, nail art, design de sobrancelhas, limpeza de pele e massagem relaxante em Florianópolis. Elevamos sua autoestima em minutos. Agende pelo WhatsApp.">
+<meta name="theme-color" content="#5FD3C4">
+<meta property="og:title" content="Esmalteria Spindola — Nails Bar & Estética">
+<meta property="og:description" content="Elevamos a sua autoestima dentro de minutos. Mais de 5 mil pessoas felizes. Florianópolis · Grande Floripa.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%235FD3C4'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23C9A24B' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   :root{
-    --choc:#241813;
-    --choc-2:#3A281F;
-    --brown:#5A4034;
-    --gold:#B98A50;
-    --gold-lt:#DCB98A;
-    --rose:#E6C0AC;
-    --sand:#F1E7DE;
-    --off:#FBF8F5;
-    --ink:#2C1F19;
-    --muted:#8A7566;
+    --teal:#5FD3C4;
+    --teal-2:#63D1C0;
+    --teal-deep:#2E8C82;
+    --teal-ink:#1C4E49;
+    --gold:#C9A24B;
+    --gold-lt:#E2C687;
+    --graphite:#20211F;
+    --ink:#25302E;
+    --muted:#6E8480;
+    --rose:#EAC3CE;
+    --lilac:#D8CAE8;
+    --mint:#EAF8F5;
+    --off:#FBFCFB;
+    --white:#FFFFFF;
 
     --display:'Cormorant Garamond', Georgia, serif;
     --body:'Jost', system-ui, -apple-system, sans-serif;
     --script:'Sacramento', cursive;
 
-    --w:1180px;
+    --w:1160px;
+    --r:18px;
+    --shadow:0 24px 60px -30px rgba(28,78,73,.45);
   }
 
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -44,623 +55,570 @@
   a{color:inherit;text-decoration:none}
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
 
-  .wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 28px}
+  .wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 26px}
 
-  /* ── eyebrow / labels ───────────────────────── */
   .eyebrow{
     font-family:var(--body);
-    font-size:11px;
-    font-weight:400;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex;align-items:center;gap:12px;
+    font-size:11px;font-weight:400;
+    letter-spacing:.3em;text-transform:uppercase;
+    color:var(--teal-deep);
+    display:inline-flex;align-items:center;gap:12px;
   }
-  .eyebrow::before{
-    content:"";width:28px;height:1px;background:var(--gold);flex:none;
-  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
 
-  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:.005em}
+  .script{font-family:var(--script);color:var(--gold);font-weight:400}
 
-  /* ── nav ────────────────────────────────────── */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(251,248,245,.88);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(185,138,80,.18);
-  }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{display:flex;flex-direction:column;line-height:1}
-  .logo b{font-family:var(--script);font-size:32px;font-weight:400;color:var(--brown)}
-  .logo span{
-    font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--gold);margin-top:2px;margin-left:3px;
-  }
-  .nav-links{display:flex;gap:34px;align-items:center}
-  .nav-links a{
-    font-size:13px;letter-spacing:.06em;color:var(--brown);
-    transition:color .25s;
-  }
-  .nav-links a:hover{color:var(--gold)}
-
-  /* ── buttons ────────────────────────────────── */
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:var(--body);font-size:13.5px;font-weight:400;
-    letter-spacing:.09em;text-transform:uppercase;
-    padding:15px 30px;border:1px solid transparent;cursor:pointer;
-    transition:background .3s, color .3s, border-color .3s, transform .2s;
+    display:inline-flex;align-items:center;gap:11px;
+    font-family:var(--body);font-weight:400;font-size:14px;letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:16px 30px;border-radius:100px;
+    background:var(--gold);color:#2a1e07;
+    border:1px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 14px 30px -14px rgba(201,162,75,.8);
   }
-  .btn-gold{background:var(--gold);color:#fff}
-  .btn-gold:hover{background:var(--brown);transform:translateY(-1px)}
-  .btn-line{background:transparent;color:var(--brown);border-color:rgba(185,138,80,.5)}
-  .btn-line:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-ghost-lt{background:transparent;color:var(--sand);border-color:rgba(220,185,138,.4)}
-  .btn-ghost-lt:hover{background:var(--gold);border-color:var(--gold);color:#fff}
-  .btn-sm{padding:11px 20px;font-size:11.5px}
+  .btn:hover{transform:translateY(-2px);background:var(--gold-lt);box-shadow:0 20px 36px -14px rgba(201,162,75,.9)}
+  .btn svg{width:18px;height:18px}
+  .btn.ghost{
+    background:transparent;color:var(--teal-ink);border-color:rgba(46,140,130,.4);box-shadow:none;
+  }
+  .btn.ghost:hover{background:rgba(95,211,196,.12);border-color:var(--teal-deep)}
+  .btn.light{background:var(--white);color:var(--teal-ink);box-shadow:0 14px 30px -16px rgba(0,0,0,.4)}
 
-  /* ── HERO ───────────────────────────────────── */
-  .hero{position:relative;padding:88px 0 78px;overflow:hidden}
-  .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(720px 500px at 78% 30%, rgba(230,192,172,.28), transparent 65%);
-  }
-  .hero-grid{
-    position:relative;z-index:2;
-    display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;
-  }
-  .hero h1{
-    font-size:clamp(40px,5.4vw,68px);
-    margin:22px 0 0;
-    color:var(--choc);
-  }
-  .hero h1 em{
-    font-style:italic;font-weight:300;color:var(--gold);
-  }
-  .hero .sub{
-    margin-top:24px;max-width:44ch;font-size:18px;color:var(--brown);
-  }
-  .hero ul{list-style:none;margin:32px 0 0;display:flex;flex-direction:column;gap:11px}
-  .hero ul li{
-    display:flex;align-items:flex-start;gap:12px;
-    font-size:15.5px;color:var(--ink);
-  }
-  .tick{
-    flex:none;margin-top:6px;width:16px;height:1px;background:var(--gold);
-  }
-  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:38px}
-  .microcopy{
-    margin-top:14px;font-size:12.5px;letter-spacing:.05em;color:var(--muted);
-    display:flex;align-items:center;gap:8px;
-  }
-  .dot{width:5px;height:5px;border-radius:50%;background:#5BAA6E;flex:none;
-       box-shadow:0 0 0 0 rgba(91,170,110,.6);animation:pulse 2.4s infinite}
-  @keyframes pulse{
-    70%{box-shadow:0 0 0 7px rgba(91,170,110,0)}
-    100%{box-shadow:0 0 0 0 rgba(91,170,110,0)}
-  }
-  .trust{
-    margin-top:44px;padding-top:22px;border-top:1px solid rgba(185,138,80,.25);
-    display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
-    font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
-  }
-  .trust b{color:var(--brown);font-weight:500}
+  /* ── logo mark ─────────────────────────── */
+  .mark{display:inline-flex;align-items:center;gap:13px}
+  .hex{width:44px;height:48px;flex:none;filter:drop-shadow(0 6px 14px rgba(201,162,75,.35))}
+  .mark .name{line-height:1}
+  .mark .name b{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:.02em;display:block;color:var(--graphite)}
+  .mark .name span{font-family:var(--body);font-weight:400;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--teal-deep)}
 
-  /* ── SIGNATURE: mapa facial ─────────────────── */
-  .face-card{
-    position:relative;aspect-ratio:4/5;
-    background:linear-gradient(160deg,#FDFAF7 0%, var(--sand) 55%, var(--rose) 100%);
-    border:1px solid rgba(185,138,80,.3);
-    display:grid;place-items:center;overflow:hidden;
-  }
-  .face-card::before{
-    content:"";position:absolute;inset:14px;border:1px solid rgba(185,138,80,.22);
-    pointer-events:none;z-index:2;
-  }
-  .face-card img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:50% 32%;
-  }
-  .face-svg{width:74%;height:auto;overflow:visible}
-  .face-svg .stroke{
-    fill:none;stroke:var(--brown);stroke-width:1.1;
-    stroke-linecap:round;stroke-linejoin:round;opacity:.55;
-    stroke-dasharray:1400;stroke-dashoffset:1400;
-    animation:draw 2.6s cubic-bezier(.25,.8,.3,1) .3s forwards;
-  }
-  .face-svg .zone{
-    fill:none;stroke:var(--gold);stroke-width:.9;
-    stroke-dasharray:4 4;opacity:0;
-    animation:fade .9s ease forwards;
-  }
-  .face-svg .zone:nth-of-type(1){animation-delay:2.0s}
-  .face-svg .zone:nth-of-type(2){animation-delay:2.25s}
-  .face-svg .zone:nth-of-type(3){animation-delay:2.5s}
-  .face-svg .pt{fill:var(--gold);opacity:0;animation:fade .5s ease forwards}
-  .face-svg .pt:nth-of-type(4n+1){animation-delay:2.7s}
-  .face-svg .pt:nth-of-type(4n+2){animation-delay:2.85s}
-  .face-svg .pt:nth-of-type(4n+3){animation-delay:3.0s}
-  .face-svg .pt:nth-of-type(4n){animation-delay:3.15s}
-  .face-svg text{
-    font-family:var(--body);font-size:5.2px;letter-spacing:.22em;
-    text-transform:uppercase;fill:var(--gold);opacity:0;
-    animation:fade .8s ease 3.3s forwards;
-  }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
-  .face-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;
-    background:linear-gradient(to top, rgba(36,24,19,.9), transparent);
-    color:var(--sand);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  /* ── header ─────────────────────────────── */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease, box-shadow .3s ease, padding .3s ease;padding:20px 0}
+  header.solid{background:rgba(251,252,251,.9);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(46,140,130,.1);padding:12px 0}
+  header .bar{display:flex;align-items:center;justify-content:space-between}
+  nav.links{display:flex;gap:30px}
+  nav.links a{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);opacity:.8;transition:opacity .2s,color .2s}
+  nav.links a:hover{opacity:1;color:var(--teal-deep)}
+  header .cta{display:inline-flex}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.25s}
+  @media(max-width:900px){
+    nav.links,header .cta{display:none}
+    .menu-btn{display:block}
   }
 
-  /* ── PILARES ────────────────────────────────── */
-  .pillars{background:var(--choc);color:var(--sand);padding:66px 0}
-  .pillars-in{
-    display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;
+  /* ── hero ───────────────────────────────── */
+  .hero{position:relative;padding:150px 0 90px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(120% 90% at 78% -10%, rgba(95,211,196,.55), transparent 55%),
+      radial-gradient(90% 80% at 8% 110%, rgba(234,195,206,.4), transparent 60%),
+      linear-gradient(160deg,#F4FBF9 0%,#FBFCFB 55%,#F7FCFA 100%);
   }
-  .slogan{
-    font-family:var(--display);font-style:italic;font-weight:300;
-    font-size:clamp(24px,2.4vw,32px);line-height:1.25;color:var(--gold-lt);
-    max-width:11ch;
-  }
-  .pillar-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .pillar{padding:0 26px;border-left:1px solid rgba(220,185,138,.28)}
-  .pillar:first-child{padding-left:0;border-left:0}
-  .pillar h3{font-size:22px;color:#fff;margin-bottom:8px}
-  .pillar p{font-size:13.5px;line-height:1.55;color:rgba(241,231,222,.6)}
+  .hero .blob{position:absolute;z-index:-1;border-radius:50%;filter:blur(8px);opacity:.5}
+  .hero .b1{width:320px;height:320px;top:-60px;right:-40px;background:radial-gradient(circle at 30% 30%,#7DE0D3,#3FB6A8)}
+  .hero .b2{width:180px;height:180px;bottom:20px;left:-50px;background:radial-gradient(circle at 40% 40%,#EAC3CE,#D8CAE8)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(42px,6.4vw,74px);color:var(--graphite)}
+  .hero h1 em{font-style:italic;color:var(--teal-deep)}
+  .hero .lead{margin:26px 0 12px;max-width:30ch;font-size:19px;color:var(--ink)}
+  .hero .sub{color:var(--muted);max-width:34ch;margin-bottom:32px}
+  .hero .actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero .microcopy{font-size:12.5px;color:var(--muted);letter-spacing:.04em;margin-top:20px;display:flex;align-items:center;gap:8px}
+  .hero .microcopy svg{width:15px;height:15px;color:var(--teal-deep)}
 
-  /* ── seções genéricas ───────────────────────── */
-  .sec{padding:96px 0}
-  .sec-head{max-width:640px;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(32px,3.8vw,46px);margin:18px 0 0;color:var(--choc)}
-  .sec-head p{margin-top:16px;color:var(--brown);font-size:17px}
-
-  /* sinais */
-  .signs{background:var(--sand)}
-  .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(185,138,80,.28)}
-  .sign{background:var(--sand);padding:34px 26px}
-  .sign .num{
-    font-family:var(--display);font-size:15px;color:var(--gold);
-    letter-spacing:.1em;margin-bottom:14px;
+  /* hero visual card */
+  .hero-card{
+    position:relative;aspect-ratio:4/4.6;border-radius:26px;
+    background:linear-gradient(150deg,var(--teal) 0%, var(--teal-deep) 100%);
+    box-shadow:var(--shadow);overflow:hidden;display:grid;place-items:center;
   }
-  .sign h3{font-size:23px;margin-bottom:9px;color:var(--choc)}
-  .sign p{font-size:14.5px;color:var(--brown);line-height:1.6}
-  .signs-note{
-    margin-top:34px;font-family:var(--display);font-style:italic;
-    font-size:21px;color:var(--brown);
+  .hero-card .watermark{position:absolute;inset:0;opacity:.16;display:grid;place-items:center}
+  .hero-card .watermark svg{width:78%;height:78%}
+  .hero-card .plate{
+    position:relative;z-index:2;text-align:center;color:#fff;padding:34px;
   }
-
-  /* tratamentos */
-  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .treat{
-    border:1px solid rgba(185,138,80,.28);padding:32px 28px;
-    background:#fff;transition:border-color .3s, transform .3s;
+  .hero-card .plate .big{font-family:var(--script);font-size:clamp(46px,7vw,70px);color:#fff;line-height:.9}
+  .hex-badge{width:120px;height:130px;margin:0 auto 18px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.28))}
+  .hero-card .tagline{font-family:var(--body);letter-spacing:.28em;text-transform:uppercase;font-size:11px;margin-top:16px;opacity:.92}
+  .float-chip{
+    position:absolute;z-index:3;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+    border-radius:14px;padding:12px 16px;box-shadow:0 16px 34px -18px rgba(0,0,0,.5);
+    font-size:12.5px;color:var(--ink);display:flex;align-items:center;gap:9px;
   }
-  .treat:hover{border-color:var(--gold);transform:translateY(-3px)}
-  .treat .tag{
-    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
-  }
-  .treat h3{font-size:25px;margin-bottom:10px;color:var(--choc)}
-  .treat p{font-size:14.5px;color:var(--brown);line-height:1.6}
-
-  /* sobre */
-  .about{background:var(--choc-2);color:var(--sand)}
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-  .portrait{
-    position:relative;aspect-ratio:3/4;
-    background:linear-gradient(150deg, var(--brown), var(--choc));
-    border:1px solid rgba(220,185,138,.3);
-    overflow:hidden;
-  }
-  .portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:32% 20%;
-  }
-  .about h2{font-size:clamp(30px,3.4vw,44px);color:#fff;margin:18px 0 22px}
-  .about p{color:rgba(241,231,222,.78);margin-bottom:16px;font-size:16.5px}
-  .about .sig{
-    font-family:var(--script);font-size:44px;color:var(--gold-lt);
-    margin-top:26px;line-height:1;
-  }
-  .about .crd{
-    font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:rgba(220,185,138,.6);margin-top:6px;
+  .float-chip b{font-family:var(--display);font-size:18px;font-weight:600;color:var(--teal-deep)}
+  .float-chip.a{top:24px;left:-24px}
+  .float-chip.b{bottom:30px;right:-20px}
+  @media(max-width:840px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .hero-card{max-width:420px;margin-inline:auto}
+    .float-chip.a{left:6px}.float-chip.b{right:6px}
   }
 
-  /* depoimentos */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .quote{
-    border-left:2px solid var(--gold);padding:6px 0 6px 24px;
-  }
-  .quote p{
-    font-family:var(--display);font-size:21px;font-style:italic;
-    line-height:1.42;color:var(--choc);
-  }
-  .quote cite{
-    display:block;margin-top:16px;font-family:var(--body);font-style:normal;
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  }
-  .slot{
-    margin-top:30px;padding:14px 18px;border:1px dashed rgba(185,138,80,.55);
-    font-size:12.5px;letter-spacing:.05em;color:var(--muted);background:rgba(230,192,172,.12);
-  }
+  /* ── marquee strip ──────────────────────── */
+  .strip{background:var(--graphite);color:#EBF4F2;padding:15px 0;overflow:hidden;white-space:nowrap}
+  .strip .row{display:inline-flex;gap:44px;animation:slide 26s linear infinite;padding-left:44px}
+  .strip span{font-family:var(--display);font-style:italic;font-size:19px;letter-spacing:.02em;display:inline-flex;align-items:center;gap:44px;color:#DDECEA}
+  .strip span::after{content:"✦";color:var(--gold);font-style:normal;font-size:12px}
+  @keyframes slide{to{transform:translateX(-50%)}}
 
-  /* CTA final */
-  .final{
-    background:var(--choc);color:var(--sand);text-align:center;padding:104px 0;
+  /* ── section shell ──────────────────────── */
+  section{padding:96px 0}
+  .head{max-width:640px;margin-bottom:56px}
+  .head h2{font-size:clamp(32px,4.4vw,50px);color:var(--graphite);margin:16px 0 14px}
+  .head p{color:var(--muted)}
+  .center{margin-inline:auto;text-align:center}
+  .center .eyebrow{justify-content:center}
+
+  /* ── services ───────────────────────────── */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{
+    background:var(--white);border:1px solid rgba(46,140,130,.12);border-radius:var(--r);
+    padding:32px 28px;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     position:relative;overflow:hidden;
   }
-  .final::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(600px 380px at 50% 0%, rgba(185,138,80,.22), transparent 70%);
-  }
-  .final-in{position:relative;z-index:2}
-  .final .eyebrow{justify-content:center}
-  .final .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
-  .final h2{font-size:clamp(34px,4.4vw,56px);color:#fff;margin:22px 0 18px}
-  .final p{max-width:52ch;margin:0 auto;color:rgba(241,231,222,.7)}
-  .final .cta-row{justify-content:center}
-  .addr{
-    margin-top:56px;padding-top:30px;border-top:1px solid rgba(220,185,138,.22);
-    display:flex;flex-wrap:wrap;gap:26px 60px;justify-content:center;text-align:left;
-  }
-  .addr div{min-width:180px}
-  .addr dt{
-    font-size:10px;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:7px;
-  }
-  .addr dd{font-size:15px;color:rgba(241,231,222,.85);line-height:1.5}
+  .svc::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .35s ease}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .svc:hover::after{width:100%}
+  .svc .ic{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:var(--mint);margin-bottom:20px}
+  .svc .ic svg{width:26px;height:26px;color:var(--teal-deep)}
+  .svc h3{font-size:24px;color:var(--graphite);margin-bottom:9px}
+  .svc p{font-size:15px;color:var(--muted);line-height:1.6}
+  @media(max-width:860px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
 
-  /* footer */
-  footer{background:#1B110D;color:rgba(241,231,222,.45);padding:32px 0;font-size:12.5px}
-  .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  footer a:hover{color:var(--gold-lt)}
+  /* ── story ──────────────────────────────── */
+  .story{background:linear-gradient(160deg,#F4FBF9,#FBFCFB)}
+  .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+  .story-visual{
+    aspect-ratio:1/1.12;border-radius:24px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 70% 20%, rgba(234,195,206,.7), transparent 45%),
+      radial-gradient(circle at 20% 80%, rgba(216,202,232,.6), transparent 45%),
+      linear-gradient(150deg,var(--teal),var(--teal-deep));
+    box-shadow:var(--shadow);display:grid;place-items:center;
+  }
+  .story-visual .qmark{color:rgba(255,255,255,.9);text-align:center;padding:40px}
+  .story-visual .qmark .s{font-family:var(--script);font-size:clamp(40px,6vw,62px);line-height:1;display:block;margin-bottom:12px}
+  .story-visual .qmark small{font-family:var(--body);letter-spacing:.26em;text-transform:uppercase;font-size:10.5px;opacity:.9}
+  .story h2{font-size:clamp(30px,4.2vw,46px);color:var(--graphite);margin:16px 0 20px}
+  .story p{color:var(--ink);margin-bottom:16px;max-width:52ch}
+  .story .sign{font-family:var(--script);font-size:34px;color:var(--gold);margin-top:6px}
+  @media(max-width:840px){.story-grid{grid-template-columns:1fr;gap:40px}.story-visual{max-width:380px}}
 
-  /* whatsapp float */
-  .wa{
-    position:fixed;right:22px;bottom:22px;z-index:90;
-    width:58px;height:58px;border-radius:50%;
-    background:#25D366;display:grid;place-items:center;
-    box-shadow:0 8px 26px rgba(37,211,102,.42);
-    transition:transform .25s, box-shadow .25s;
-  }
-  .wa:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(37,211,102,.6)}
-  .wa svg{width:30px;height:30px;fill:#fff}
-  .wa::after{
-    content:"";position:absolute;inset:0;border-radius:50%;
-    border:2px solid rgba(37,211,102,.5);animation:ring 2.6s ease-out infinite;
-  }
-  @keyframes ring{
-    0%{transform:scale(1);opacity:.8}
-    100%{transform:scale(1.55);opacity:0}
-  }
+  /* ── stats ──────────────────────────────── */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:14px}
+  .stat{text-align:center;padding:20px}
+  .stat b{font-family:var(--display);font-weight:600;font-size:clamp(38px,5vw,54px);color:var(--teal-deep);display:block;line-height:1}
+  .stat span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block}
+  @media(max-width:640px){.stats{grid-template-columns:1fr 1fr;gap:10px}}
 
-  /* reveal */
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
-  .rv.in{opacity:1;transform:none}
+  /* ── experience / diferenciais ──────────── */
+  .exp{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .exp .item{display:flex;gap:18px;align-items:flex-start;background:var(--white);border-radius:var(--r);padding:26px;border:1px solid rgba(46,140,130,.1)}
+  .exp .num{font-family:var(--display);font-weight:600;font-size:22px;color:var(--gold);flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold-lt);display:grid;place-items:center}
+  .exp h3{font-size:21px;color:var(--graphite);margin-bottom:6px}
+  .exp p{font-size:14.5px;color:var(--muted)}
+  @media(max-width:720px){.exp{grid-template-columns:1fr}}
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition:none!important}
-    .rv{opacity:1;transform:none}
-    .face-svg .stroke{stroke-dashoffset:0}
-    .face-svg .zone,.face-svg .pt,.face-svg text{opacity:1}
-  }
+  /* ── testimonials ───────────────────────── */
+  .testi{background:var(--graphite);color:#EAF4F2}
+  .testi .head h2{color:#fff}
+  .testi .head p{color:#9FBAB6}
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:30px}
+  .quote .stars{color:var(--gold);letter-spacing:3px;font-size:15px;margin-bottom:14px}
+  .quote p{font-family:var(--display);font-style:italic;font-size:20px;line-height:1.4;color:#EAF4F2;margin-bottom:20px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(140deg,var(--teal),var(--teal-deep));display:grid;place-items:center;font-family:var(--display);color:#fff;font-weight:600;flex:none}
+  .quote .who b{font-family:var(--body);font-weight:400;font-size:14px;color:#fff}
+  .quote .who span{font-size:12px;color:#8FAAA6}
+  @media(max-width:860px){.tgrid{grid-template-columns:1fr}}
 
-  /* ── responsivo ─────────────────────────────── */
-  @media (max-width:980px){
-    .nav-links{display:none}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .face-card{max-width:400px;margin:0 auto}
-    .pillars-in{grid-template-columns:1fr;gap:34px}
-    .slogan{max-width:none}
-    .pillar-list{grid-template-columns:repeat(2,1fr);gap:28px 0}
-    .pillar{padding:0 22px}
-    .pillar:nth-child(3){padding-left:0;border-left:0}
-    .sign-grid{grid-template-columns:repeat(2,1fr)}
-    .treat-grid{grid-template-columns:repeat(2,1fr)}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    .portrait{max-width:320px}
-    .quotes{grid-template-columns:1fr;gap:32px}
+  /* ── CTA / booking ──────────────────────── */
+  .book{padding:0}
+  .book-inner{
+    background:linear-gradient(150deg,var(--teal) 0%,var(--teal-deep) 100%);
+    border-radius:30px;padding:70px 56px;position:relative;overflow:hidden;color:#fff;
+    box-shadow:var(--shadow);
   }
-  @media (max-width:620px){
-    body{font-size:16px}
-    .wrap{padding:0 20px}
-    .hero{padding:56px 0 60px}
-    .sec{padding:68px 0}
-    .final{padding:76px 0}
-    .sign-grid,.treat-grid{grid-template-columns:1fr}
-    .pillar-list{grid-template-columns:1fr;gap:24px}
-    .pillar{padding:0 0 0 20px;border-left:1px solid rgba(220,185,138,.28)}
-    .pillar:nth-child(3){padding-left:20px;border-left:1px solid rgba(220,185,138,.28)}
-    .cta-row .btn{width:100%}
-    .addr{justify-content:flex-start}
+  .book-inner::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.09);top:-120px;right:-80px}
+  .book-inner::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(201,162,75,.28);bottom:-100px;left:-40px;filter:blur(10px)}
+  .book-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+  .book h2{font-size:clamp(30px,4.4vw,50px);color:#fff}
+  .book h2 .script{color:var(--gold-lt)}
+  .book p{color:#E8F7F4;margin:18px 0 0;max-width:44ch}
+  .book .actions{display:flex;flex-direction:column;gap:14px}
+  .book .actions .btn{justify-content:center}
+  .book .note{font-size:12.5px;color:#DCF2EE;text-align:center;letter-spacing:.04em}
+  @media(max-width:760px){.book-grid{grid-template-columns:1fr;gap:30px}.book-inner{padding:48px 28px}}
+
+  /* ── location ───────────────────────────── */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .loc h2{font-size:clamp(28px,4vw,44px);color:var(--graphite);margin:14px 0 18px}
+  .loc .rowitem{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .loc .rowitem svg{width:20px;height:20px;color:var(--teal-deep);flex:none;margin-top:3px}
+  .loc .rowitem b{display:block;font-family:var(--body);font-weight:500;color:var(--graphite);font-size:15px}
+  .loc .rowitem span{font-size:14.5px;color:var(--muted)}
+  .loc .card{
+    aspect-ratio:1/.82;border-radius:24px;background:
+      radial-gradient(circle at 80% 15%, rgba(234,195,206,.55), transparent 45%),
+      linear-gradient(150deg,var(--mint),#DAF2EE);
+    border:1px solid rgba(46,140,130,.15);display:grid;place-items:center;text-align:center;padding:30px;
   }
+  .loc .card .hex{width:80px;height:88px;margin:0 auto 16px}
+  .loc .card b{font-family:var(--display);font-size:26px;color:var(--teal-ink);display:block}
+  .loc .card span{font-size:13px;color:var(--teal-deep);letter-spacing:.2em;text-transform:uppercase}
+  @media(max-width:760px){.loc-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* ── footer ─────────────────────────────── */
+  footer{background:var(--graphite);color:#B9CFCC;padding:70px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.09)}
+  footer .mark .name b{color:#fff}
+  footer h4{font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer ul a{font-size:14.5px;color:#B9CFCC;transition:color .2s}
+  footer ul a:hover{color:var(--teal)}
+  footer .about{font-size:14.5px;color:#9FBAB6;max-width:34ch;margin:18px 0}
+  .social{display:flex;gap:12px}
+  .social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;transition:.25s}
+  .social a:hover{background:var(--teal);border-color:var(--teal);color:var(--graphite)}
+  .social svg{width:18px;height:18px}
+  .copy{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:12.5px;color:#7F9B97}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* floating whatsapp */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.6);transition:transform .25s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px;color:#fff}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.strip .row{animation:none}}
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══════════════════════════════════════ -->
-<nav>
-  <div class="wrap nav-in">
-    <a href="#top" class="logo">
-      <b>Danielli Vanz</b>
-      <span>Estética Avançada</span>
+<!-- ══ HEADER ══ -->
+<header id="hdr">
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Esmalteria Spindola">
+      <svg class="hex" viewBox="0 0 100 110" aria-hidden="true">
+        <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="#5FD3C4"/>
+        <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="none" stroke="#C9A24B" stroke-width="3"/>
+        <text x="50" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="56" font-weight="600" fill="#C9A24B" text-anchor="middle">S</text>
+      </svg>
+      <span class="name"><b>Spindola</b><span>Esmalteria · Nails Bar</span></span>
     </a>
-    <div class="nav-links">
-      <a href="#sinais">Sinais</a>
-      <a href="#tratamentos">Tratamentos</a>
-      <a href="#sobre">A clínica</a>
-      <a href="#feedback">Feedback</a>
-    </div>
-    <a href="#agendar" class="btn btn-gold btn-sm">Agendar avaliação</a>
-  </div>
-</nav>
-
-<!-- ══ HERO — dobra zero (Versão B) ═════════════ -->
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-
-    <div>
-      <div class="eyebrow rv">Estética avançada · Centro, Florianópolis</div>
-
-      <h1 class="rv">Não são as rugas.<br>É o <em>contorno</em><br>que você perdeu.</h1>
-
-      <p class="sub rv">A maioria das mulheres percebe que o rosto mudou muito antes de conseguir nomear o quê. A avaliação existe pra dar nome — e dar caminho.</p>
-
-      <ul class="rv">
-        <li><span class="tick"></span>Descubra o que mudou no seu rosto</li>
-        <li><span class="tick"></span>Entenda a causa antes de qualquer aplicação</li>
-        <li><span class="tick"></span>Saia com um plano na ordem certa</li>
-      </ul>
-
-      <div class="cta-row rv">
-        <a href="#agendar" class="btn btn-gold">Quero entender meu rosto</a>
-        <a href="#sinais" class="btn btn-line">Ver os sinais mais comuns</a>
-      </div>
-      <p class="microcopy rv"><span class="dot"></span>Avaliação presencial no Centro, sem compromisso de fechar</p>
-
-      <div class="trust rv">
-        <span><b>6 mil</b> mulheres acompanham</span>
-        <span><b>Clínica própria</b> no Centro</span>
-        <span><b>Regen Match</b> · Evo &amp; LMG Aesthetics</span>
-      </div>
-    </div>
-
-    <!-- retrato da Danielli -->
-    <div class="face-card rv">
-      <img src="img/danielli-hero.jpg" width="667" height="824"
-           alt="Danielli Vanz na clínica de estética avançada, diante do painel dourado DV com parede de flores">
-      <div class="face-cap">O rosto inteiro, antes de qualquer aplicação</div>
-    </div>
-
+    <nav class="links" aria-label="Navegacao principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#historia">Nossa história</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#depoimentos">Clientes</a>
+      <a href="#localizacao">Onde estamos</a>
+    </nav>
+    <a class="btn cta" href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener">
+      Agendar horário
+    </a>
+    <button class="menu-btn" aria-label="Abrir menu" onclick="document.querySelector('nav.links').scrollIntoView()"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ══ PILARES ══════════════════════════════════ -->
-<section class="pillars">
-  <div class="wrap pillars-in">
-    <p class="slogan rv">Realce sua essência. Revele sua confiança.</p>
-    <div class="pillar-list">
-      <div class="pillar rv">
-        <h3>Ciência</h3>
-        <p>Indicação baseada em evidência, não em tendência de rede social.</p>
+<!-- ══ HERO ══ -->
+<a id="top"></a>
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Beauty · Cosmetic &amp; Personal Care</span>
+      <h1>Elevamos a sua <em>autoestima</em> em minutos.</h1>
+      <p class="lead">Esmalteria, alongamento em gel, sobrancelhas, pele e massagem — cuidado de verdade, feito com carinho.</p>
+      <p class="sub">Um cantinho de calmaria em Florianópolis, onde cada detalhe existe para você sair mais confiante do que entrou.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.393l-.999 3.648 3.899-1.048zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn ghost" href="#servicos">Ver serviços</a>
       </div>
-      <div class="pillar rv">
-        <h3>Técnica</h3>
-        <p>Protocolos avançados e atualização constante em estética regenerativa.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Naturalidade</h3>
-        <p>O objetivo é você parecer descansada, não parecer procedimento.</p>
-      </div>
-      <div class="pillar rv">
-        <h3>Confiança</h3>
-        <p>Você entende cada etapa antes de aceitar qualquer uma delas.</p>
+      <p class="microcopy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Marcação rápida pelo WhatsApp · (48) 98839-9774
+      </p>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-card">
+        <div class="watermark">
+          <svg viewBox="0 0 100 110" aria-hidden="true">
+            <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="none" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="plate">
+          <svg class="hex-badge" viewBox="0 0 100 110" aria-hidden="true">
+            <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="#FBFCFB"/>
+            <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="none" stroke="#C9A24B" stroke-width="3.5"/>
+            <text x="50" y="73" font-family="Cormorant Garamond, Georgia, serif" font-size="60" font-weight="600" fill="#C9A24B" text-anchor="middle">S</text>
+          </svg>
+          <div class="big">Spindola</div>
+          <div class="tagline">Nails Bar &amp; Estética</div>
+        </div>
+        <div class="float-chip a"><b>+5mil</b> pessoas felizes 💅</div>
+        <div class="float-chip b"><b>★ 5,0</b> autocuidado &amp; carinho</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SINAIS ═══════════════════════════════════ -->
-<section class="sec signs" id="sinais">
+<!-- ══ MARQUEE ══ -->
+<div class="strip" aria-hidden="true">
+  <div class="row">
+    <span>Esmalteria</span><span>Alongamento em Gel</span><span>Nail Art</span><span>Design de Sobrancelhas</span><span>Limpeza de Pele</span><span>Massagem Relaxante</span>
+    <span>Esmalteria</span><span>Alongamento em Gel</span><span>Nail Art</span><span>Design de Sobrancelhas</span><span>Limpeza de Pele</span><span>Massagem Relaxante</span>
+  </div>
+</div>
+
+<!-- ══ SERVIÇOS ══ -->
+<section id="servicos">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que costuma passar despercebido</div>
-      <h2>O rosto não envelhece com rugas. Envelhece com estrutura.</h2>
-      <p>Quatro sinais que aparecem antes das linhas de expressão — e que quase ninguém sabe nomear.</p>
+    <div class="head reveal">
+      <span class="eyebrow">O que fazemos por você</span>
+      <h2>Serviços pensados para o seu bem-estar</h2>
+      <p>Do esmalte perfeito ao momento de relaxar — cada serviço é uma pausa de autocuidado no seu dia.</p>
     </div>
-
-    <div class="sign-grid">
-      <div class="sign rv">
-        <div class="num">I</div>
-        <h3>Contorno</h3>
-        <p>A linha da mandíbula perde definição e o rosto parece "cair" na foto de perfil.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">II</div>
-        <h3>Volume</h3>
-        <p>A maçã do rosto esvazia. O olhar fica cansado mesmo depois de dormir bem.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">III</div>
-        <h3>Firmeza</h3>
-        <p>A pele responde menos ao toque e a maquiagem começa a marcar onde não marcava.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">IV</div>
-        <h3>Qualidade da pele</h3>
-        <p>Textura irregular, poro aparente e perda de viço, mesmo com skincare em dia.</p>
-      </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-1 3-3 4-3 8a3 3 0 006 0c0-4-2-5-3-8z"/><path d="M6 21h12"/><path d="M9 21v-3M15 21v-3"/></svg></div>
+        <h3>Esmalteria</h3>
+        <p>Manicure e pedicure com acabamento impecável, higiene rigorosa e aquele capricho que faz diferença.</p>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 21c0-4 1-9 5-13 3 3 3 8 3 13"/><path d="M9 21h8"/><path d="M14 4l3-2"/></svg></div>
+        <h3>Alongamento em Gel</h3>
+        <p>Unhas alongadas com técnica e resistência natural, no formato e comprimento que combinam com você.</p>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 15.8 7 18.2l1-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <h3>Nail Art</h3>
+        <p>Unhas decoradas e personalizadas — do minimalista ao statement, traduzindo o seu estilo em cada detalhe.</p>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 14c3-4 15-4 18 0"/><path d="M5 12c2.5 2.5 11.5 2.5 14 0"/></svg></div>
+        <h3>Design de Sobrancelhas</h3>
+        <p>Design e micropigmentação que valorizam o seu olhar e realçam a expressão do rosto com naturalidade.</p>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.5 1.2 4.5 1.2 6 0"/></svg></div>
+        <h3>Limpeza de Pele</h3>
+        <p>Remove cravos, controla a oleosidade e melhora a textura — pele renovada e um cuidado que se sente.</p>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15c2-1 5-1 8 0s6 1 8 0"/><path d="M6 11c2-1 4-1 6 0s4 1 6 0"/><circle cx="12" cy="5" r="2"/></svg></div>
+        <h3>Massagem Relaxante</h3>
+        <p>Massagem terapêutica e relaxante para trazer calmaria ao corpo e à mente — o inverno pede aconchego.</p>
+      </article>
     </div>
-
-    <p class="signs-note rv">Tratar um sinal isolado é o que produz resultado artificial. Por isso a avaliação vem antes.</p>
   </div>
 </section>
 
-<!-- ══ TRATAMENTOS ══════════════════════════════ -->
-<section class="sec" id="tratamentos">
+<!-- ══ HISTÓRIA ══ -->
+<section id="historia" class="story">
+  <div class="wrap story-grid">
+    <div class="story-visual reveal">
+      <div class="qmark">
+        <span class="s">do interior<br>ao sonho</span>
+        <small>realizado em Florianópolis</small>
+      </div>
+    </div>
+    <div class="story-copy reveal">
+      <span class="eyebrow">Nossa história</span>
+      <h2>De um começo simples à realização de um sonho.</h2>
+      <p>A Esmalteria Spindola nasceu de um começo simples no interior e cresceu até se tornar um sonho realizado em Florianópolis. Somos uma família apaixonada pelo que faz.</p>
+      <p>Aqui, cada cliente é acolhida como parte dessa história. Acreditamos que autocuidado é também autoestima — e que uma hora dedicada a você tem o poder de mudar o dia inteiro.</p>
+      <p>Somos gratas por fazer parte do seu dia. Confie e acredite no seu processo. 🤍</p>
+      <div class="sign">Equipe Spindola</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section style="padding:60px 0">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que é feito na clínica</div>
-      <h2>Tratamentos faciais, corporais e regenerativos</h2>
-      <p>A indicação sai da avaliação. Nada aqui é vendido como pacote fechado antes de olhar o seu rosto.</p>
-    </div>
-
-    <div class="treat-grid">
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Harmonização facial</h3>
-        <p>Reposição de volume e reequilíbrio de proporções, com leitura do rosto inteiro antes da primeira aplicação.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Toxina botulínica</h3>
-        <p>Suavização de linhas de expressão preservando a movimentação natural do rosto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Bioestimuladores de colágeno</h3>
-        <p>Recuperação de firmeza e sustentação a partir do estímulo do próprio colágeno.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Regenerativo</div>
-        <h3>REGEN-HK e HIPRO</h3>
-        <p>Tecnologias de estética regenerativa para qualidade de pele e sustentação profunda.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Pele</div>
-        <h3>LHA LA Peel</h3>
-        <p>Peeling de quarta geração, sem descamação, com efeito de pele lisa e uniforme.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Criolipólise da Pri</h3>
-        <p>Redução de gordura localizada por resfriamento controlado, com protocolo individual.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Diástase PH</h3>
-        <p>Protocolo para afastamento dos músculos abdominais, comum no pós-parto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Manutenção</div>
-        <h3>Tratamentos faciais</h3>
-        <p>Limpeza, hidratação e protocolos de rotina que sustentam o resultado dos procedimentos.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Rotina</div>
-        <h3>Skincare e home care</h3>
-        <p>Prescrição de cuidado diário, porque metade do resultado acontece fora da clínica.</p>
-      </div>
+    <div class="stats">
+      <div class="stat reveal"><b>+5mil</b><span>Pessoas felizes</span></div>
+      <div class="stat reveal"><b>6</b><span>Serviços de beleza</span></div>
+      <div class="stat reveal"><b>48</b><span>Grande Florianópolis</span></div>
+      <div class="stat reveal"><b>★5,0</b><span>Feito com carinho</span></div>
     </div>
   </div>
 </section>
 
-<!-- ══ SOBRE ════════════════════════════════════ -->
-<section class="sec about" id="sobre">
-  <div class="wrap about-grid">
-    <div class="portrait rv">
-      <img src="img/danielli-clinica.jpg" width="683" height="821"
-           alt="Danielli Vanz na clínica, com equipamento de estética avançada">
-    </div>
-    <div>
-      <div class="eyebrow rv">A profissional</div>
-      <h2 class="rv">Estratégia, não excesso.</h2>
-      <p class="rv">Danielli Cássia Vanz atua há anos na estética avançada em Florianópolis. Antes de abrir a clínica própria no Centro, foi sócia-proprietária da +Top Estética, onde construiu a base técnica que hoje sustenta os protocolos da Danielli Vanz Estética Avançada.</p>
-      <p class="rv">Em 2026 foi convidada pela Evo e pela LMG Aesthetics para o Regen Match, encontro fechado de estética regenerativa — o tipo de reconhecimento que vem de pares, não de anúncio.</p>
-      <p class="rv">A clínica funciona sobre uma regra simples: o rosto é avaliado por inteiro antes de qualquer aplicação. Cada área tem uma função, e tratar uma sozinha é exatamente o que gera aquele resultado que todo mundo percebe.</p>
-      <div class="sig rv">Danielli Vanz</div>
-      <div class="crd rv">Estética Avançada · Florianópolis, SC</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FEEDBACK ═════════════════════════════════ -->
-<section class="sec" id="feedback">
+<!-- ══ EXPERIÊNCIA ══ -->
+<section id="experiencia">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Feedback</div>
-      <h2>O que dizem quem já sentou na cadeira</h2>
+    <div class="head reveal">
+      <span class="eyebrow">Por que a Spindola</span>
+      <h2>Mais do que unhas: uma experiência de cuidado</h2>
     </div>
-
-    <div class="quotes">
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
+    <div class="exp">
+      <div class="item reveal"><div class="num">01</div><div><h3>Ambiente nails bar</h3><p>Espaço acolhedor com equipe atenciosa e um drink de boas-vindas para você relaxar do início ao fim.</p></div></div>
+      <div class="item reveal"><div class="num">02</div><div><h3>Higiene e técnica</h3><p>Protocolos rigorosos e profissionais especializadas em cada serviço, do gel à limpeza de pele.</p></div></div>
+      <div class="item reveal"><div class="num">03</div><div><h3>Atendimento que otimiza seu tempo</h3><p>Marcação simples pelo WhatsApp e horários organizados para respeitar a sua agenda.</p></div></div>
+      <div class="item reveal"><div class="num">04</div><div><h3>Vínculo de verdade</h3><p>Uma família apaixonada pelo que faz, feliz em arrancar um sorriso e cuidar da sua autoestima.</p></div></div>
     </div>
-
-    <p class="slot rv">Espaços reservados: 3 depoimentos reais (destaque "Feedback" do Instagram) + 1 par de antes/depois na dobra, se houver autorização de uso de imagem assinada.</p>
   </div>
 </section>
 
-<!-- ══ CTA FINAL ════════════════════════════════ -->
-<section class="final" id="agendar">
-  <div class="wrap final-in">
-    <div class="eyebrow rv">Agende sua avaliação</div>
-    <h2 class="rv">Uma hora para entender o seu rosto.</h2>
-    <p class="rv">Você sai da avaliação sabendo o que mudou, por que mudou e qual a ordem certa de tratar. Sem pacote empurrado, sem promessa que a pele não sustenta.</p>
-
-    <div class="cta-row rv">
-      <a href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-gold" id="cta-wa">Chamar no WhatsApp</a>
-      <a href="https://instagram.com/daniellivanzestetica" target="_blank" rel="noopener" class="btn btn-ghost-lt">Ver o Instagram</a>
+<!-- ══ DEPOIMENTOS ══ -->
+<section id="depoimentos" class="testi">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Quem vive a experiência</span>
+      <h2>Mais de 5 mil pessoas felizes</h2>
+      <p>O carinho da nossa equipe ganha nome, rosto e sorriso a cada atendimento.</p>
     </div>
-
-    <dl class="addr rv">
-      <div>
-        <dt>Endereço</dt>
-        <dd>Rua Cruz e Sousa, 57 — sala 1201<br>Centro · Florianópolis, SC</dd>
-      </div>
-      <div>
-        <dt>WhatsApp</dt>
-        <dd>Resposta em até 24h<br>Segunda a sexta</dd>
-      </div>
-      <div>
-        <dt>Instagram</dt>
-        <dd>@daniellivanzestetica</dd>
-      </div>
-    </dl>
+    <div class="tgrid">
+      <figure class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Saí de lá renovada. Além das unhas perfeitas, o atendimento é acolhedor e a gente sente o carinho em cada detalhe.”</p>
+        <figcaption class="who"><span class="av">M</span><div><b>Marina R.</b><span>Cliente · Florianópolis</span></div></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“O alongamento em gel ficou impecável e durou lindo. Ambiente lindo, equipe maravilhosa, virei cliente fiel.”</p>
+        <figcaption class="who"><span class="av">C</span><div><b>Camila S.</b><span>Cliente · Grande Floripa</span></div></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Momento de autocuidado que faz bem pra alma. Massagem relaxante e sobrancelhas na perfeição. Recomendo demais!”</p>
+        <figcaption class="who"><span class="av">J</span><div><b>Juliana P.</b><span>Cliente · São José</span></div></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════ -->
+<!-- ══ BOOKING CTA ══ -->
+<section class="book">
+  <div class="wrap">
+    <div class="book-inner reveal">
+      <div class="book-grid">
+        <div>
+          <h2>Vamos colocar em prática? <span class="script">Agende seu horário.</span></h2>
+          <p>Clica no link, escolhe o melhor dia e deixa o resto com a gente. Você merece esse cuidado.</p>
+        </div>
+        <div class="actions">
+          <a class="btn light" href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.393l-.999 3.648 3.899-1.048zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Agendar no WhatsApp
+          </a>
+          <p class="note">(48) 98839-9774 · resposta rápida</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCALIZAÇÃO ══ -->
+<section id="localizacao">
+  <div class="wrap loc-grid">
+    <div class="reveal">
+      <span class="eyebrow">Onde nos encontrar</span>
+      <h2>Um cantinho de calmaria em Florianópolis</h2>
+      <div class="rowitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><b>Florianópolis · SC</b><span>Atendimento em toda a Grande Florianópolis (DDD 48)</span></div>
+      </div>
+      <div class="rowitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.94.36 1.86.68 2.75a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0122 16.92z"/></svg>
+        <div><b>WhatsApp · (48) 98839-9774</b><span>Marcação de horários pelo link, com resposta rápida</span></div>
+      </div>
+      <div class="rowitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        <div><b>@esmalteriaspindola</b><span>Acompanhe bastidores, novidades e nail art no Instagram</span></div>
+      </div>
+      <a class="btn" style="margin-top:14px" href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener">Agendar horário</a>
+    </div>
+    <div class="card reveal">
+      <svg class="hex" viewBox="0 0 100 110" aria-hidden="true">
+        <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="#5FD3C4"/>
+        <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="none" stroke="#C9A24B" stroke-width="3"/>
+        <text x="50" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="56" font-weight="600" fill="#C9A24B" text-anchor="middle">S</text>
+      </svg>
+      <b>Esmalteria Spindola</b>
+      <span>Nails Bar &amp; Estética</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Danielli Vanz Estética Avançada · Florianópolis, SC</span>
-    <span>Resultados variam conforme avaliação individual.</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="mark" href="#top">
+          <svg class="hex" viewBox="0 0 100 110" aria-hidden="true">
+            <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="#5FD3C4"/>
+            <polygon points="50,2 94,27 94,83 50,108 6,83 6,27" fill="none" stroke="#C9A24B" stroke-width="3"/>
+            <text x="50" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="56" font-weight="600" fill="#C9A24B" text-anchor="middle">S</text>
+          </svg>
+          <span class="name"><b>Spindola</b><span>Esmalteria · Nails Bar</span></span>
+        </a>
+        <p class="about">Elevamos a sua autoestima dentro de minutos. Autocuidado, carinho e bem-estar em cada atendimento.</p>
+        <div class="social">
+          <a href="https://instagram.com/esmalteriaspindola" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.393l-.999 3.648 3.899-1.048z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Esmalteria</a></li>
+          <li><a href="#servicos">Alongamento em gel</a></li>
+          <li><a href="#servicos">Nail art</a></li>
+          <li><a href="#servicos">Sobrancelhas</a></li>
+          <li><a href="#servicos">Limpeza de pele</a></li>
+          <li><a href="#servicos">Massagem relaxante</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener">WhatsApp (48) 98839-9774</a></li>
+          <li><a href="https://instagram.com/esmalteriaspindola" target="_blank" rel="noopener">@esmalteriaspindola</a></li>
+          <li><a href="#localizacao">Florianópolis · SC</a></li>
+          <li><a href="#historia">Nossa história</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr"></span> Esmalteria Spindola · Nails Bar &amp; Estética</span>
+      <span>Florianópolis · Grande Floripa 🤍</span>
+    </div>
   </div>
 </footer>
 
-<!-- ══ WHATSAPP FLUTUANTE ═══════════════════════ -->
-<a class="wa" id="wa-float"
-   href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
-   target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.04 3C8.86 3 3.02 8.84 3.02 16.02c0 2.29.6 4.53 1.75 6.5L3 29l6.65-1.74a13 13 0 0 0 6.39 1.66h.01c7.18 0 13.02-5.84 13.02-13.02C29.07 8.84 23.22 3 16.04 3zm0 23.69h-.01a10.8 10.8 0 0 1-5.5-1.51l-.4-.23-4.09 1.07 1.09-3.99-.26-.41a10.77 10.77 0 0 1-1.65-5.76c0-5.97 4.86-10.83 10.83-10.83 2.89 0 5.61 1.13 7.65 3.18a10.75 10.75 0 0 1 3.17 7.66c0 5.97-4.86 10.82-10.83 10.82zm5.94-8.11c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.62-1.61-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.41-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.33c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
-  </svg>
+<a class="wa-float" href="https://wa.me/message/SHRS3BGNDFJ5N1" target="_blank" rel="noopener" aria-label="Agendar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.393l-.999 3.648 3.899-1.048zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
 
 <script>
-  // reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var hdr = document.getElementById('hdr');
+  var onScroll = function(){ hdr.classList.toggle('solid', window.scrollY > 30); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-  document.querySelectorAll('.rv').forEach((el, i) => {
-    el.style.transitionDelay = (Math.min(i % 6, 5) * 70) + 'ms';
-    io.observe(el);
-  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 </script>
-
 </body>
 </html>
