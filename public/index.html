@@ -3,29 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danielli Vanz — Estética Avançada | Florianópolis</title>
-<meta name="description" content="Clínica de estética avançada no Centro de Florianópolis. Harmonização facial, toxina botulínica, bioestimuladores e protocolos regenerativos. Avaliação do rosto inteiro antes de qualquer aplicação.">
+<title>Dra. Juliana Barros — Estética Avançada | Florianópolis</title>
+<meta name="description" content="Enfermeira Esteta em Florianópolis–SC. Harmonização facial, toxina botulínica, bioestimuladores de colágeno, preenchimento labial, depilação a laser e o protocolo Gold Skin 3D. Autoestima e bem-estar através da estética.">
+<meta name="theme-color" content="#0e4f4a">
+<meta property="og:title" content="Dra. Juliana Barros — Estética Avançada">
+<meta property="og:description" content="Enfermeira Esteta em Florianópolis. Promovendo autoestima e bem-estar através da estética.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --choc:#241813;
-    --choc-2:#3A281F;
-    --brown:#5A4034;
-    --gold:#B98A50;
-    --gold-lt:#DCB98A;
-    --rose:#E6C0AC;
-    --sand:#F1E7DE;
-    --off:#FBF8F5;
-    --ink:#2C1F19;
-    --muted:#8A7566;
+    /* Brand palette — turquoise / teal / aqua with mint botanicals over a dark frame */
+    --teal-deep:#0b3b38;
+    --teal:#0e4f4a;
+    --teal-2:#12746c;
+    --aqua:#1fa89d;
+    --aqua-lt:#5fc9bf;
+    --mint:#d8f0ea;
+    --mint-2:#eaf7f3;
+    --off:#f6fbf9;
+    --ink:#173430;
+    --muted:#5c7a74;
+    --gold:#c9a86a;
 
-    --display:'Cormorant Garamond', Georgia, serif;
+    --display:'Fraunces', Georgia, serif;
     --body:'Jost', system-ui, -apple-system, sans-serif;
-    --script:'Sacramento', cursive;
 
-    --w:1180px;
+    --w:1160px;
   }
 
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -36,631 +41,452 @@
     font-family:var(--body);
     font-weight:300;
     font-size:17px;
-    line-height:1.65;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
     overflow-x:hidden;
   }
-  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;letter-spacing:-.01em}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
-
-  .wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 28px}
-
-  /* ── eyebrow / labels ───────────────────────── */
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 26px}
   .eyebrow{
-    font-family:var(--body);
-    font-size:11px;
-    font-weight:400;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex;align-items:center;gap:12px;
+    font-family:var(--body);font-weight:500;font-size:12.5px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--aqua);
+    display:inline-flex;align-items:center;gap:12px;
   }
-  .eyebrow::before{
-    content:"";width:28px;height:1px;background:var(--gold);flex:none;
-  }
-
-  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.01em}
-
-  /* ── nav ────────────────────────────────────── */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(251,248,245,.88);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(185,138,80,.18);
-  }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{display:flex;flex-direction:column;line-height:1}
-  .logo b{font-family:var(--script);font-size:32px;font-weight:400;color:var(--brown)}
-  .logo span{
-    font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--gold);margin-top:2px;margin-left:3px;
-  }
-  .nav-links{display:flex;gap:34px;align-items:center}
-  .nav-links a{
-    font-size:13px;letter-spacing:.06em;color:var(--brown);
-    transition:color .25s;
-  }
-  .nav-links a:hover{color:var(--gold)}
-
-  /* ── buttons ────────────────────────────────── */
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--aqua-lt)}
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:var(--body);font-size:13.5px;font-weight:400;
-    letter-spacing:.09em;text-transform:uppercase;
-    padding:15px 30px;border:1px solid transparent;cursor:pointer;
-    transition:background .3s, color .3s, border-color .3s, transform .2s;
+    display:inline-flex;align-items:center;gap:11px;
+    font-family:var(--body);font-weight:500;font-size:14.5px;letter-spacing:.04em;
+    padding:16px 30px;border-radius:100px;transition:.3s ease;cursor:pointer;border:none;
   }
-  .btn-gold{background:var(--gold);color:#fff}
-  .btn-gold:hover{background:var(--brown);transform:translateY(-1px)}
-  .btn-line{background:transparent;color:var(--brown);border-color:rgba(185,138,80,.5)}
-  .btn-line:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-ghost-lt{background:transparent;color:var(--sand);border-color:rgba(220,185,138,.4)}
-  .btn-ghost-lt:hover{background:var(--gold);border-color:var(--gold);color:#fff}
-  .btn-sm{padding:11px 20px;font-size:11.5px}
+  .btn-solid{background:var(--aqua);color:#fff;box-shadow:0 14px 30px -12px rgba(18,116,108,.7)}
+  .btn-solid:hover{background:var(--teal-2);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
 
-  /* ── HERO ───────────────────────────────────── */
-  .hero{position:relative;padding:88px 0 78px;overflow:hidden}
-  .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(720px 500px at 78% 30%, rgba(230,192,172,.28), transparent 65%);
-  }
-  .hero-grid{
-    position:relative;z-index:2;
-    display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;
-  }
-  .hero h1{
-    font-size:clamp(40px,5.4vw,68px);
-    margin:22px 0 0;
-    color:var(--choc);
-  }
-  .hero h1 em{
-    font-style:italic;font-weight:300;color:var(--gold);
-  }
-  .hero .sub{
-    margin-top:24px;max-width:44ch;font-size:18px;color:var(--brown);
-  }
-  .hero ul{list-style:none;margin:32px 0 0;display:flex;flex-direction:column;gap:11px}
-  .hero ul li{
-    display:flex;align-items:flex-start;gap:12px;
-    font-size:15.5px;color:var(--ink);
-  }
-  .tick{
-    flex:none;margin-top:6px;width:16px;height:1px;background:var(--gold);
-  }
-  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:38px}
-  .microcopy{
-    margin-top:14px;font-size:12.5px;letter-spacing:.05em;color:var(--muted);
-    display:flex;align-items:center;gap:8px;
-  }
-  .dot{width:5px;height:5px;border-radius:50%;background:#5BAA6E;flex:none;
-       box-shadow:0 0 0 0 rgba(91,170,110,.6);animation:pulse 2.4s infinite}
-  @keyframes pulse{
-    70%{box-shadow:0 0 0 7px rgba(91,170,110,0)}
-    100%{box-shadow:0 0 0 0 rgba(91,170,110,0)}
-  }
-  .trust{
-    margin-top:44px;padding-top:22px;border-top:1px solid rgba(185,138,80,.25);
-    display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
-    font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
-  }
-  .trust b{color:var(--brown);font-weight:500}
+  /* ---------- botanical leaf motif (shared) ---------- */
+  .leaf{position:absolute;opacity:.5;pointer-events:none}
 
-  /* ── SIGNATURE: mapa facial ─────────────────── */
-  .face-card{
-    position:relative;aspect-ratio:4/5;
-    background:linear-gradient(160deg,#FDFAF7 0%, var(--sand) 55%, var(--rose) 100%);
-    border:1px solid rgba(185,138,80,.3);
-    display:grid;place-items:center;overflow:hidden;
-  }
-  .face-card::before{
-    content:"";position:absolute;inset:14px;border:1px solid rgba(185,138,80,.22);
-    pointer-events:none;z-index:2;
-  }
-  .face-card img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:50% 32%;
-  }
-  .face-svg{width:74%;height:auto;overflow:visible}
-  .face-svg .stroke{
-    fill:none;stroke:var(--brown);stroke-width:1.1;
-    stroke-linecap:round;stroke-linejoin:round;opacity:.55;
-    stroke-dasharray:1400;stroke-dashoffset:1400;
-    animation:draw 2.6s cubic-bezier(.25,.8,.3,1) .3s forwards;
-  }
-  .face-svg .zone{
-    fill:none;stroke:var(--gold);stroke-width:.9;
-    stroke-dasharray:4 4;opacity:0;
-    animation:fade .9s ease forwards;
-  }
-  .face-svg .zone:nth-of-type(1){animation-delay:2.0s}
-  .face-svg .zone:nth-of-type(2){animation-delay:2.25s}
-  .face-svg .zone:nth-of-type(3){animation-delay:2.5s}
-  .face-svg .pt{fill:var(--gold);opacity:0;animation:fade .5s ease forwards}
-  .face-svg .pt:nth-of-type(4n+1){animation-delay:2.7s}
-  .face-svg .pt:nth-of-type(4n+2){animation-delay:2.85s}
-  .face-svg .pt:nth-of-type(4n+3){animation-delay:3.0s}
-  .face-svg .pt:nth-of-type(4n){animation-delay:3.15s}
-  .face-svg text{
-    font-family:var(--body);font-size:5.2px;letter-spacing:.22em;
-    text-transform:uppercase;fill:var(--gold);opacity:0;
-    animation:fade .8s ease 3.3s forwards;
-  }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
-  .face-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 22px;
-    background:linear-gradient(to top, rgba(36,24,19,.9), transparent);
-    color:var(--sand);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  }
+  /* ---------- NAV ---------- */
+  header.nav{position:absolute;top:0;left:0;right:0;z-index:20}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .brand{display:flex;flex-direction:column;line-height:1.05;color:#fff}
+  .brand b{font-family:var(--display);font-weight:500;font-size:22px;letter-spacing:.01em}
+  .brand span{font-family:var(--body);font-weight:400;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--aqua-lt);margin-top:4px}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{color:rgba(255,255,255,.86);font-size:14px;letter-spacing:.02em;transition:.25s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{border:1px solid rgba(255,255,255,.35);padding:11px 22px;border-radius:100px;font-size:13.5px}
+  .nav-cta:hover{background:#fff;color:var(--teal)!important}
+  .menu-btn{display:none}
 
-  /* ── PILARES ────────────────────────────────── */
-  .pillars{background:var(--choc);color:var(--sand);padding:66px 0}
-  .pillars-in{
-    display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;
+    background:
+      radial-gradient(120% 90% at 80% -10%, rgba(31,168,157,.35), transparent 55%),
+      radial-gradient(100% 80% at 0% 110%, rgba(11,59,56,.6), transparent 60%),
+      linear-gradient(160deg,#0d443f 0%, #0b3b38 45%, #072a27 100%);
+    color:#fff;overflow:hidden;padding:130px 0 90px;
   }
-  .slogan{
-    font-family:var(--display);font-style:italic;font-weight:300;
-    font-size:clamp(24px,2.4vw,32px);line-height:1.25;color:var(--gold-lt);
-    max-width:11ch;
-  }
-  .pillar-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .pillar{padding:0 26px;border-left:1px solid rgba(220,185,138,.28)}
-  .pillar:first-child{padding-left:0;border-left:0}
-  .pillar h3{font-size:22px;color:#fff;margin-bottom:8px}
-  .pillar p{font-size:13.5px;line-height:1.55;color:rgba(241,231,222,.6)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:5}
+  .hero h1{font-size:clamp(44px,6.4vw,80px);margin:22px 0 8px;color:#fff}
+  .hero h1 em{font-style:italic;color:var(--aqua-lt)}
+  .hero .lead{font-size:18.5px;color:rgba(232,247,244,.86);max-width:37ch;margin:22px 0 34px;font-weight:300}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:40px;margin-top:52px;padding-top:30px;border-top:1px solid rgba(255,255,255,.14)}
+  .hero-stats div b{font-family:var(--display);font-size:30px;color:#fff;display:block;line-height:1}
+  .hero-stats div span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua-lt)}
 
-  /* ── seções genéricas ───────────────────────── */
-  .sec{padding:96px 0}
-  .sec-head{max-width:640px;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(32px,3.8vw,46px);margin:18px 0 0;color:var(--choc)}
-  .sec-head p{margin-top:16px;color:var(--brown);font-size:17px}
-
-  /* sinais */
-  .signs{background:var(--sand)}
-  .sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(185,138,80,.28)}
-  .sign{background:var(--sand);padding:34px 26px}
-  .sign .num{
-    font-family:var(--display);font-size:15px;color:var(--gold);
-    letter-spacing:.1em;margin-bottom:14px;
-  }
-  .sign h3{font-size:23px;margin-bottom:9px;color:var(--choc)}
-  .sign p{font-size:14.5px;color:var(--brown);line-height:1.6}
-  .signs-note{
-    margin-top:34px;font-family:var(--display);font-style:italic;
-    font-size:21px;color:var(--brown);
-  }
-
-  /* tratamentos */
-  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .treat{
-    border:1px solid rgba(185,138,80,.28);padding:32px 28px;
-    background:#fff;transition:border-color .3s, transform .3s;
-  }
-  .treat:hover{border-color:var(--gold);transform:translateY(-3px)}
-  .treat .tag{
-    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
-  }
-  .treat h3{font-size:25px;margin-bottom:10px;color:var(--choc)}
-  .treat p{font-size:14.5px;color:var(--brown);line-height:1.6}
-
-  /* sobre */
-  .about{background:var(--choc-2);color:var(--sand)}
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+  /* hero portrait card (photo-free, brand-mark based) */
+  .hero-visual{position:relative;height:520px}
   .portrait{
-    position:relative;aspect-ratio:3/4;
-    background:linear-gradient(150deg, var(--brown), var(--choc));
-    border:1px solid rgba(220,185,138,.3);
-    overflow:hidden;
+    position:absolute;inset:0;border-radius:200px 200px 26px 26px;overflow:hidden;
+    background:
+      radial-gradient(90% 60% at 50% 8%, rgba(95,201,191,.55), transparent 60%),
+      linear-gradient(155deg,#12746c,#0b3b38);
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.6);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   }
-  .portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:32% 20%;
+  .portrait .mono{
+    width:118px;height:118px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
+    display:flex;align-items:center;justify-content:center;margin-bottom:26px;
+    font-family:var(--display);font-size:46px;color:#fff;font-weight:400;
+    background:rgba(255,255,255,.05);
   }
-  .about h2{font-size:clamp(30px,3.4vw,44px);color:#fff;margin:18px 0 22px}
-  .about p{color:rgba(241,231,222,.78);margin-bottom:16px;font-size:16.5px}
-  .about .sig{
-    font-family:var(--script);font-size:44px;color:var(--gold-lt);
-    margin-top:26px;line-height:1;
+  .portrait h3{color:#fff;font-size:28px;font-weight:500}
+  .portrait p{color:var(--aqua-lt);font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;margin-top:8px}
+  .portrait .loc{margin-top:22px;font-family:var(--body);font-size:13px;color:rgba(255,255,255,.72);letter-spacing:.05em;display:flex;align-items:center;gap:7px}
+  .badge-float{
+    position:absolute;left:-26px;bottom:44px;background:#fff;color:var(--teal);
+    border-radius:16px;padding:15px 20px;box-shadow:0 24px 50px -18px rgba(0,0,0,.4);
+    display:flex;align-items:center;gap:13px;max-width:230px;
   }
-  .about .crd{
-    font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:rgba(220,185,138,.6);margin-top:6px;
-  }
+  .badge-float .ic{width:40px;height:40px;border-radius:12px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .badge-float b{font-family:var(--body);font-weight:600;font-size:14px;display:block;color:var(--teal-deep)}
+  .badge-float span{font-size:12px;color:var(--muted);line-height:1.4}
+  .hero-wave{position:absolute;bottom:-1px;left:0;width:100%;z-index:4}
 
-  /* depoimentos */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .quote{
-    border-left:2px solid var(--gold);padding:6px 0 6px 24px;
-  }
-  .quote p{
-    font-family:var(--display);font-size:21px;font-style:italic;
-    line-height:1.42;color:var(--choc);
-  }
-  .quote cite{
-    display:block;margin-top:16px;font-family:var(--body);font-style:normal;
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  }
-  .slot{
-    margin-top:30px;padding:14px 18px;border:1px dashed rgba(185,138,80,.55);
-    font-size:12.5px;letter-spacing:.05em;color:var(--muted);background:rgba(230,192,172,.12);
-  }
+  /* ---------- STRIP ---------- */
+  .strip{background:var(--teal-deep);color:rgba(255,255,255,.75);padding:20px 0}
+  .strip-in{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;align-items:center;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+  .strip-in span{display:flex;align-items:center;gap:12px}
+  .strip-in span::before{content:"❋";color:var(--aqua-lt);font-size:12px}
 
-  /* CTA final */
-  .final{
-    background:var(--choc);color:var(--sand);text-align:center;padding:104px 0;
-    position:relative;overflow:hidden;
-  }
-  .final::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(600px 380px at 50% 0%, rgba(185,138,80,.22), transparent 70%);
-  }
-  .final-in{position:relative;z-index:2}
-  .final .eyebrow{justify-content:center}
-  .final .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
-  .final h2{font-size:clamp(34px,4.4vw,56px);color:#fff;margin:22px 0 18px}
-  .final p{max-width:52ch;margin:0 auto;color:rgba(241,231,222,.7)}
-  .final .cta-row{justify-content:center}
-  .addr{
-    margin-top:56px;padding-top:30px;border-top:1px solid rgba(220,185,138,.22);
-    display:flex;flex-wrap:wrap;gap:26px 60px;justify-content:center;text-align:left;
-  }
-  .addr div{min-width:180px}
-  .addr dt{
-    font-size:10px;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:7px;
-  }
-  .addr dd{font-size:15px;color:rgba(241,231,222,.85);line-height:1.5}
+  /* ---------- SECTION SHELL ---------- */
+  section.block{padding:104px 0;position:relative}
+  .sec-head{max-width:640px;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(32px,4.4vw,50px);margin:18px 0 0;color:var(--teal-deep)}
+  .sec-head h2 em{font-style:italic;color:var(--aqua)}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head p{margin-top:18px;color:var(--muted)}
 
-  /* footer */
-  footer{background:#1B110D;color:rgba(241,231,222,.45);padding:32px 0;font-size:12.5px}
-  .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  footer a:hover{color:var(--gold-lt)}
-
-  /* whatsapp float */
-  .wa{
-    position:fixed;right:22px;bottom:22px;z-index:90;
-    width:58px;height:58px;border-radius:50%;
-    background:#25D366;display:grid;place-items:center;
-    box-shadow:0 8px 26px rgba(37,211,102,.42);
-    transition:transform .25s, box-shadow .25s;
+  /* ---------- ABOUT ---------- */
+  .about{background:linear-gradient(180deg,#fff, var(--mint-2))}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .about-visual{position:relative}
+  .about-card{
+    border-radius:24px;overflow:hidden;aspect-ratio:4/5;
+    background:linear-gradient(155deg,#eaf7f3,#cfeae3);
+    border:1px solid rgba(18,116,108,.14);position:relative;
+    display:flex;align-items:flex-end;padding:30px;
+    box-shadow:0 40px 80px -40px rgba(11,59,56,.4);
   }
-  .wa:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(37,211,102,.6)}
-  .wa svg{width:30px;height:30px;fill:#fff}
-  .wa::after{
-    content:"";position:absolute;inset:0;border-radius:50%;
-    border:2px solid rgba(37,211,102,.5);animation:ring 2.6s ease-out infinite;
-  }
-  @keyframes ring{
-    0%{transform:scale(1);opacity:.8}
-    100%{transform:scale(1.55);opacity:0}
-  }
+  .about-card .quote{position:relative;z-index:3;color:var(--teal-deep)}
+  .about-card .quote b{font-family:var(--display);font-style:italic;font-size:24px;font-weight:400;line-height:1.3;display:block}
+  .about-card .sig{margin-top:16px;font-family:var(--display);font-size:22px;color:var(--teal-2)}
+  .about-frame{position:absolute;inset:14px;border:1px solid rgba(18,116,108,.25);border-radius:16px;z-index:2}
+  .about-tag{position:absolute;top:24px;right:-16px;background:var(--aqua);color:#fff;padding:12px 20px;border-radius:12px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 18px 34px -14px rgba(18,116,108,.7)}
+  .about-body p{margin-bottom:20px;color:#3f5f59}
+  .about-body p.big{font-family:var(--display);font-size:22px;font-style:italic;color:var(--teal-deep);line-height:1.4}
+  .about-list{list-style:none;margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+  .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#3f5f59}
+  .about-list li b{color:var(--teal-deep);font-weight:600}
+  .tick{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;margin-top:2px}
 
-  /* reveal */
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
-  .rv.in{opacity:1;transform:none}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition:none!important}
-    .rv{opacity:1;transform:none}
-    .face-svg .stroke{stroke-dashoffset:0}
-    .face-svg .zone,.face-svg .pt,.face-svg text{opacity:1}
+  /* ---------- SERVICES ---------- */
+  .services{background:#fff}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{
+    border:1px solid rgba(18,116,108,.14);border-radius:20px;padding:34px 30px;
+    background:linear-gradient(180deg,#fff,#fbfefe);transition:.35s ease;position:relative;overflow:hidden;
   }
+  .svc::after{content:"";position:absolute;inset:0;border-radius:20px;box-shadow:0 30px 60px -30px rgba(18,116,108,.5);opacity:0;transition:.35s}
+  .svc:hover{transform:translateY(-6px);border-color:transparent}
+  .svc:hover::after{opacity:1}
+  .svc-ic{width:56px;height:56px;border-radius:16px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:22px;color:var(--teal-2)}
+  .svc h3{font-size:22px;color:var(--teal-deep);margin-bottom:10px}
+  .svc p{font-size:14.5px;color:var(--muted)}
+  .svc.feature{background:linear-gradient(155deg,var(--teal-2),var(--teal-deep));color:#fff;border-color:transparent}
+  .svc.feature .svc-ic{background:rgba(255,255,255,.12);color:#fff}
+  .svc.feature h3{color:#fff}
+  .svc.feature p{color:rgba(232,247,244,.82)}
+  .svc.feature .tagx{display:inline-block;margin-top:16px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua-lt)}
 
-  /* ── responsivo ─────────────────────────────── */
-  @media (max-width:980px){
+  /* ---------- PHILOSOPHY ---------- */
+  .philo{background:linear-gradient(160deg,#0d443f,#072a27);color:#fff;position:relative;overflow:hidden}
+  .philo .sec-head h2{color:#fff}
+  .philo .sec-head h2 em{color:var(--aqua-lt)}
+  .philo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:3}
+  .pcard{padding:34px 30px;border:1px solid rgba(255,255,255,.14);border-radius:20px;background:rgba(255,255,255,.03)}
+  .pcard .num{font-family:var(--display);font-size:20px;color:var(--aqua-lt);border:1px solid rgba(95,201,191,.4);width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+  .pcard h3{font-size:21px;color:#fff;margin-bottom:10px}
+  .pcard p{font-size:14.5px;color:rgba(232,247,244,.76)}
+
+  /* ---------- CTA ---------- */
+  .cta{background:var(--mint-2);position:relative;overflow:hidden}
+  .cta-box{
+    background:linear-gradient(150deg,var(--teal-2),var(--teal-deep));
+    border-radius:32px;padding:66px 60px;color:#fff;position:relative;overflow:hidden;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+    box-shadow:0 50px 100px -40px rgba(11,59,56,.7);
+  }
+  .cta-box h2{font-size:clamp(30px,4vw,46px);color:#fff}
+  .cta-box h2 em{font-style:italic;color:var(--aqua-lt)}
+  .cta-box p{color:rgba(232,247,244,.85);margin-top:16px;max-width:44ch}
+  .cta-actions{display:flex;flex-direction:column;gap:16px}
+  .cta-actions .btn{justify-content:center}
+  .cta-phone{display:flex;align-items:center;gap:14px;margin-top:6px;font-family:var(--display);font-size:26px;color:#fff}
+  .cta-phone small{display:block;font-family:var(--body);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua-lt)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--teal-deep);color:rgba(255,255,255,.7);padding:70px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand b{font-family:var(--display);font-size:26px;color:#fff;display:block}
+  .foot-brand span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--aqua-lt)}
+  .foot-brand p{margin-top:18px;font-size:14px;max-width:34ch}
+  .foot-col h4{font-family:var(--body);font-weight:600;color:#fff;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+  .foot-col a,.foot-col p{display:block;font-size:14.5px;color:rgba(255,255,255,.7);margin-bottom:11px;transition:.25s}
+  .foot-col a:hover{color:var(--aqua-lt)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+  /* floating whatsapp */
+  .wa{position:fixed;right:22px;bottom:22px;z-index:50;width:60px;height:60px;border-radius:50%;
+    background:#25d366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 16px 34px -10px rgba(37,211,102,.8);transition:.3s}
+  .wa:hover{transform:scale(1.07)}
+
+  @media(max-width:920px){
     .nav-links{display:none}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .face-card{max-width:400px;margin:0 auto}
-    .pillars-in{grid-template-columns:1fr;gap:34px}
-    .slogan{max-width:none}
-    .pillar-list{grid-template-columns:repeat(2,1fr);gap:28px 0}
-    .pillar{padding:0 22px}
-    .pillar:nth-child(3){padding-left:0;border-left:0}
-    .sign-grid{grid-template-columns:repeat(2,1fr)}
-    .treat-grid{grid-template-columns:repeat(2,1fr)}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    .portrait{max-width:320px}
-    .quotes{grid-template-columns:1fr;gap:32px}
+    .hero-grid,.about-grid,.svc-grid,.philo-grid,.cta-box,.foot-grid{grid-template-columns:1fr}
+    .hero-visual{height:420px;margin-top:20px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .cta-box{padding:44px 30px}
+    .about-list{grid-template-columns:1fr}
   }
-  @media (max-width:620px){
-    body{font-size:16px}
-    .wrap{padding:0 20px}
-    .hero{padding:56px 0 60px}
-    .sec{padding:68px 0}
-    .final{padding:76px 0}
-    .sign-grid,.treat-grid{grid-template-columns:1fr}
-    .pillar-list{grid-template-columns:1fr;gap:24px}
-    .pillar{padding:0 0 0 20px;border-left:1px solid rgba(220,185,138,.28)}
-    .pillar:nth-child(3){padding-left:20px;border-left:1px solid rgba(220,185,138,.28)}
-    .cta-row .btn{width:100%}
-    .addr{justify-content:flex-start}
+  @media(max-width:600px){
+    .svc-grid{grid-template-columns:1fr}
+    .hero-stats{gap:26px}
+    .hero-stats div b{font-size:24px}
+    section.block{padding:74px 0}
+    .badge-float{left:0}
   }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══════════════════════════════════════ -->
-<nav>
+<!-- NAV -->
+<header class="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="logo">
-      <b>Danielli Vanz</b>
+    <div class="brand">
+      <b>Juliana Barros</b>
       <span>Estética Avançada</span>
-    </a>
-    <div class="nav-links">
-      <a href="#sinais">Sinais</a>
-      <a href="#tratamentos">Tratamentos</a>
-      <a href="#sobre">A clínica</a>
-      <a href="#feedback">Feedback</a>
     </div>
-    <a href="#agendar" class="btn btn-gold btn-sm">Agendar avaliação</a>
-  </div>
-</nav>
-
-<!-- ══ HERO — dobra zero (Versão B) ═════════════ -->
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-
-    <div>
-      <div class="eyebrow rv">Estética avançada · Centro, Florianópolis</div>
-
-      <h1 class="rv">Não são as rugas.<br>É o <em>contorno</em><br>que você perdeu.</h1>
-
-      <p class="sub rv">A maioria das mulheres percebe que o rosto mudou muito antes de conseguir nomear o quê. A avaliação existe pra dar nome — e dar caminho.</p>
-
-      <ul class="rv">
-        <li><span class="tick"></span>Descubra o que mudou no seu rosto</li>
-        <li><span class="tick"></span>Entenda a causa antes de qualquer aplicação</li>
-        <li><span class="tick"></span>Saia com um plano na ordem certa</li>
-      </ul>
-
-      <div class="cta-row rv">
-        <a href="#agendar" class="btn btn-gold">Quero entender meu rosto</a>
-        <a href="#sinais" class="btn btn-line">Ver os sinais mais comuns</a>
-      </div>
-      <p class="microcopy rv"><span class="dot"></span>Avaliação presencial no Centro, sem compromisso de fechar</p>
-
-      <div class="trust rv">
-        <span><b>6 mil</b> mulheres acompanham</span>
-        <span><b>Clínica própria</b> no Centro</span>
-        <span><b>Regen Match</b> · Evo &amp; LMG Aesthetics</span>
-      </div>
-    </div>
-
-    <!-- retrato da Danielli -->
-    <div class="face-card rv">
-      <img src="img/danielli-hero.jpg" width="667" height="824"
-           alt="Danielli Vanz na clínica de estética avançada, diante do painel dourado DV com parede de flores">
-      <div class="face-cap">O rosto inteiro, antes de qualquer aplicação</div>
-    </div>
-
+    <nav class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#filosofia">Cuidado</a>
+      <a href="#contato" class="nav-cta">Agende sua avaliação</a>
+    </nav>
   </div>
 </header>
 
-<!-- ══ PILARES ══════════════════════════════════ -->
-<section class="pillars">
-  <div class="wrap pillars-in">
-    <p class="slogan rv">Realce sua essência. Revele sua confiança.</p>
-    <div class="pillar-list">
-      <div class="pillar rv">
-        <h3>Ciência</h3>
-        <p>Indicação baseada em evidência, não em tendência de rede social.</p>
+<!-- HERO -->
+<section class="hero">
+  <svg class="leaf" style="top:-40px;right:-30px;width:340px;color:#5fc9bf" viewBox="0 0 200 200" fill="none"><path d="M100 20C60 40 40 90 60 150c40-20 60-70 40-130Z" stroke="currentColor" stroke-width="1.2" opacity=".5"/><path d="M100 20C90 70 80 110 60 150" stroke="currentColor" stroke-width="1.2" opacity=".5"/></svg>
+  <svg class="leaf" style="bottom:60px;left:-40px;width:260px;color:#12746c" viewBox="0 0 200 200"><path d="M100 180C140 160 160 110 140 50c-40 20-60 70-40 130Z" stroke="currentColor" stroke-width="1.2" opacity=".55"/></svg>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Enfermeira Esteta · Florianópolis–SC</span>
+      <h1>Autoestima e bem-estar através da <em>estética</em>.</h1>
+      <p class="lead">Cuidado que vai além da beleza. Cada protocolo é pensado no seu tempo, na sua história e na sua saúde — com técnica, acolhimento e resultados naturais.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/5548999019699?text=Ol%C3%A1%20Dra.%20Juliana!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-solid" target="_blank" rel="noopener">
+          Agende seu momento
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#servicos" class="btn btn-ghost">Conheça os tratamentos</a>
       </div>
-      <div class="pillar rv">
-        <h3>Técnica</h3>
-        <p>Protocolos avançados e atualização constante em estética regenerativa.</p>
+      <div class="hero-stats">
+        <div><b>+8</b><span>Protocolos<br>faciais &amp; corporais</span></div>
+        <div><b>2 mil+</b><span>Mulheres<br>acompanhadas</span></div>
+        <div><b>100%</b><span>Avaliação<br>individual</span></div>
       </div>
-      <div class="pillar rv">
-        <h3>Naturalidade</h3>
-        <p>O objetivo é você parecer descansada, não parecer procedimento.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="portrait">
+        <div class="mono">JB</div>
+        <h3>Dra. Juliana Barros</h3>
+        <p>Enfermeira Esteta</p>
+        <div class="loc">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          Florianópolis · Santa Catarina
+        </div>
       </div>
-      <div class="pillar rv">
-        <h3>Confiança</h3>
-        <p>Você entende cada etapa antes de aceitar qualquer uma delas.</p>
+      <div class="badge-float">
+        <div class="ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.2L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.6-.8L12 3Z" fill="#12746c"/></svg>
+        </div>
+        <div><b>Protocolo Gold Skin 3D</b><span>Renovação e viço para a sua pele</span></div>
       </div>
     </div>
   </div>
+  <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 90V44c240 40 480 40 720 12S1200 4 1440 40v50H0Z" fill="#f6fbf9"/></svg>
 </section>
 
-<!-- ══ SINAIS ═══════════════════════════════════ -->
-<section class="sec signs" id="sinais">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que costuma passar despercebido</div>
-      <h2>O rosto não envelhece com rugas. Envelhece com estrutura.</h2>
-      <p>Quatro sinais que aparecem antes das linhas de expressão — e que quase ninguém sabe nomear.</p>
-    </div>
-
-    <div class="sign-grid">
-      <div class="sign rv">
-        <div class="num">I</div>
-        <h3>Contorno</h3>
-        <p>A linha da mandíbula perde definição e o rosto parece "cair" na foto de perfil.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">II</div>
-        <h3>Volume</h3>
-        <p>A maçã do rosto esvazia. O olhar fica cansado mesmo depois de dormir bem.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">III</div>
-        <h3>Firmeza</h3>
-        <p>A pele responde menos ao toque e a maquiagem começa a marcar onde não marcava.</p>
-      </div>
-      <div class="sign rv">
-        <div class="num">IV</div>
-        <h3>Qualidade da pele</h3>
-        <p>Textura irregular, poro aparente e perda de viço, mesmo com skincare em dia.</p>
-      </div>
-    </div>
-
-    <p class="signs-note rv">Tratar um sinal isolado é o que produz resultado artificial. Por isso a avaliação vem antes.</p>
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <span>Harmonização facial</span>
+    <span>Botox</span>
+    <span>Bioestimuladores</span>
+    <span>Preenchimento labial</span>
+    <span>Depilação a laser</span>
+    <span>Gold Skin 3D</span>
   </div>
-</section>
+</div>
 
-<!-- ══ TRATAMENTOS ══════════════════════════════ -->
-<section class="sec" id="tratamentos">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">O que é feito na clínica</div>
-      <h2>Tratamentos faciais, corporais e regenerativos</h2>
-      <p>A indicação sai da avaliação. Nada aqui é vendido como pacote fechado antes de olhar o seu rosto.</p>
-    </div>
-
-    <div class="treat-grid">
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Harmonização facial</h3>
-        <p>Reposição de volume e reequilíbrio de proporções, com leitura do rosto inteiro antes da primeira aplicação.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Toxina botulínica</h3>
-        <p>Suavização de linhas de expressão preservando a movimentação natural do rosto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Facial</div>
-        <h3>Bioestimuladores de colágeno</h3>
-        <p>Recuperação de firmeza e sustentação a partir do estímulo do próprio colágeno.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Regenerativo</div>
-        <h3>REGEN-HK e HIPRO</h3>
-        <p>Tecnologias de estética regenerativa para qualidade de pele e sustentação profunda.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Pele</div>
-        <h3>LHA LA Peel</h3>
-        <p>Peeling de quarta geração, sem descamação, com efeito de pele lisa e uniforme.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Criolipólise da Pri</h3>
-        <p>Redução de gordura localizada por resfriamento controlado, com protocolo individual.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Corporal</div>
-        <h3>Diástase PH</h3>
-        <p>Protocolo para afastamento dos músculos abdominais, comum no pós-parto.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Manutenção</div>
-        <h3>Tratamentos faciais</h3>
-        <p>Limpeza, hidratação e protocolos de rotina que sustentam o resultado dos procedimentos.</p>
-      </div>
-      <div class="treat rv">
-        <div class="tag">Rotina</div>
-        <h3>Skincare e home care</h3>
-        <p>Prescrição de cuidado diário, porque metade do resultado acontece fora da clínica.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SOBRE ════════════════════════════════════ -->
-<section class="sec about" id="sobre">
+<!-- ABOUT -->
+<section class="block about" id="sobre">
   <div class="wrap about-grid">
-    <div class="portrait rv">
-      <img src="img/danielli-clinica.jpg" width="683" height="821"
-           alt="Danielli Vanz na clínica, com equipamento de estética avançada">
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="about-frame"></div>
+        <div class="about-tag">Enfermeira Esteta</div>
+        <div class="quote">
+          <b>“Vocês todas moram no meu coração.”</b>
+          <div class="sig">Juliana Barros</div>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="eyebrow rv">A profissional</div>
-      <h2 class="rv">Estratégia, não excesso.</h2>
-      <p class="rv">Danielli Cássia Vanz atua há anos na estética avançada em Florianópolis. Antes de abrir a clínica própria no Centro, foi sócia-proprietária da +Top Estética, onde construiu a base técnica que hoje sustenta os protocolos da Danielli Vanz Estética Avançada.</p>
-      <p class="rv">Em 2026 foi convidada pela Evo e pela LMG Aesthetics para o Regen Match, encontro fechado de estética regenerativa — o tipo de reconhecimento que vem de pares, não de anúncio.</p>
-      <p class="rv">A clínica funciona sobre uma regra simples: o rosto é avaliado por inteiro antes de qualquer aplicação. Cada área tem uma função, e tratar uma sozinha é exatamente o que gera aquele resultado que todo mundo percebe.</p>
-      <div class="sig rv">Danielli Vanz</div>
-      <div class="crd rv">Estética Avançada · Florianópolis, SC</div>
+    <div class="about-body">
+      <span class="eyebrow">Quem cuida de você</span>
+      <div class="sec-head" style="margin-bottom:22px">
+        <h2>Estética com <em>propósito</em>, técnica e afeto.</h2>
+      </div>
+      <p class="big">Minha missão vai muito além da beleza: é oferecer cuidado, bem-estar e autoestima para cada mulher que confia em mim.</p>
+      <p>Como Enfermeira Esteta, uno formação técnica e um olhar humano para entregar resultados naturais e seguros. Aqui, cada procedimento começa por escutar você — seus desejos, sua rotina e o que faz sentido para o seu momento.</p>
+      <p>Acredito em escolhas conscientes: procedimento bem feito é aquele conduzido por profissional qualificado, com estrutura e responsabilidade — nunca decidido apenas pelo preço.</p>
+      <ul class="about-list">
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="#12746c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Avaliação individual</b> antes de qualquer aplicação</div></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="#12746c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Estrutura e conforto</b> em cada atendimento</div></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="#12746c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Resultados naturais</b> respeitando a sua identidade</div></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="#12746c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Acolhimento</b> do primeiro contato ao pós</div></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ══ FEEDBACK ═════════════════════════════════ -->
-<section class="sec" id="feedback">
+<!-- SERVICES -->
+<section class="block services" id="servicos">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Feedback</div>
-      <h2>O que dizem quem já sentou na cadeira</h2>
+    <div class="sec-head center">
+      <span class="eyebrow" style="justify-content:center">O que ofereço</span>
+      <h2>Tratamentos faciais &amp; <em>corporais</em></h2>
+      <p>Protocolos personalizados para realçar a sua beleza natural, promover saúde para a pele e devolver a confiança que mora em você.</p>
     </div>
-
-    <div class="quotes">
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
-      <blockquote class="quote rv">
-        <p>[ Depoimento real da paciente — substituir pelo texto do Direct ou do Google. ]</p>
-        <cite>Nome · procedimento · Florianópolis</cite>
-      </blockquote>
+    <div class="svc-grid">
+      <div class="svc feature">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.2L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.6-.8L12 3Z" fill="currentColor"/></svg></div>
+        <h3>Gold Skin 3D</h3>
+        <p>Protocolo exclusivo de renovação da pele: mais viço, textura uniforme e aquele brilho saudável de dentro para fora.</p>
+        <span class="tagx">Protocolo assinatura</span>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 4c-4 5-6 8-6 11a6 6 0 0012 0c0-3-2-6-6-11Z" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h3>Harmonização Facial</h3>
+        <p>Equilíbrio e proporção respeitando seus traços — realce natural, sem exageros, pensado para o rosto inteiro.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Toxina Botulínica</h3>
+        <p>Suavização de linhas de expressão para uma aparência descansada, natural e ainda cheia de vida.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 14c4-2 12-2 16 0M6 10c3-1.5 9-1.5 12 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17" r="1.4" fill="currentColor"/></svg></div>
+        <h3>Preenchimento Labial</h3>
+        <p>Contorno e hidratação para lábios harmônicos, definidos e naturais — do jeitinho que combina com você.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3>Bioestimuladores de Colágeno</h3>
+        <p>Estímulo natural à produção de colágeno para firmeza, sustentação e qualidade de pele a longo prazo.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M9 5l1.5 1.5M14 4l1 1M5 9l1 1M19 10l1 1M16 15l1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Depilação a Laser</h3>
+        <p>Pele lisa e livre de pelos com tecnologia, conforto e sessões planejadas para o seu tipo de pele.</p>
+      </div>
     </div>
-
-    <p class="slot rv">Espaços reservados: 3 depoimentos reais (destaque "Feedback" do Instagram) + 1 par de antes/depois na dobra, se houver autorização de uso de imagem assinada.</p>
+    <div style="text-align:center;margin-top:44px">
+      <p style="color:var(--muted);font-size:14.5px;margin-bottom:20px">Também realizo estética facial e corporal, peeling e limpeza de pele.</p>
+      <a href="https://wa.me/5548999019699?text=Ol%C3%A1%20Dra.%20Juliana!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos." class="btn btn-solid" target="_blank" rel="noopener">Falar sobre o meu tratamento</a>
+    </div>
   </div>
 </section>
 
-<!-- ══ CTA FINAL ════════════════════════════════ -->
-<section class="final" id="agendar">
-  <div class="wrap final-in">
-    <div class="eyebrow rv">Agende sua avaliação</div>
-    <h2 class="rv">Uma hora para entender o seu rosto.</h2>
-    <p class="rv">Você sai da avaliação sabendo o que mudou, por que mudou e qual a ordem certa de tratar. Sem pacote empurrado, sem promessa que a pele não sustenta.</p>
-
-    <div class="cta-row rv">
-      <a href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-gold" id="cta-wa">Chamar no WhatsApp</a>
-      <a href="https://instagram.com/daniellivanzestetica" target="_blank" rel="noopener" class="btn btn-ghost-lt">Ver o Instagram</a>
+<!-- PHILOSOPHY -->
+<section class="block philo" id="filosofia">
+  <svg class="leaf" style="top:20px;right:-30px;width:280px;color:#5fc9bf" viewBox="0 0 200 200"><path d="M100 20C60 40 40 90 60 150c40-20 60-70 40-130Z" stroke="currentColor" stroke-width="1.2" opacity=".4"/></svg>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" style="justify-content:center">Meu jeito de cuidar</span>
+      <h2>Mais do que beleza, <em>bem-estar</em></h2>
     </div>
-
-    <dl class="addr rv">
-      <div>
-        <dt>Endereço</dt>
-        <dd>Rua Cruz e Sousa, 57 — sala 1201<br>Centro · Florianópolis, SC</dd>
+    <div class="philo-grid">
+      <div class="pcard">
+        <div class="num">01</div>
+        <h3>Escuta antes da técnica</h3>
+        <p>Cada atendimento começa entendendo você. É a sua história que guia o plano de tratamento — não o contrário.</p>
       </div>
-      <div>
-        <dt>WhatsApp</dt>
-        <dd>Resposta em até 24h<br>Segunda a sexta</dd>
+      <div class="pcard">
+        <div class="num">02</div>
+        <h3>Segurança em primeiro lugar</h3>
+        <p>Profissional qualificada, produtos de procedência e estrutura adequada. Sua saúde nunca entra em negociação.</p>
       </div>
-      <div>
-        <dt>Instagram</dt>
-        <dd>@daniellivanzestetica</dd>
+      <div class="pcard">
+        <div class="num">03</div>
+        <h3>Vínculo que acolhe</h3>
+        <p>Gratidão e cuidado de verdade. Aqui você não é mais um número — é acompanhada com carinho em cada etapa.</p>
       </div>
-    </dl>
+    </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════ -->
+<!-- CTA -->
+<section class="block cta" id="contato">
+  <div class="wrap">
+    <div class="cta-box">
+      <svg class="leaf" style="bottom:-40px;right:-20px;width:260px;color:#5fc9bf;opacity:.25" viewBox="0 0 200 200"><path d="M100 180C140 160 160 110 140 50c-40 20-60 70-40 130Z" stroke="currentColor" stroke-width="1.4"/></svg>
+      <div>
+        <span class="eyebrow" style="color:var(--aqua-lt)">Agende agora</span>
+        <h2>Seu momento de cuidado <em>começa aqui</em>.</h2>
+        <p>Reserve a sua avaliação e descubra o protocolo ideal para você. Atendimento presencial em Florianópolis–SC.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://wa.me/5548999019699?text=Ol%C3%A1%20Dra.%20Juliana!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-solid" target="_blank" rel="noopener" style="background:#25d366;box-shadow:0 14px 30px -12px rgba(37,211,102,.7)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.1-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <div class="cta-phone">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 005 5L16 12l5 2v3a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <div>
+            <small>Ligue ou chame</small>
+            (48) 9 9901-9699
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Danielli Vanz Estética Avançada · Florianópolis, SC</span>
-    <span>Resultados variam conforme avaliação individual.</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>Juliana Barros</b>
+        <span>Estética Avançada</span>
+        <p>Enfermeira Esteta em Florianópolis. Promovendo autoestima e bem-estar através da estética. 🤍</p>
+      </div>
+      <div class="foot-col">
+        <h4>Tratamentos</h4>
+        <a href="#servicos">Gold Skin 3D</a>
+        <a href="#servicos">Harmonização Facial</a>
+        <a href="#servicos">Toxina Botulínica</a>
+        <a href="#servicos">Bioestimuladores</a>
+        <a href="#servicos">Depilação a Laser</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <p>📍 Florianópolis – SC</p>
+        <a href="https://wa.me/5548999019699" target="_blank" rel="noopener">💬 (48) 9 9901-9699</a>
+        <a href="https://bio.site/drajulianabarrosh" target="_blank" rel="noopener">🔗 bio.site/drajulianabarrosh</a>
+        <a href="https://wa.me/5548999019699?text=Ol%C3%A1%20Dra.%20Juliana!" target="_blank" rel="noopener">📅 Agende seu momento</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dra. Juliana Barros — Estética Avançada. Todos os direitos reservados.</span>
+      <span>Enfermeira Esteta · Florianópolis–SC</span>
+    </div>
   </div>
 </footer>
 
-<!-- ══ WHATSAPP FLUTUANTE ═══════════════════════ -->
-<a class="wa" id="wa-float"
-   href="https://wa.me/55SEUNUMERO?text=Oi%2C%20Danielli.%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
-   target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.04 3C8.86 3 3.02 8.84 3.02 16.02c0 2.29.6 4.53 1.75 6.5L3 29l6.65-1.74a13 13 0 0 0 6.39 1.66h.01c7.18 0 13.02-5.84 13.02-13.02C29.07 8.84 23.22 3 16.04 3zm0 23.69h-.01a10.8 10.8 0 0 1-5.5-1.51l-.4-.23-4.09 1.07 1.09-3.99-.26-.41a10.77 10.77 0 0 1-1.65-5.76c0-5.97 4.86-10.83 10.83-10.83 2.89 0 5.61 1.13 7.65 3.18a10.75 10.75 0 0 1 3.17 7.66c0 5.97-4.86 10.82-10.83 10.82zm5.94-8.11c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.62-1.61-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.41-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.33c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
-  </svg>
+<a class="wa" href="https://wa.me/5548999019699?text=Ol%C3%A1%20Dra.%20Juliana!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.1-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
 </a>
-
-<script>
-  // reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.rv').forEach((el, i) => {
-    el.style.transitionDelay = (Math.min(i % 6, 5) * 70) + 'ms';
-    io.observe(el);
-  });
-</script>
 
 </body>
 </html>
