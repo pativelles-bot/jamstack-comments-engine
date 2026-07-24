@@ -1,4 +1,4 @@
-# Static deploy of the Danielli Vanz landing page.
+# Static deploy of the Dra. Juliana Barros landing page.
 #
 # The site is a single, self-contained index.html living in ./public.
 # We set `base` to that folder so Netlify runs there: it finds no package.json,
