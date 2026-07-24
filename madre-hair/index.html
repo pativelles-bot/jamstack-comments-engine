@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madre Hair | Edy Monteiro — Salão capilar na Trindade, Florianópolis</title>
+<meta name="description" content="Salão unissex na Trindade, em Florianópolis. Edy Monteiro assina cortes, coloração, escova, penteados de noiva, unhas e maquiagem. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --preto:#0A0908;
+  --carvao:#151310;
+  --ouro:#CDA349;
+  --ouro-fundo:#8C6B2F;
+  --champanhe:#EADFC8;
+  --off:#F4F0E8;
+  --linha:rgba(205,163,73,.28);
+  --display:"Cormorant Garamond",Georgia,serif;
+  --corpo:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --script:"Pinyon Script",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--preto);
+  color:var(--off);
+  font-family:var(--corpo);
+  font-weight:300;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,90vw);margin:0 auto}
+.eyebrow{
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--ouro);font-weight:400;
+}
+
+/* ---------- barra de topo ---------- */
+.faixa{
+  border-bottom:1px solid rgba(244,240,232,.09);
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(244,240,232,.6);
+}
+.faixa .wrap{display:flex;justify-content:space-between;gap:20px;padding:14px 0;flex-wrap:wrap}
+.faixa strong{color:var(--champanhe);font-weight:400}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:74px 0 88px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(60% 50% at 78% 18%,rgba(205,163,73,.16),transparent 68%),
+    radial-gradient(45% 40% at 8% 82%,rgba(140,107,47,.13),transparent 70%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.marca{margin-bottom:44px}
+.marca .nome{
+  font-family:var(--display);font-size:40px;letter-spacing:.16em;
+  line-height:1;color:var(--champanhe);
+}
+.marca .nome span{font-weight:300;letter-spacing:.24em}
+.marca .assin{font-family:var(--script);font-size:23px;color:var(--ouro);margin-top:2px}
+h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(38px,4.9vw,62px);
+  line-height:1.06;
+  letter-spacing:-.005em;
+  color:var(--off);
+  margin:18px 0 22px;
+}
+h1 em{font-style:normal;color:var(--ouro)}
+.sub{font-size:18px;color:rgba(244,240,232,.78);max-width:44ch}
+.bul{list-style:none;margin:32px 0 38px}
+.bul li{
+  padding:13px 0 13px 26px;position:relative;
+  border-top:1px solid rgba(244,240,232,.1);
+  font-size:15.5px;color:rgba(244,240,232,.86);
+}
+.bul li:last-child{border-bottom:1px solid rgba(244,240,232,.1)}
+.bul li::before{
+  content:"";position:absolute;left:0;top:23px;
+  width:11px;height:1px;background:var(--ouro);
+}
+.acoes{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.btn{
+  display:inline-block;background:var(--ouro);color:#17140E;
+  padding:16px 34px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;border:1px solid var(--ouro);
+  transition:background .25s ease,color .25s ease;
+}
+.btn:hover,.btn:focus-visible{background:transparent;color:var(--ouro)}
+.btn-linha{
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;color:rgba(244,240,232,.72);
+  border-bottom:1px solid var(--linha);padding-bottom:3px;
+  transition:color .25s ease,border-color .25s ease;
+}
+.btn-linha:hover,.btn-linha:focus-visible{color:var(--ouro);border-color:var(--ouro)}
+.micro{margin-top:16px;font-size:13.5px;color:rgba(244,240,232,.5)}
+
+/* ---------- espelho (elemento-assinatura) ---------- */
+.espelho{position:relative;justify-self:center;width:100%;max-width:430px}
+.espelho .moldura{
+  border:1px solid var(--linha);
+  border-radius:215px 215px 8px 8px;
+  padding:13px;
+  background:linear-gradient(160deg,rgba(205,163,73,.13),rgba(10,9,8,0) 55%);
+}
+.espelho img{
+  border-radius:203px 203px 4px 4px;
+  width:100%;height:530px;object-fit:cover;object-position:center 22%;
+  filter:saturate(.92) contrast(1.03);
+}
+.selo{
+  position:absolute;left:-30px;bottom:44px;
+  background:var(--preto);border:1px solid var(--linha);
+  padding:15px 19px;text-align:center;
+}
+.selo b{display:block;font-family:var(--display);font-size:30px;color:var(--ouro);line-height:1;font-weight:400}
+.selo span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,240,232,.62)}
+
+/* ---------- provas ---------- */
+.provas{border-top:1px solid rgba(244,240,232,.09);border-bottom:1px solid rgba(244,240,232,.09);background:var(--carvao)}
+.provas .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(244,240,232,.08)}
+.prova{background:var(--carvao);padding:30px 24px}
+.prova b{display:block;font-family:var(--display);font-size:19px;color:var(--champanhe);font-weight:400;margin-bottom:5px}
+.prova span{font-size:13.5px;color:rgba(244,240,232,.6);line-height:1.5;display:block}
+
+/* ---------- seções ---------- */
+.sec{padding:96px 0}
+.sec-titulo{font-family:var(--display);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.14;margin:14px 0 0;max-width:22ch}
+.sec-intro{color:rgba(244,240,232,.72);max-width:52ch;margin-top:18px}
+
+.servicos{display:grid;grid-template-columns:1fr 1fr;gap:0 70px;margin-top:52px}
+.serv{border-top:1px solid rgba(244,240,232,.12);padding:26px 0}
+.serv h3{font-family:var(--display);font-weight:400;font-size:26px;color:var(--champanhe);margin-bottom:7px}
+.serv p{font-size:15px;color:rgba(244,240,232,.63)}
+
+.dupla{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.dupla img{width:100%;height:520px;object-fit:cover;object-position:center 18%;border:1px solid var(--linha)}
+
+/* ---------- agenda ---------- */
+.agenda{background:var(--carvao);border-top:1px solid rgba(244,240,232,.09);border-bottom:1px solid rgba(244,240,232,.09)}
+.grade{margin-top:40px;border-top:1px solid rgba(244,240,232,.12)}
+.dia{
+  display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:17px 0;border-bottom:1px solid rgba(244,240,232,.12);
+}
+.dia strong{font-weight:400;font-size:15px;letter-spacing:.11em;text-transform:uppercase;color:rgba(244,240,232,.82)}
+.dia span{font-family:var(--display);font-size:23px;color:var(--ouro)}
+.dia.fechado span{color:rgba(244,240,232,.34);font-size:19px}
+.endereco{margin-top:38px;font-size:16px;color:rgba(244,240,232,.75);line-height:1.8}
+.endereco a{color:var(--ouro);text-decoration:none;border-bottom:1px solid var(--linha)}
+
+/* ---------- fecho ---------- */
+.fecho{text-align:center;padding:110px 0}
+.fecho h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.1;max-width:16ch;margin:16px auto 22px}
+.fecho p{color:rgba(244,240,232,.72);max-width:46ch;margin:0 auto 34px}
+
+footer{border-top:1px solid rgba(244,240,232,.09);padding:38px 0;font-size:13px;color:rgba(244,240,232,.45)}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+/* ---------- whatsapp flutuante ---------- */
+.zap{
+  position:fixed;right:22px;bottom:22px;z-index:50;
+  width:60px;height:60px;border-radius:50%;
+  background:#1FA855;display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(0,0,0,.45);
+  transition:transform .22s ease;
+}
+.zap:hover,.zap:focus-visible{transform:scale(1.07)}
+.zap svg{width:31px;height:31px;fill:#fff}
+
+/* ---------- entrada ---------- */
+.rev{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.rev.on{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  .rev{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+@media (max-width:900px){
+  .hero .wrap,.dupla{grid-template-columns:1fr;gap:48px}
+  .hero{padding:48px 0 64px}
+  .espelho{max-width:360px;order:-1}
+  .espelho img{height:400px}
+  .selo{left:auto;right:-14px;bottom:22px}
+  .provas .wrap{grid-template-columns:1fr 1fr}
+  .servicos{grid-template-columns:1fr;gap:0}
+  .dupla img{height:400px}
+  .sec{padding:70px 0}
+}
+@media (max-width:520px){
+  .faixa .wrap{font-size:11px;gap:6px}
+  .provas .wrap{grid-template-columns:1fr}
+  .acoes{gap:18px}
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="faixa">
+  <div class="wrap">
+    <div>Rua Lauro Linhares, Trindade <strong>Florianópolis</strong></div>
+    <div>Seg 13h às 20h <strong>Ter a sáb 9h às 20h</strong></div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="rev">
+      <div class="marca">
+        <div class="nome">MADRE <span>HAIR</span></div>
+        <div class="assin">by Edy Monteiro</div>
+      </div>
+
+      <p class="eyebrow">Salão unissex na Trindade</p>
+      <h1>Cansou de sair do salão com uma cor que você <em>não pediu</em></h1>
+      <p class="sub">Aqui o fio passa por avaliação antes de qualquer química, e quem conduz o atendimento do começo ao fim é o Edy, com vinte anos de cabelo nas mãos.</p>
+
+      <ul class="bul">
+        <li>Avaliação do fio antes de qualquer química</li>
+        <li>Coloração, corte, escova e penteado de noiva</li>
+        <li>Linha profissional MH no atendimento</li>
+      </ul>
+
+      <div class="acoes">
+        <!-- TROCAR 55SEUNUMERO pelo WhatsApp real do salão -->
+        <a class="btn" href="https://wa.me/55SEUNUMERO?text=Oi!%20Quero%20reservar%20um%20hor%C3%A1rio%20no%20Madre%20Hair.">Reservar meu horário</a>
+        <a class="btn-linha" href="#servicos">Ver o que fazemos</a>
+      </div>
+      <p class="micro">Resposta pelo WhatsApp no mesmo dia de atendimento.</p>
+    </div>
+
+    <div class="espelho rev">
+      <div class="moldura"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NjAiIGhlaWdodD0iMTA2MCIgdmlld0JveD0iMCAwIDg2MCAxMDYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxNTEzMTAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjU1IiBzdG9wLWNvbG9yPSIjMEEwOTA4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFjMTgxMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdyIgY3g9IjAuNSIgY3k9IjAuMzQiIHI9IjAuNiI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0NEQTM0OSIgc3RvcC1vcGFjaXR5PSIwLjIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0NEQTM0OSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODYwIiBoZWlnaHQ9IjEwNjAiIGZpbGw9InVybCgjZykiLz4KICA8cmVjdCB3aWR0aD0iODYwIiBoZWlnaHQ9IjEwNjAiIGZpbGw9InVybCgjZ2xvdykiLz4KICA8Y2lyY2xlIGN4PSI0MzAiIGN5PSIzNjAiIHI9IjE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQ0RBMzQ5IiBzdHJva2Utb3BhY2l0eT0iMC41NSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MzAiIHk9IjQxMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIxNTAiIGZpbGw9IiNDREEzNDkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSI2Ij5NSDwvdGV4dD4KICA8dGV4dCB4PSI0MzAiIHk9IjYwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjQ2IiBmaWxsPSIjRUFERkM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMTQiPk1BRFJFIEhBSVI8L3RleHQ+CiAgPHRleHQgeD0iNDMwIiB5PSI2NDgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyNiIgZmlsbD0iI0NEQTM0OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjQiIGZvbnQtc3R5bGU9Iml0YWxpYyI+YnkgRWR5IE1vbnRlaXJvPC90ZXh0PgogIDx0ZXh0IHg9IjQzMCIgeT0iOTIwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiNGNEYwRTgiIGZpbGwtb3BhY2l0eT0iMC40NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjYiPkZPVE8gRU0gQlJFVkU8L3RleHQ+Cjwvc3ZnPgo=" alt="Espaço reservado para retrato de Edy Monteiro no salão Madre Hair, na Trindade"></div>
+      <div class="selo"><b>20</b><span>anos de cabelo</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="provas">
+  <div class="wrap">
+    <div class="prova"><b>Premiação ANCEC</b><span>Reconhecimento do setor de beleza</span></div>
+    <div class="prova"><b>Comunidade AVOIC</b><span>Clientes que voltam há anos</span></div>
+    <div class="prova"><b>MH Professional</b><span>Linha própria usada no atendimento</span></div>
+    <div class="prova"><b>Unissex</b><span>Corte masculino, cor, noiva, unhas</span></div>
+  </div>
+</section>
+
+<section class="sec" id="servicos">
+  <div class="wrap rev">
+    <p class="eyebrow">O que fazemos</p>
+    <h2 class="sec-titulo">Um salão completo, com o capilar no centro de tudo</h2>
+    <p class="sec-intro">Você marca uma coisa e sai resolvendo três. Cabelo, unha e maquiagem no mesmo endereço, na mesma tarde.</p>
+
+    <div class="servicos">
+      <div class="serv">
+        <h3>Corte</h3>
+        <p>Feminino e masculino, pensado pro seu fio e pra rotina que você tem de manhã.</p>
+      </div>
+      <div class="serv">
+        <h3>Coloração e tonalização</h3>
+        <p>Da cobertura de branco ao tom que você levou printado no celular.</p>
+      </div>
+      <div class="serv">
+        <h3>Escova e finalização</h3>
+        <p>Pra sair daqui pronta, seja pro trabalho ou pro jantar da noite.</p>
+      </div>
+      <div class="serv">
+        <h3>Noivas e eventos</h3>
+        <p>Penteado com prova marcada antes, sem descobrir o resultado no dia.</p>
+      </div>
+      <div class="serv">
+        <h3>Unhas</h3>
+        <p>Manicure, esmaltação e nail art enquanto a química age no cabelo.</p>
+      </div>
+      <div class="serv">
+        <h3>Maquiagem</h3>
+        <p>Social e de noiva, combinada com o penteado no mesmo atendimento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--carvao);border-top:1px solid rgba(244,240,232,.09)">
+  <div class="wrap dupla rev">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iMTA0MCIgdmlld0JveD0iMCAwIDkwMCAxMDQwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzIiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMTIxMDBjIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC42IiBzdG9wLWNvbG9yPSIjMEEwOTA4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFhMTYxMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdzIiIGN4PSIwLjUiIGN5PSIwLjQiIHI9IjAuNjUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM4QzZCMkYiIHN0b3Atb3BhY2l0eT0iMC4yMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4QzZCMkYiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxMDQwIiBmaWxsPSJ1cmwoI2cyKSIvPgogIDxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iMTA0MCIgZmlsbD0idXJsKCNnbG93MikiLz4KICA8Y2lyY2xlIGN4PSI0NTAiIGN5PSI0MDAiIHI9IjE0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQ0RBMzQ5IiBzdHJva2Utb3BhY2l0eT0iMC41IiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ1MCIgeT0iNDQ4IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTMwIiBmaWxsPSIjQ0RBMzQ5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNiI+TUg8L3RleHQ+CiAgPHRleHQgeD0iNDUwIiB5PSI2NDAiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNCIgZmlsbD0iI0VBREZDOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjEwIj5CQVJCRUFSSUEgwrcgQ09SVEU8L3RleHQ+CiAgPHRleHQgeD0iNDUwIiB5PSI5MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI0Y0RjBFOCIgZmlsbC1vcGFjaXR5PSIwLjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNiI+Rk9UTyBFTSBCUkVWRTwvdGV4dD4KPC9zdmc+Cg==" alt="Espaço reservado para foto de cliente com corte e barba alinhados no Madre Hair">
+    <div>
+      <p class="eyebrow">Também pra eles</p>
+      <h2 class="sec-titulo">Barba alinhada e corte que aguenta o mês inteiro</h2>
+      <p class="sec-intro">Atendimento unissex de verdade, com hora marcada e sem fila de espera. Você entra, resolve e volta pro dia.</p>
+      <div class="acoes" style="margin-top:34px">
+        <a class="btn" href="https://wa.me/55SEUNUMERO?text=Oi!%20Quero%20marcar%20corte%20masculino%20no%20Madre%20Hair.">Marcar meu corte</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec agenda">
+  <div class="wrap rev">
+    <p class="eyebrow">Agenda</p>
+    <h2 class="sec-titulo">Quando a gente te espera</h2>
+
+    <div class="grade">
+      <div class="dia"><strong>Segunda</strong><span>13h às 20h</span></div>
+      <div class="dia"><strong>Terça a sexta</strong><span>9h às 20h</span></div>
+      <div class="dia"><strong>Sábado</strong><span>9h às 20h</span></div>
+      <div class="dia fechado"><strong>Domingo</strong><span>Fechado</span></div>
+    </div>
+
+    <p class="endereco">
+      Rua Lauro Linhares, Trindade, Florianópolis (SC)<br>
+      <a href="https://www.google.com/maps/search/?api=1&query=Madre+Hair+Rua+Lauro+Linhares+Trindade+Florianopolis" target="_blank" rel="noopener">Abrir no Google Maps</a>
+    </p>
+  </div>
+</section>
+
+<section class="fecho">
+  <div class="wrap rev">
+    <p class="eyebrow">Sua vez</p>
+    <h2>Manda uma mensagem e escolhe seu horário</h2>
+    <p>Conta o que você quer fazer no cabelo. A gente responde com os horários livres da semana.</p>
+    <a class="btn" href="https://wa.me/55SEUNUMERO?text=Oi!%20Quero%20reservar%20um%20hor%C3%A1rio%20no%20Madre%20Hair.">Reservar meu horário</a>
+    <p class="micro">Sem compromisso. Você confirma só depois de ver a agenda.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Madre Hair, by Edy Monteiro. New Concept.</div>
+    <div>Rua Lauro Linhares, Trindade, Florianópolis (SC)</div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/55SEUNUMERO?text=Oi!%20Quero%20reservar%20um%20hor%C3%A1rio%20no%20Madre%20Hair." target="_blank" rel="noopener" aria-label="Falar no WhatsApp com o Madre Hair">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.36 9.36 0 0 1-1.44-5.01c0-5.18 4.23-9.4 9.42-9.4 2.51 0 4.88.98 6.65 2.76a9.34 9.34 0 0 1 2.76 6.65c0 5.18-4.23 9.41-9.42 9.41m8.01-17.42A11.28 11.28 0 0 0 12.04 1C5.84 1 .8 6.03.8 12.22c0 1.98.52 3.91 1.5 5.61L.7 23.5l5.81-1.52a11.24 11.24 0 0 0 5.53 1.4h.01c6.2 0 11.24-5.03 11.24-11.22 0-3-1.17-5.82-3.29-7.94"/></svg>
+</a>
+
+<script>
+(function(){
+  var alvos=document.querySelectorAll('.rev');
+  if(!('IntersectionObserver' in window)){alvos.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(ent){
+    ent.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+  },{threshold:.12});
+  alvos.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
