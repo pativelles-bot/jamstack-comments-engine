@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rozeli Machado · Assistente Virtual para Empresárias</title>
+<meta name="description" content="Organizo os bastidores do seu negócio — agenda, demandas e rotina — pra você ter tempo e clareza pra focar no que só você pode fazer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#3E2A47;
+  --plum-deep:#2C1D33;
+  --purple:#6B4E7B;
+  --lilac:#B9A3C6;
+  --beige:#F6F1EA;
+  --beige-deep:#EFE7DC;
+  --lavender:#EEE7F2;
+  --ink:#2B2230;
+  --white:#FFFDFB;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Mulish',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--beige);line-height:1.7;font-size:17px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.2;color:var(--plum)}
+h1{font-size:clamp(2.1rem,5vw,3.4rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:1.2rem}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+.narrow{max-width:760px}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:14px}
+
+/* botões */
+.btn{display:inline-block;background:var(--plum);color:var(--white);font-weight:700;font-size:1.02rem;padding:17px 36px;border-radius:60px;text-decoration:none;transition:background .25s,transform .25s;box-shadow:0 8px 24px rgba(62,42,71,.22)}
+.btn:hover{background:var(--purple);transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.micro{display:block;font-size:.85rem;color:var(--purple);margin-top:10px;font-weight:500}
+.btn-sec{display:inline-block;color:var(--plum);font-weight:700;text-decoration:none;border-bottom:2px solid var(--lilac);padding-bottom:3px;transition:border-color .25s}
+.btn-sec:hover{border-color:var(--plum)}
+
+/* header */
+header{padding:22px 0;background:var(--beige)}
+.header-in{display:flex;align-items:center;justify-content:space-between}
+.monogram{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--plum);letter-spacing:.06em;text-decoration:none}
+.monogram span{color:var(--purple)}
+.header-cta{font-size:.92rem;font-weight:700;color:var(--plum);text-decoration:none;border:1.5px solid var(--plum);border-radius:60px;padding:9px 22px;transition:all .25s}
+.header-cta:hover{background:var(--plum);color:var(--white)}
+
+/* hero */
+.hero{padding:64px 0 96px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:20px}
+.hero-sub{font-size:1.12rem;color:#4d4053;margin-bottom:28px;max-width:34rem}
+.hero-bullets{list-style:none;margin-bottom:34px}
+.hero-bullets li{padding-left:32px;position:relative;margin-bottom:10px;font-weight:600;color:var(--plum)}
+.hero-bullets li::before{content:"";position:absolute;left:0;top:9px;width:16px;height:16px;border-radius:50%;background:var(--lilac)}
+.hero-bullets li::after{content:"";position:absolute;left:5px;top:13px;width:6px;height:3px;border-left:2px solid var(--plum);border-bottom:2px solid var(--plum);transform:rotate(-45deg)}
+.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero-photo{position:relative}
+.hero-photo::before{content:"";position:absolute;inset:-28px -18px auto auto;width:88%;height:104%;background:var(--lavender);border-radius:200px 200px 24px 24px;z-index:0;right:-14px;top:-24px}
+.photo-frame{position:relative;z-index:1;aspect-ratio:4/5;border-radius:160px 160px 20px 20px;background:linear-gradient(160deg,var(--lilac),var(--purple));display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-display);font-size:1.05rem;text-align:center;padding:24px}
+.trust{margin-top:22px;font-size:.92rem;color:var(--purple);font-weight:600;font-style:italic}
+
+/* identificação */
+.identify{background:var(--plum);color:var(--beige)}
+.identify h2{color:var(--beige)}
+.identify .scene{font-size:1.15rem;padding:18px 0;border-bottom:1px solid rgba(246,241,234,.18)}
+.identify .scene:last-of-type{border-bottom:none}
+.identify .close{margin-top:34px;font-family:var(--font-display);font-size:1.35rem;color:var(--lilac);line-height:1.5}
+
+/* sobre */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.about-photo{aspect-ratio:4/5;border-radius:20px 20px 160px 160px;background:linear-gradient(200deg,var(--purple),var(--plum));display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-display);text-align:center;padding:24px}
+.about p{margin-bottom:16px}
+.signature{margin-top:26px;font-family:var(--font-display);font-size:1.4rem;color:var(--purple);border-left:4px solid var(--lilac);padding-left:20px;line-height:1.4}
+
+/* serviços */
+.services{background:var(--white)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:36px}
+.svc{background:var(--beige);border-radius:18px;padding:30px 28px}
+.svc h3{font-size:1.2rem;margin-bottom:8px}
+.svc-close{margin-top:40px;text-align:center;font-family:var(--font-display);font-size:1.3rem;color:var(--plum);max-width:38rem;margin-left:auto;margin-right:auto;line-height:1.5}
+
+/* diferencial */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px}
+.diff-card{border-radius:20px;padding:38px 32px}
+.diff-card ul{list-style:none}
+.diff-card li{padding:12px 0 12px 30px;position:relative;border-bottom:1px solid rgba(62,42,71,.1)}
+.diff-card li:last-child{border-bottom:none}
+.diff-a{background:var(--beige-deep);color:#6a5d70}
+.diff-a h3{color:#6a5d70;font-size:1.15rem;margin-bottom:14px}
+.diff-a li::before{content:"—";position:absolute;left:0;color:#a99bb0}
+.diff-b{background:var(--plum);color:var(--beige)}
+.diff-b h3{color:var(--white);font-size:1.15rem;margin-bottom:14px}
+.diff-b li{border-bottom-color:rgba(246,241,234,.15);font-weight:600}
+.diff-b li::before{content:"";position:absolute;left:0;top:19px;width:8px;height:4px;border-left:2px solid var(--lilac);border-bottom:2px solid var(--lilac);transform:rotate(-45deg)}
+.diff-close{margin-top:36px;text-align:center;font-family:var(--font-display);font-size:1.3rem;color:var(--plum)}
+
+/* como funciona */
+.how{background:var(--lavender)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px;counter-reset:step}
+.step{background:var(--white);border-radius:18px;padding:34px 28px;counter-increment:step;position:relative}
+.step::before{content:counter(step,decimal-leading-zero);font-family:var(--font-display);font-size:2.4rem;color:var(--lilac);display:block;margin-bottom:10px}
+.step h3{font-size:1.18rem;margin-bottom:8px}
+.how-cta{text-align:center;margin-top:48px}
+
+/* depoimentos */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:36px}
+.testi{background:var(--white);border-radius:18px;padding:32px 28px;border-top:4px solid var(--lilac)}
+.testi p{font-style:italic;margin-bottom:16px}
+.testi .who{font-weight:700;color:var(--purple);font-size:.92rem;font-style:normal}
+
+/* faq */
+.faq{background:var(--white)}
+details{border-bottom:1px solid var(--beige-deep);padding:20px 0}
+summary{font-weight:700;font-size:1.08rem;color:var(--plum);cursor:pointer;list-style:none;position:relative;padding-right:36px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:-2px;font-family:var(--font-display);font-size:1.6rem;color:var(--lilac);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;color:#4d4053}
+
+/* cta final */
+.final{background:var(--plum-deep);color:var(--beige);text-align:center}
+.final h2{color:var(--white)}
+.final p{max-width:34rem;margin:0 auto 34px;font-size:1.12rem}
+.final .micro{color:var(--lilac)}
+
+footer{padding:30px 0;text-align:center;font-size:.88rem;color:var(--purple);background:var(--beige)}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn:hover{transition:none;transform:none}}
+@media(max-width:860px){
+  section{padding:64px 0}
+  .hero{padding:36px 0 72px}
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:44px}
+  .hero-photo{max-width:340px;margin:0 auto}
+  .about-photo{max-width:320px;margin:0 auto}
+  .diff-grid,.steps{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-in">
+    <a class="monogram" href="#">R<span>M</span> · Rozeli Machado</a>
+    <a class="header-cta" href="https://wa.me/5548988091415" target="_blank" rel="noopener">Falar comigo</a>
+  </div>
+</header>
+
+<!-- BLOCO 1 · HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Assistente virtual para empresárias</span>
+      <h1>Você não precisa dar conta de tudo sozinha</h1>
+      <p class="hero-sub">Trabalho, casa, clientes, agenda — quando tudo depende de você, o negócio para quando você para. Eu organizo os bastidores pra sua rotina voltar a ser leve.</p>
+      <ul class="hero-bullets">
+        <li>Pare de apagar incêndios todos os dias</li>
+        <li>Transforme o caos em rotina organizada</li>
+        <li>Volte a focar no que só você faz</li>
+      </ul>
+      <div class="hero-actions">
+        <div>
+          <a class="btn" href="https://wa.me/5548988091415" target="_blank" rel="noopener">Quero organizar minha rotina</a>
+          <span class="micro">Conversa inicial sem compromisso</span>
+        </div>
+        <a class="btn-sec" href="#sobre">Conhecer a Rozeli</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">[foto da Rozeli aqui]</div>
+      <p class="trust">"Eu já vivi essa sobrecarga — e sei o caminho de saída."</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 2 · IDENTIFICAÇÃO -->
+<section class="identify">
+  <div class="container narrow">
+    <h2>Se o seu dia parece uma corrida que nunca termina, é porque:</h2>
+    <p class="scene">Você responde cliente enquanto termina o almoço.</p>
+    <p class="scene">Abre a agenda de manhã já sabendo que não vai dar conta de tudo — de novo.</p>
+    <p class="scene">Passa o dia apagando incêndio, enquanto a lista do que faria o negócio crescer fica pra depois.</p>
+    <p class="scene">E quando finalmente senta pra descansar, a cabeça continua trabalhando.</p>
+    <p class="close">Tudo isso tem um nome: falta de estrutura. O problema não é você — é carregar sozinha o que deveria ter apoio.</p>
+  </div>
+</section>
+
+<!-- BLOCO 3 · SOBRE -->
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="about-photo">[foto profissional aqui]</div>
+    <div class="about">
+      <span class="eyebrow">Quem cuida dos seus bastidores</span>
+      <h2>Prazer, eu sou a Rozeli — e eu já estive do seu lado do caos.</h2>
+      <p>Antes de me tornar assistente virtual, eu vivi na pele o que é acumular trabalho, casa e família — e sentir que nunca era suficiente.</p>
+      <p>Foi tentando dar conta de tudo sozinha que eu entendi uma coisa: crescimento não vem de trabalhar mais. Vem de ter estrutura e apoio.</p>
+      <p>Hoje, é isso que eu entrego pra empresárias como você: cuido dos bastidores do seu negócio — agenda, demandas, rotina — pra que você tenha tempo e clareza pra focar no que só você pode fazer.</p>
+      <p class="signature">"Negócio estruturado é negócio que dá liberdade."</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 4 · SERVIÇOS -->
+<section class="services">
+  <div class="container">
+    <span class="eyebrow">Na prática</span>
+    <h2>O que sai das suas costas quando eu entro nos bastidores:</h2>
+    <div class="svc-grid">
+      <div class="svc"><h3>Agenda organizada</h3><p>Compromissos, prazos e lembretes sob controle, sem você precisar lembrar de tudo.</p></div>
+      <div class="svc"><h3>Gestão de demandas</h3><p>Tarefas distribuídas, acompanhadas e concluídas, sem nada caindo no esquecimento.</p></div>
+      <div class="svc"><h3>Rotina estruturada</h3><p>Um formato de dia a dia que funciona pra você, não contra você.</p></div>
+      <div class="svc"><h3>Execução garantida</h3><p>O que precisa acontecer, acontece — mesmo quando você está em reunião ou com a família.</p></div>
+      <div class="svc"><h3>Organização de processos</h3><p>O jeito de fazer as coisas documentado, pra sua operação não depender da sua memória.</p></div>
+    </div>
+    <p class="svc-close">Você não precisa de mais horas no dia. Precisa de alguém cuidando do que consome as horas que você já tem.</p>
+  </div>
+</section>
+
+<!-- BLOCO 5 · DIFERENCIAL -->
+<section>
+  <div class="container">
+    <span class="eyebrow">O diferencial</span>
+    <h2>Existem dois tipos de assistente virtual. Só um faz seu negócio crescer.</h2>
+    <div class="diff-grid">
+      <div class="diff-card diff-a">
+        <h3>A que executa tarefas</h3>
+        <ul>
+          <li>Responde o que você manda</li>
+          <li>Espera instrução pra tudo</li>
+          <li>Resolve o urgente de hoje</li>
+          <li>Você continua carregando a operação na cabeça</li>
+        </ul>
+      </div>
+      <div class="diff-card diff-b">
+        <h3>A que entende o negócio — meu trabalho</h3>
+        <ul>
+          <li>Antecipa demandas antes de virarem problema</li>
+          <li>Cria organização que funciona sem cobrança</li>
+          <li>Constrói consistência, não só alívio pontual</li>
+          <li>Você sai da operação e volta pra estratégia</li>
+        </ul>
+      </div>
+    </div>
+    <p class="diff-close">A diferença não está nas tarefas. Está em ter alguém que pensa junto com você.</p>
+  </div>
+</section>
+
+<!-- BLOCO 6 · COMO FUNCIONA -->
+<section class="how">
+  <div class="container">
+    <span class="eyebrow">Como funciona</span>
+    <h2>Começar é mais simples do que organizar sua semana:</h2>
+    <div class="steps">
+      <div class="step"><h3>Conversa inicial</h3><p>Você me conta como é seu dia a dia, o que mais pesa e onde quer chegar. Sem compromisso.</p></div>
+      <div class="step"><h3>Formato ideal</h3><p>Eu monto uma proposta com o formato de apoio certo pro seu momento — nem mais, nem menos do que você precisa.</p></div>
+      <div class="step"><h3>Rotina rodando</h3><p>Começamos juntas. Em poucas semanas, sua rotina já funciona diferente: mais leve, mais clara, mais sua.</p></div>
+    </div>
+    <div class="how-cta">
+      <a class="btn" href="https://wa.me/5548988091415" target="_blank" rel="noopener">Quero organizar minha rotina</a>
+      <span class="micro">Conversa inicial sem compromisso</span>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 7 · DEPOIMENTOS (placeholder — remover se não houver) -->
+<section>
+  <div class="container">
+    <span class="eyebrow">Prova social</span>
+    <h2>O que dizem as empresárias que já delegaram os bastidores:</h2>
+    <div class="testi-grid">
+      <div class="testi"><p>"[Depoimento real da cliente aqui — foco na transformação: antes caótico, depois leve.]"</p><p class="who">Nome · Tipo de negócio</p></div>
+      <div class="testi"><p>"[Depoimento real da cliente aqui.]"</p><p class="who">Nome · Tipo de negócio</p></div>
+      <div class="testi"><p>"[Depoimento real da cliente aqui.]"</p><p class="who">Nome · Tipo de negócio</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 8 · FAQ -->
+<section class="faq">
+  <div class="container narrow">
+    <span class="eyebrow">Dúvidas comuns</span>
+    <h2>Perguntas que toda empresária faz antes de delegar:</h2>
+    <details>
+      <summary>Como funciona a contratação?</summary>
+      <p>Tudo começa com uma conversa gratuita pelo WhatsApp. A partir dela, eu monto uma proposta personalizada com escopo, formato e valor. Você decide sem pressão.</p>
+    </details>
+    <details>
+      <summary>Quanto custa?</summary>
+      <p>Depende do formato de apoio que você precisa. Por isso a proposta é individual — você não paga por um pacote genérico, paga pelo que faz sentido pro seu negócio.</p>
+    </details>
+    <details>
+      <summary>Como eu confio meus bastidores a alguém que não conheço?</summary>
+      <p>Começamos devagar, com demandas menores, e a confiança se constrói na prática. Além disso, trabalho com sigilo total sobre as informações do seu negócio.</p>
+    </details>
+    <details>
+      <summary>E se eu não souber o que delegar?</summary>
+      <p>Isso é o mais comum — e faz parte do meu trabalho te ajudar a enxergar. Na conversa inicial, a gente mapeia juntas o que está consumindo seu tempo.</p>
+    </details>
+    <details>
+      <summary>Preciso assinar contrato de longo prazo?</summary>
+      <p>Não. O formato é combinado entre nós, com flexibilidade pra ajustar conforme seu negócio evolui.</p>
+    </details>
+  </div>
+</section>
+
+<!-- BLOCO 9 · CTA FINAL -->
+<section class="final">
+  <div class="container">
+    <h2>Sua rotina não precisa continuar assim.</h2>
+    <p>Você já provou que consegue fazer tudo sozinha. Agora é hora de provar que consegue crescer com apoio.</p>
+    <a class="btn" href="https://wa.me/5548988091415" target="_blank" rel="noopener">Quero organizar minha rotina</a>
+    <span class="micro">Resposta em até 24h pelo WhatsApp</span>
+  </div>
+</section>
+
+<footer>
+  <div class="container">Rozeli Machado · Assistente Virtual · Grande Florianópolis e todo o Brasil (online)</div>
+</footer>
+
+</body>
+</html>
