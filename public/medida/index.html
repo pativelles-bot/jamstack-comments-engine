@@ -158,9 +158,9 @@ const MARCENARIAS = [
   { nome: "Trilho Móveis", base: "Palhoça", km: 18.4, nota: 4.6, avals: 64, prazo: "30 dias", forte: "Custo-benefício, MDF", agenda: "Sábado, 9h", materiais: ["carvalho", "laca"] },
 ];
 const PROPOSTAS = [
-  { nome: "Ateliê Sambaqui", valor: "62.400", prazo: "45 dias", material: "Lâmina de freijó + MDF Duratex", garantia: "5 anos", pgto: "40 / 30 / 30", destaque: "Acabamento" },
-  { nome: "Serraria Marcenaria", valor: "48.900", prazo: "35 dias", material: "MDF Duratex, ferragens Blum", garantia: "3 anos", pgto: "50 / 50", destaque: "Prazo" },
-  { nome: "Trilho Móveis", valor: "39.700", prazo: "30 dias", material: "MDF Guararapes, ferragens FGV", garantia: "2 anos", pgto: "30 / 40 / 30", destaque: "Preço" },
+  { nome: "Ateliê Sambaqui", valor: "62.400", prazo: "45 dias", dias: 45, material: "Lâmina de freijó + MDF Duratex", garantia: "5 anos", pgto: "40 / 30 / 30", destaque: "Acabamento" },
+  { nome: "Serraria Marcenaria", valor: "48.900", prazo: "35 dias", dias: 35, material: "MDF Duratex, ferragens Blum", garantia: "3 anos", pgto: "50 / 50", destaque: "Prazo" },
+  { nome: "Trilho Móveis", valor: "39.700", prazo: "30 dias", dias: 30, material: "MDF Guararapes, ferragens FGV", garantia: "2 anos", pgto: "30 / 40 / 30", destaque: "Preço" },
 ];
 const OUTROS_LEADS = [
   { tipo: "Closet + home office", bairro: "Jurerê Internacional", km: 22, faixa: "R$ 40 a 80 mil", score: 92, compradopor: 3, fotos: 6, projeto: true, min: 12 },
@@ -169,6 +169,10 @@ const OUTROS_LEADS = [
 ];
 
 /* ---------- helpers ---------- */
+function entrega(dias) {
+  const d = new Date(); d.setDate(d.getDate() + dias);
+  return d.toLocaleDateString("pt-BR", { day: "numeric", month: "short" }).replace(".", "");
+}
 function calcScore(p) {
   let s = 25;
   if (p.tipo) s += 10;
@@ -265,19 +269,19 @@ function App() {
               <span className="eyebrow">Grande Florianópolis</span>
             </div>
             <h1 className="serif ink" style={{ fontSize: 44, lineHeight: 1.02, textWrap: "balance" }}>
-              Móvel sob medida,<br /><em style={{ color: "var(--brand)" }}>medido na sua casa.</em>
+              A casa dos sonhos,<br /><em style={{ color: "var(--brand)" }}>com data e hora marcada.</em>
             </h1>
             <div className="mt-5 mb-4"><Regua cm={12} /></div>
             <p className="text-[14.5px] muted leading-relaxed" style={{ maxWidth: 300 }}>
-              Você descreve o ambiente. Marcenarias selecionadas da região vão até lá medir e orçam sem custo.
+              Praticidade e planejamento: você descreve o ambiente ideal, marcenarias selecionadas medem na sua casa e o sonho fica pronto na data combinada.
             </p>
           </div>
 
           <div className="card px-4 mb-5">
             {[
-              ["Você conta o que precisa", "3 minutos, pelo celular"],
-              ["Até 3 marcenarias respondem", "escolhidas por distância e tipo de obra"],
-              ["Elas medem e orçam", "você compara lado a lado"],
+              ["Você descreve o ambiente ideal", "3 minutos, pelo celular"],
+              ["Até 3 marcenarias medem e orçam", "com hora marcada, sem custo"],
+              ["Você escolhe e fecha a data", "compara prazo, material e entrega lado a lado"],
             ].map(([t, s], i) => (
               <div key={i} className="flex gap-4 items-baseline py-3.5" style={{ borderTop: i ? "1px solid var(--line)" : "none" }}>
                 <span className="serif num" style={{ fontSize: 22, color: "var(--brass)", width: 18 }}>{i + 1}</span>
@@ -289,7 +293,7 @@ function App() {
             ))}
           </div>
 
-          <Btn onClick={() => go(1)}>Começar o pedido</Btn>
+          <Btn onClick={() => go(1)}>Planejar meu ambiente</Btn>
           <p className="text-center text-xs mt-3 muted">Gratuito para quem contrata</p>
         </div>
       );
@@ -388,7 +392,7 @@ function App() {
                   <Swatches list={m.materiais} />
                 </div>
                 <div className="inset flex items-center justify-between px-3 py-2 mb-3">
-                  <span className="eyebrow" style={{ fontSize: 10 }}>Medição livre</span>
+                  <span className="eyebrow" style={{ fontSize: 10 }}>Medição com hora marcada</span>
                   <span className="text-xs font-semibold ink">{m.agenda}</span>
                 </div>
                 <Btn small variant={on ? "brand" : "secondary"}
@@ -412,9 +416,9 @@ function App() {
             <div className="mx-auto mb-3 h-10 w-10 rounded-full flex items-center justify-center" style={{ background: "var(--brand)" }}>
               <Check size={18} color="var(--surface)" strokeWidth={3} />
             </div>
-            <div className="serif ink" style={{ fontSize: 24 }}>Pedido enviado</div>
+            <div className="serif ink" style={{ fontSize: 24 }}>Sonho em andamento</div>
             <p className="text-[13.5px] mt-1 muted">
-              {escolhidas.length} {escolhidas.length === 1 ? "marcenaria vai" : "marcenarias vão"} confirmar a visita em até 4 horas.
+              {escolhidas.length} {escolhidas.length === 1 ? "marcenaria vai" : "marcenarias vão"} confirmar a data e a hora da medição em até 4 horas.
             </p>
           </div>
 
@@ -433,7 +437,7 @@ function App() {
           })}
 
           <div className="h-7" />
-          <Label note="Prévia de como fica quando os orçamentos chegarem.">Comparar propostas</Label>
+          <Label note="Prévia de como fica quando os orçamentos chegarem. Cada proposta traz a data em que o ambiente fica pronto.">Comparar propostas</Label>
           <div className="h-2" />
           {PROPOSTAS.map((o) => (
             <div key={o.nome} className="card p-4 mb-3">
@@ -443,7 +447,7 @@ function App() {
               </div>
               <div className="hair mb-3" />
               <div className="grid grid-cols-[76px_1fr] gap-y-1.5 text-[12.5px]">
-                <span className="muted">Prazo</span><span className="ink">{o.prazo}</span>
+                <span className="muted">Pronto em</span><span className="ink"><span className="font-semibold">{entrega(o.dias)}</span> <span className="muted num">({o.prazo})</span></span>
                 <span className="muted">Material</span><span className="ink">{o.material}</span>
                 <span className="muted">Garantia</span><span className="ink">{o.garantia}</span>
                 <span className="muted">Pagamento</span><span className="ink num">{o.pgto}</span>
@@ -612,8 +616,8 @@ function App() {
       <div className="stage flex flex-col items-center w-full">
         <div className="mb-6 text-center">
           <div className="eyebrow mb-2">Protótipo navegável</div>
-          <div className="serif ink" style={{ fontSize: 30, lineHeight: 1 }}>Marcenaria sob medida, Grande Florianópolis</div>
-          <div className="text-[13.5px] muted mt-2">Troque de lado para ver o mesmo pedido pelos três olhares.</div>
+          <div className="serif ink" style={{ fontSize: 30, lineHeight: 1 }}>A casa dos sonhos, com data e hora marcada</div>
+          <div className="text-[13.5px] muted mt-2">Grande Florianópolis · Troque de lado para ver o mesmo pedido pelos três olhares.</div>
         </div>
 
         <div className="seg mb-7">
