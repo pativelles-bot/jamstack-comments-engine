@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.4/babel.min.js"></script>
+<style>
+  :root {
+    --ink: #14211C;
+    --green: #1E6B57;
+    --green-soft: #E2EDE8;
+    --amber: #B07D18;
+    --muted: #6B7B74;
+    --line: #DCE2DD;
+    --canvas: #E6EAE4;
+    color-scheme: light;
+  }
+  html, body { background: var(--canvas); color: var(--ink); margin: 0; }
+  body { font-family: 'Manrope', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .display { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-variation-settings: 'opsz' 60; letter-spacing: -0.01em; }
+  .num { font-variant-numeric: tabular-nums; }
+  button { font: inherit; }
+  button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+  .phone::-webkit-scrollbar { width: 6px; }
+  .phone::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+  #root { min-height: 100vh; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState } = React;
+
+/* ---------- tokens ---------- */
+const ink = "#14211C";
+const green = "#1E6B57";
+const greenSoft = "#E2EDE8";
+const amber = "#B07D18";
+const muted = "#6B7B74";
+const line = "#DCE2DD";
+const canvas = "#E6EAE4";
+const num = { fontVariantNumeric: "tabular-nums" };
+
+/* ---------- icons (lucide paths, inline) ---------- */
+const PATHS = {
+  ChevronLeft: <path d="m15 18-6-6 6-6" />,
+  MapPin: <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></>,
+  Camera: <><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" /><circle cx="12" cy="13" r="3" /></>,
+  Ruler: <><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z" /><path d="m14.5 12.5 2-2" /><path d="m11.5 9.5 2-2" /><path d="m8.5 6.5 2-2" /><path d="m17.5 15.5 2-2" /></>,
+  Check: <path d="M20 6 9 17l-5-5" />,
+  Star: <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />,
+  Clock: <><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>,
+  Lock: <><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>,
+  Building2: <><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /><path d="M10 6h4" /><path d="M10 10h4" /><path d="M10 14h4" /><path d="M10 18h4" /></>,
+  User: <><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>,
+  Compass: <><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></>,
+  Calendar: <><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></>,
+  ShieldCheck: <><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></>,
+  Plus: <><path d="M5 12h14" /><path d="M12 5v14" /></>,
+  FileText: <><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></>,
+};
+const mkIcon = (name) => ({ size = 16, color = "currentColor", fill = "none", strokeWidth = 2, className, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={color} strokeWidth={strokeWidth}
+       strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+    {PATHS[name]}
+  </svg>
+);
+const ChevronLeft = mkIcon("ChevronLeft"), MapPin = mkIcon("MapPin"), Camera = mkIcon("Camera"), Ruler = mkIcon("Ruler"),
+  Check = mkIcon("Check"), Star = mkIcon("Star"), Clock = mkIcon("Clock"), Lock = mkIcon("Lock"),
+  Building2 = mkIcon("Building2"), User = mkIcon("User"), Compass = mkIcon("Compass"), Calendar = mkIcon("Calendar"),
+  ShieldCheck = mkIcon("ShieldCheck"), Plus = mkIcon("Plus"), FileText = mkIcon("FileText");
+
+/* ---------- data ---------- */
+const TIPOS = [
+  { id: "cozinha", label: "Cozinha", hint: "planejada, ilha, despensa" },
+  { id: "closet", label: "Dormitório e closet", hint: "guarda-roupa, cabeceira" },
+  { id: "office", label: "Home office", hint: "bancada, estante" },
+  { id: "sala", label: "Sala e painel", hint: "rack, buffet, adega" },
+  { id: "gourmet", label: "Área gourmet", hint: "churrasqueira, externa" },
+  { id: "corp", label: "Comercial", hint: "loja, escritório, clínica" },
+];
+
+const OBRA = ["Comprei na planta", "Em obra agora", "Chaves na mão", "Reforma de imóvel usado"];
+const PRAZO = ["Quero começar já", "Em 1 a 3 meses", "Em 3 a 6 meses", "Só pesquisando"];
+const FAIXA = ["Até R$ 15 mil", "R$ 15 a 40 mil", "R$ 40 a 80 mil", "Acima de R$ 80 mil", "Ainda não sei"];
+const PROJETO = ["Tenho projeto de arquiteto", "Tenho referências e ideias", "Preciso de ajuda com o projeto"];
+
+const BAIRROS = [
+  "Campeche", "Centro", "Córrego Grande", "Itacorubi", "Jurerê Internacional",
+  "Lagoa da Conceição", "Santo Antônio de Lisboa", "Trindade", "São José", "Palhoça",
+];
+
+const MARCENARIAS = [
+  { nome: "Ateliê Sambaqui", base: "Santo Antônio de Lisboa", km: 6.2, nota: 4.9, avals: 38, prazo: "45 dias", forte: "Lâmina natural e curvas", agenda: "Quinta, 10h" },
+  { nome: "Serraria Marcenaria", base: "São José", km: 11.8, nota: 4.7, avals: 112, prazo: "35 dias", forte: "Cozinhas e volume", agenda: "Amanhã, 14h" },
+  { nome: "Trilho Móveis", base: "Palhoça", km: 18.4, nota: 4.6, avals: 64, prazo: "30 dias", forte: "Custo-benefício, MDF", agenda: "Sábado, 9h" },
+];
+
+const PROPOSTAS = [
+  { nome: "Ateliê Sambaqui", valor: "R$ 62.400", prazo: "45 dias", material: "Lâmina de freijó + MDF Duratex", garantia: "5 anos", pgto: "40/30/30", destaque: "Acabamento" },
+  { nome: "Serraria Marcenaria", valor: "R$ 48.900", prazo: "35 dias", material: "MDF Duratex, ferragens Blum", garantia: "3 anos", pgto: "50/50", destaque: "Prazo" },
+  { nome: "Trilho Móveis", valor: "R$ 39.700", prazo: "30 dias", material: "MDF Guararapes, ferragens FGV", garantia: "2 anos", pgto: "30/40/30", destaque: "Preço" },
+];
+
+const OUTROS_LEADS = [
+  { tipo: "Closet + home office", bairro: "Jurerê Internacional", km: 22, faixa: "R$ 40 a 80 mil", score: 92, compradopor: 3, fotos: 6, projeto: true, min: 12 },
+  { tipo: "Rack e painel de sala", bairro: "Trindade", km: 4, faixa: "Ainda não sei", score: 34, compradopor: 0, fotos: 0, projeto: false, min: 55 },
+  { tipo: "Cozinha compacta", bairro: "Palhoça", km: 19, faixa: "Até R$ 15 mil", score: 61, compradopor: 1, fotos: 2, projeto: false, min: 130 },
+];
+
+/* ---------- helpers ---------- */
+function calcScore(p) {
+  let s = 25;
+  if (p.tipo) s += 10;
+  if (p.obra) s += 15;
+  if (p.prazo && p.prazo !== "Só pesquisando") s += 15;
+  if (p.faixa && p.faixa !== "Ainda não sei") s += 15;
+  if (p.fotos > 0) s += 10;
+  if (p.projeto === "Tenho projeto de arquiteto") s += 10;
+  return Math.min(s, 100);
+}
+function precoLead(score, comprado) {
+  const base = score >= 80 ? 48 : score >= 55 ? 32 : 16;
+  return Math.max(8, Math.round(base * (1 - comprado * 0.2)));
+}
+function faixaTemp(score) {
+  if (score >= 80) return { txt: "Pronto para fechar", cor: green, bg: greenSoft };
+  if (score >= 55) return { txt: "Em avaliação", cor: amber, bg: "#F7EFDD" };
+  return { txt: "Pesquisando", cor: muted, bg: "#EDEFEC" };
+}
+
+/* ---------- ui atoms ---------- */
+const Btn = ({ children, onClick, variant = "primary", disabled, small }) => {
+  const st =
+    variant === "primary"
+      ? { background: disabled ? "#B9C4BE" : green, color: "#fff", border: "1px solid transparent" }
+      : variant === "ghost"
+      ? { background: "transparent", color: green, border: `1px solid ${line}` }
+      : { background: "#fff", color: ink, border: `1px solid ${line}` };
+  return (
+    <button
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
+      className={`w-full rounded-xl font-semibold transition-colors ${small ? "py-2 text-sm" : "py-3.5"}`}
+      style={{ ...st, cursor: disabled ? "not-allowed" : "pointer" }}
+    >
+      {children}
+    </button>
+  );
+};
+
+const Pick = ({ label, hint, active, onClick }) => (
+  <button
+    onClick={onClick}
+    className="w-full text-left rounded-xl px-4 py-3 mb-2 transition-colors"
+    style={{ background: active ? greenSoft : "#fff", border: `1px solid ${active ? green : line}`, color: ink }}
+  >
+    <div className="flex items-center justify-between">
+      <div>
+        <div className="font-semibold text-sm">{label}</div>
+        {hint && <div className="text-xs mt-0.5" style={{ color: muted }}>{hint}</div>}
+      </div>
+      {active && <Check size={16} color={green} strokeWidth={3} />}
+    </div>
+  </button>
+);
+
+const Bar = ({ pct }) => (
+  <div className="h-1 w-full rounded-full" style={{ background: line }}>
+    <div className="h-1 rounded-full transition-all" style={{ width: `${pct}%`, background: green }} />
+  </div>
+);
+
+const Head = ({ onBack, title, sub }) => (
+  <div className="mb-5">
+    {onBack && (
+      <button onClick={onBack} className="mb-3 flex items-center gap-1 text-sm" style={{ color: muted }}>
+        <ChevronLeft size={16} /> Voltar
+      </button>
+    )}
+    <h2 className="text-xl leading-tight font-bold" style={{ color: ink, textWrap: "balance" }}>{title}</h2>
+    {sub && <p className="text-sm mt-1.5" style={{ color: muted }}>{sub}</p>}
+  </div>
+);
+
+const EMPTY = { tipo: null, obra: null, prazo: null, faixa: null, projeto: null, bairro: null, fotos: 0 };
+
+/* ---------- app ---------- */
+function App() {
+  const [persona, setPersona] = useState("cliente");
+  const [step, setStep] = useState(0);
+  const [p, setP] = useState(EMPTY);
+  const [escolhidas, setEscolhidas] = useState([]);
+  const [desbloqueados, setDesbloqueados] = useState([]);
+  const [creditos, setCreditos] = useState(120);
+
+  const score = calcScore(p);
+  const set = (k, v) => setP({ ...p, [k]: v });
+  const go = (n) => setStep(n);
+  const reset = () => { setStep(0); setP(EMPTY); setEscolhidas([]); };
+
+  /* ----- cliente ----- */
+  const cliente = () => {
+    if (step === 0)
+      return (
+        <div>
+          <div className="pt-6 pb-8">
+            <div className="flex items-center gap-2 mb-6">
+              <Ruler size={20} color={green} />
+              <span className="text-lg font-bold tracking-tight" style={{ color: ink }}>Medida</span>
+            </div>
+            <h1 className="display text-4xl leading-tight" style={{ color: ink, fontWeight: 500 }}>
+              Móvel sob medida,<br />medido na sua casa.
+            </h1>
+            <p className="text-sm mt-3 leading-relaxed" style={{ color: muted }}>
+              Você descreve o ambiente. Marcenarias da Grande Florianópolis vão até lá medir e orçam sem custo.
+            </p>
+          </div>
+          <div className="rounded-2xl p-4 mb-5" style={{ background: "#fff", border: `1px solid ${line}` }}>
+            {[
+              ["Você conta o que precisa", "3 minutos, pelo celular"],
+              ["Até 3 marcenarias respondem", "escolhidas por distância e tipo de obra"],
+              ["Elas medem e orçam", "você compara lado a lado"],
+            ].map(([t, s], i) => (
+              <div key={i} className="flex gap-3 py-2.5" style={{ borderTop: i ? `1px solid ${line}` : "none" }}>
+                <div className="mt-0.5 h-5 w-5 shrink-0 rounded-full flex items-center justify-center text-xs font-bold num"
+                     style={{ background: greenSoft, color: green }}>{i + 1}</div>
+                <div>
+                  <div className="text-sm font-semibold" style={{ color: ink }}>{t}</div>
+                  <div className="text-xs" style={{ color: muted }}>{s}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Btn onClick={() => go(1)}>Começar</Btn>
+          <p className="text-center text-xs mt-3" style={{ color: muted }}>Gratuito para quem contrata</p>
+        </div>
+      );
+
+    if (step === 1)
+      return (
+        <div className="pt-4">
+          <Bar pct={20} />
+          <div className="h-5" />
+          <Head onBack={() => go(0)} title="O que você quer fazer?" sub="Escolha o principal. Dá para incluir outros depois." />
+          {TIPOS.map((t) => (
+            <Pick key={t.id} label={t.label} hint={t.hint} active={p.tipo === t.id}
+                  onClick={() => { set("tipo", t.id); setTimeout(() => go(2), 120); }} />
+          ))}
+        </div>
+      );
+
+    if (step === 2)
+      return (
+        <div className="pt-4">
+          <Bar pct={45} />
+          <div className="h-5" />
+          <Head onBack={() => go(1)} title="Como está o imóvel?" sub="Isso define quem consegue medir e quando." />
+          <div className="mb-5">
+            {OBRA.map((o) => <Pick key={o} label={o} active={p.obra === o} onClick={() => set("obra", o)} />)}
+          </div>
+          <p className="text-sm font-semibold mb-2" style={{ color: ink }}>Quando pretende instalar?</p>
+          <div className="mb-5">
+            {PRAZO.map((o) => <Pick key={o} label={o} active={p.prazo === o} onClick={() => set("prazo", o)} />)}
+          </div>
+          <p className="text-sm font-semibold mb-1" style={{ color: ink }}>Quanto pensa em investir?</p>
+          <p className="text-xs mb-2" style={{ color: muted }}>Só a marcenaria vê. Serve para ela não te orçar fora da realidade.</p>
+          <div className="mb-6">
+            {FAIXA.map((o) => <Pick key={o} label={o} active={p.faixa === o} onClick={() => set("faixa", o)} />)}
+          </div>
+          <Btn onClick={() => go(3)} disabled={!p.obra || !p.prazo || !p.faixa}>Continuar</Btn>
+        </div>
+      );
+
+    if (step === 3)
+      return (
+        <div className="pt-4">
+          <Bar pct={70} />
+          <div className="h-5" />
+          <Head onBack={() => go(2)} title="Onde fica e o que já existe" />
+          <p className="text-sm font-semibold mb-2" style={{ color: ink }}>Bairro</p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {BAIRROS.map((b) => (
+              <button key={b} onClick={() => set("bairro", b)}
+                className="rounded-full px-3 py-1.5 text-xs font-semibold"
+                style={{ background: p.bairro === b ? green : "#fff", color: p.bairro === b ? "#fff" : ink, border: `1px solid ${p.bairro === b ? green : line}` }}>
+                {b}
+              </button>
+            ))}
+          </div>
+          <p className="text-sm font-semibold mb-2" style={{ color: ink }}>Você já tem projeto?</p>
+          <div className="mb-6">
+            {PROJETO.map((o) => <Pick key={o} label={o} active={p.projeto === o} onClick={() => set("projeto", o)} />)}
+          </div>
+          <p className="text-sm font-semibold mb-1" style={{ color: ink }}>Fotos do ambiente</p>
+          <p className="text-xs mb-3" style={{ color: muted }}>Quem envia foto recebe orçamento 3x mais rápido.</p>
+          <div className="flex gap-2 mb-6">
+            {[0, 1, 2].map((i) => (
+              <button key={i} onClick={() => set("fotos", Math.max(p.fotos, i + 1))} aria-label={`Adicionar foto ${i + 1}`}
+                className="flex-1 aspect-square rounded-xl flex items-center justify-center"
+                style={{ background: p.fotos > i ? greenSoft : "#fff", border: `1px dashed ${p.fotos > i ? green : line}` }}>
+                {p.fotos > i ? <Check size={18} color={green} strokeWidth={3} /> : <Camera size={18} color={muted} />}
+              </button>
+            ))}
+          </div>
+          <Btn onClick={() => go(4)} disabled={!p.bairro || !p.projeto}>Ver marcenarias próximas</Btn>
+        </div>
+      );
+
+    if (step === 4)
+      return (
+        <div className="pt-4">
+          <Bar pct={90} />
+          <div className="h-5" />
+          <Head onBack={() => go(3)} title="3 marcenarias atendem seu bairro"
+                sub={`Ordenadas por distância até ${p.bairro}. Escolha quem você quer que vá medir.`} />
+          {MARCENARIAS.map((m) => {
+            const on = escolhidas.includes(m.nome);
+            return (
+              <div key={m.nome} className="rounded-2xl p-4 mb-3" style={{ background: "#fff", border: `1px solid ${on ? green : line}` }}>
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <div className="font-bold text-sm" style={{ color: ink }}>{m.nome}</div>
+                    <div className="flex items-center gap-1 text-xs mt-1" style={{ color: muted }}>
+                      <MapPin size={12} /> {m.base} · <span className="num">{m.km} km</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 shrink-0">
+                    <Star size={13} color={amber} fill={amber} />
+                    <span className="text-sm font-bold num" style={{ color: ink }}>{m.nota}</span>
+                    <span className="text-xs" style={{ color: muted }}>({m.avals})</span>
+                  </div>
+                </div>
+                <div className="flex gap-4 text-xs mb-3" style={{ color: muted }}>
+                  <span className="flex items-center gap-1"><Clock size={12} /> {m.prazo}</span>
+                  <span>{m.forte}</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg px-3 py-2 mb-3" style={{ background: canvas }}>
+                  <span className="text-xs" style={{ color: muted }}>Medição livre</span>
+                  <span className="text-xs font-semibold" style={{ color: ink }}>{m.agenda}</span>
+                </div>
+                <Btn small variant={on ? "ghost" : "secondary"}
+                     onClick={() => setEscolhidas(on ? escolhidas.filter((x) => x !== m.nome) : [...escolhidas, m.nome])}>
+                  {on ? "Selecionada" : "Quero esta"}
+                </Btn>
+              </div>
+            );
+          })}
+          <div className="h-2" />
+          <Btn onClick={() => go(5)} disabled={escolhidas.length === 0}>
+            Agendar {escolhidas.length || ""} {escolhidas.length === 1 ? "medição" : "medições"}
+          </Btn>
+        </div>
+      );
+
+    if (step === 5)
+      return (
+        <div className="pt-4">
+          <div className="rounded-2xl p-5 mb-5 text-center" style={{ background: greenSoft, border: `1px solid ${green}` }}>
+            <div className="mx-auto mb-3 h-10 w-10 rounded-full flex items-center justify-center" style={{ background: green }}>
+              <Check size={20} color="#fff" strokeWidth={3} />
+            </div>
+            <div className="font-bold" style={{ color: ink }}>Pedido enviado</div>
+            <p className="text-sm mt-1" style={{ color: muted }}>
+              {escolhidas.length} {escolhidas.length === 1 ? "marcenaria vai" : "marcenarias vão"} confirmar a visita em até 4 horas.
+            </p>
+          </div>
+
+          <p className="text-sm font-semibold mb-2" style={{ color: ink }}>Suas medições</p>
+          {escolhidas.map((n) => {
+            const m = MARCENARIAS.find((x) => x.nome === n);
+            return (
+              <div key={n} className="rounded-xl p-3 mb-2 flex items-center gap-3" style={{ background: "#fff", border: `1px solid ${line}` }}>
+                <Calendar size={16} color={green} />
+                <div className="flex-1">
+                  <div className="text-sm font-semibold" style={{ color: ink }}>{m.nome}</div>
+                  <div className="text-xs" style={{ color: muted }}>{m.agenda} · aguardando confirmação</div>
+                </div>
+              </div>
+            );
+          })}
+
+          <div className="h-6" />
+          <p className="text-sm font-semibold mb-1" style={{ color: ink }}>Comparar propostas</p>
+          <p className="text-xs mb-3" style={{ color: muted }}>Prévia de como fica quando os orçamentos chegarem.</p>
+          {PROPOSTAS.map((o) => (
+            <div key={o.nome} className="rounded-2xl p-4 mb-3" style={{ background: "#fff", border: `1px solid ${line}` }}>
+              <div className="flex justify-between items-baseline mb-2">
+                <span className="text-sm font-bold" style={{ color: ink }}>{o.nome}</span>
+                <span className="text-lg font-bold num" style={{ color: ink }}>{o.valor}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-y-1.5 text-xs" style={{ color: muted }}>
+                <span>Prazo</span><span style={{ color: ink }}>{o.prazo}</span>
+                <span>Material</span><span style={{ color: ink }}>{o.material}</span>
+                <span>Garantia</span><span style={{ color: ink }}>{o.garantia}</span>
+                <span>Pagamento</span><span style={{ color: ink }}>{o.pgto}</span>
+              </div>
+              <div className="mt-3 inline-block rounded-full px-2.5 py-1 text-xs font-semibold" style={{ background: greenSoft, color: green }}>
+                Melhor em {o.destaque.toLowerCase()}
+              </div>
+            </div>
+          ))}
+          <div className="h-2" />
+          <Btn variant="ghost" onClick={reset}>Simular outro pedido</Btn>
+        </div>
+      );
+  };
+
+  /* ----- marceneiro ----- */
+  const marceneiro = () => {
+    const meu = p.tipo
+      ? [{
+          tipo: TIPOS.find((t) => t.id === p.tipo).label,
+          bairro: p.bairro || "—", km: 7, faixa: p.faixa || "Ainda não sei",
+          score, compradopor: 0, fotos: p.fotos, projeto: p.projeto === "Tenho projeto de arquiteto", min: 2, meu: true,
+        }]
+      : [];
+    const leads = [...meu, ...OUTROS_LEADS];
+
+    return (
+      <div className="pt-6">
+        <div className="flex items-center justify-between mb-5">
+          <div>
+            <div className="text-lg font-bold" style={{ color: ink }}>Pedidos perto de você</div>
+            <div className="text-xs" style={{ color: muted }}>Raio de 25 km · São José</div>
+          </div>
+          <div className="rounded-full px-3 py-1.5 text-sm font-bold num" style={{ background: greenSoft, color: green }}>
+            {creditos} créditos
+          </div>
+        </div>
+
+        {!p.tipo && (
+          <div className="rounded-xl p-3 mb-4 text-xs" style={{ background: "#F7EFDD", color: amber, border: "1px solid #E8D9B8" }}>
+            Faça um pedido no modo Cliente e ele aparece aqui no topo, com a pontuação calculada.
+          </div>
+        )}
+
+        {leads.map((l, i) => {
+          const t = faixaTemp(l.score);
+          const preco = precoLead(l.score, l.compradopor);
+          const key = l.meu ? "meu" : i;
+          const aberto = desbloqueados.includes(key);
+          return (
+            <div key={key} className="rounded-2xl p-4 mb-3" style={{ background: "#fff", border: `1px solid ${l.meu ? green : line}` }}>
+              {l.meu && <div className="text-xs font-semibold mb-2" style={{ color: green }}>Seu pedido de teste</div>}
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <div className="font-bold text-sm" style={{ color: ink }}>{l.tipo}</div>
+                  <div className="flex items-center gap-1 text-xs mt-1" style={{ color: muted }}>
+                    <MapPin size={12} /> {l.bairro} · <span className="num">{l.km} km</span> · há <span className="num">{l.min}min</span>
+                  </div>
+                </div>
+                <div className="rounded-full px-2.5 py-1 text-xs font-semibold shrink-0" style={{ background: t.bg, color: t.cor }}>
+                  {t.txt}
+                </div>
+              </div>
+
+              <div className="rounded-lg p-3 mb-3" style={{ background: canvas }}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs" style={{ color: muted }}>Qualificação do pedido</span>
+                  <span className="text-sm font-bold num" style={{ color: t.cor }}>{l.score}/100</span>
+                </div>
+                <Bar pct={l.score} />
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {[
+                    [`Orçamento: ${l.faixa}`, l.faixa !== "Ainda não sei"],
+                    [`${l.fotos} fotos`, l.fotos > 0],
+                    ["Projeto pronto", l.projeto],
+                  ].map(([txt, ok], j) => (
+                    <span key={j} className="rounded-full px-2 py-0.5 text-xs" style={{ background: ok ? greenSoft : "#EDEFEC", color: ok ? green : muted }}>
+                      {ok ? "✓ " : "— "}{txt}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {aberto ? (
+                <div className="rounded-lg p-3" style={{ background: greenSoft }}>
+                  <div className="text-sm font-semibold" style={{ color: ink }}>Marina Rebelo · (48) 996••-••21</div>
+                  <div className="text-xs mt-1" style={{ color: muted }}>Rua das Araucárias, 340 · disponível quinta 10h</div>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs flex items-center gap-1" style={{ color: muted }}>
+                      <Lock size={12} /> Contato bloqueado
+                    </span>
+                    <span className="text-xs" style={{ color: muted }}>
+                      {l.compradopor === 0 ? "Nenhuma marcenaria ainda" : `${l.compradopor} já responderam`}
+                    </span>
+                  </div>
+                  <Btn small disabled={creditos < preco}
+                       onClick={() => { setDesbloqueados([...desbloqueados, key]); setCreditos(creditos - preco); }}>
+                    Desbloquear por {preco} créditos
+                  </Btn>
+                  <div className="flex items-start gap-1.5 mt-2">
+                    <ShieldCheck size={13} color={green} className="mt-0.5 shrink-0" />
+                    <span className="text-xs" style={{ color: muted }}>
+                      Crédito devolvido se o cliente não responder em 48h.
+                    </span>
+                  </div>
+                </>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  /* ----- arquiteto ----- */
+  const arquiteto = () => (
+    <div className="pt-6">
+      <div className="mb-5">
+        <div className="text-lg font-bold" style={{ color: ink }}>Seus projetos</div>
+        <div className="text-xs" style={{ color: muted }}>Envie a planta e receba orçamentos das marcenarias parceiras</div>
+      </div>
+
+      {[
+        { obra: "Apto 802 · Beira-Mar Norte", cli: "Família Cardoso", amb: "Cozinha, closet, home office", st: "3 orçamentos recebidos", cor: green, bg: greenSoft },
+        { obra: "Casa · Santo Antônio de Lisboa", cli: "Ana Prado", amb: "Área gourmet", st: "Medição quinta, 10h", cor: amber, bg: "#F7EFDD" },
+        { obra: "Clínica · Itacorubi", cli: "Dra. Helena V.", amb: "Recepção e 4 consultórios", st: "Aguardando planta", cor: muted, bg: "#EDEFEC" },
+      ].map((x) => (
+        <div key={x.obra} className="rounded-2xl p-4 mb-3" style={{ background: "#fff", border: `1px solid ${line}` }}>
+          <div className="flex justify-between items-start mb-2 gap-2">
+            <div>
+              <div className="font-bold text-sm" style={{ color: ink }}>{x.obra}</div>
+              <div className="text-xs mt-0.5" style={{ color: muted }}>{x.cli}</div>
+            </div>
+            <span className="rounded-full px-2.5 py-1 text-xs font-semibold shrink-0" style={{ background: x.bg, color: x.cor }}>{x.st}</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-xs" style={{ color: muted }}>
+            <FileText size={12} /> {x.amb}
+          </div>
+        </div>
+      ))}
+
+      <div className="rounded-2xl p-4 mb-3" style={{ background: "#fff", border: `1px dashed ${line}` }}>
+        <div className="flex items-center gap-2 mb-1">
+          <Plus size={16} color={green} />
+          <span className="text-sm font-semibold" style={{ color: ink }}>Novo projeto</span>
+        </div>
+        <p className="text-xs" style={{ color: muted }}>Suba a planta em PDF ou DWG e escolha quantas marcenarias devem orçar.</p>
+      </div>
+
+      <div className="rounded-2xl p-4" style={{ background: greenSoft }}>
+        <div className="text-sm font-semibold mb-1" style={{ color: ink }}>Por que arquitetos usam</div>
+        <p className="text-xs leading-relaxed" style={{ color: muted }}>
+          Você não paga nada e não perde o cliente. As marcenarias competem pelo seu projeto, e o histórico de prazo e
+          execução de cada uma fica registrado, para você não repetir uma escolha ruim.
+        </p>
+      </div>
+    </div>
+  );
+
+  const abas = [
+    { id: "cliente", label: "Cliente", Icon: User },
+    { id: "marceneiro", label: "Marcenaria", Icon: Building2 },
+    { id: "arquiteto", label: "Arquiteto", Icon: Compass },
+  ];
+
+  return (
+    <div className="min-h-screen w-full flex flex-col items-center py-8 px-4" style={{ background: canvas }}>
+      <div className="mb-5 text-center">
+        <div className="text-sm font-semibold" style={{ color: ink }}>Protótipo · Medida</div>
+        <div className="text-xs" style={{ color: muted }}>Troque de lado para ver o mesmo pedido pelos três olhares</div>
+      </div>
+
+      <div className="flex gap-1 p-1 rounded-full mb-5" style={{ background: "#fff", border: `1px solid ${line}` }}>
+        {abas.map(({ id, label, Icon }) => (
+          <button key={id} onClick={() => setPersona(id)}
+            className="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition-colors"
+            style={{ background: persona === id ? green : "transparent", color: persona === id ? "#fff" : muted }}>
+            <Icon size={14} /> {label}
+          </button>
+        ))}
+      </div>
+
+      <div className="w-full rounded-3xl overflow-hidden shadow-xl"
+           style={{ maxWidth: 400, height: 720, background: canvas, border: `1px solid ${line}` }}>
+        <div className="phone h-full overflow-y-auto px-5 pb-10">
+          {persona === "cliente" && cliente()}
+          {persona === "marceneiro" && marceneiro()}
+          {persona === "arquiteto" && arquiteto()}
+        </div>
+      </div>
+
+      <p className="text-xs mt-5 text-center max-w-sm" style={{ color: muted }}>
+        Dica: complete um pedido como Cliente e depois abra Marcenaria. O mesmo pedido aparece lá como lead, com pontuação e preço em créditos.
+      </p>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
