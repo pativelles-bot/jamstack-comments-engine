@@ -1,8 +1,10 @@
-# Static deploy of the Danielli Vanz landing page.
+# Deploy estático do repositório de protótipos (site Netlify: grupopv-dev).
 #
-# The site is a single, self-contained index.html living in ./public.
-# We set `base` to that folder so Netlify runs there: it finds no package.json,
-# skips dependency installation, and simply publishes the static files.
+# Publicamos a pasta ./public como está: cada projeto vive em public/<slug>/index.html
+# e a raiz é apenas o índice. Definimos `base` como essa pasta para o Netlify rodar ali,
+# não encontrar package.json, pular a instalação de dependências e publicar os arquivos.
+#
+# Leia CLAUDE.md antes de adicionar um projeto novo.
 [build]
   base = "public"
   publish = "."

@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.4/babel.min.js"></script>
+<style>
+  :root {
+    --ink: #1C1F1D;
+    --ink-2: #3A3E3B;
+    --ground: #EEE9E0;
+    --ground-2: #E4DED3;
+    --surface: #FBF9F4;
+    --brand: #2F5D4E;
+    --brand-soft: #E3EBE6;
+    --brass: #B08A4F;
+    --brass-soft: #F1E7D3;
+    --muted: #7B7F78;
+    --line: #D9D3C7;
+    --line-strong: #BFB7A8;
+    --frame: #17191A;
+    color-scheme: light;
+  }
+  html, body { background: var(--ground); color: var(--ink); margin: 0; }
+  body { font-family: 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; font-size: 15px; }
+  .serif { font-family: 'Instrument Serif', 'Times New Roman', Georgia, serif; letter-spacing: -0.01em; font-weight: 400; }
+  .num { font-variant-numeric: tabular-nums; }
+  .eyebrow { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+  .ink { color: var(--ink); } .muted { color: var(--muted); } .brand { color: var(--brand); } .brass { color: var(--brass); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+  .card.on { border-color: var(--ink); }
+  .card.ghost { background: transparent; border-style: dashed; }
+  .inset { background: var(--ground); border-radius: 10px; }
+  .btn { width: 100%; border-radius: 10px; font-weight: 600; letter-spacing: 0.01em; transition: background .15s, color .15s, border-color .15s; cursor: pointer; border: 1px solid transparent; }
+  .btn-lg { padding: 14px 16px; font-size: 15px; } .btn-sm { padding: 9px 12px; font-size: 13.5px; }
+  .btn-primary { background: var(--ink); color: var(--surface); }
+  .btn-primary:hover { background: #000; }
+  .btn[disabled] { background: var(--ground-2); color: var(--muted); cursor: not-allowed; border-color: transparent; }
+  .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
+  .btn-secondary:hover { border-color: var(--ink); }
+  .btn-ghost { background: transparent; color: var(--brand); border-color: var(--line); }
+  .btn-brand { background: var(--brand); color: var(--surface); }
+  .pick { width: 100%; text-align: left; border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); transition: border-color .15s, background .15s; }
+  .pick:hover { border-color: var(--line-strong); }
+  .pick.on { border-color: var(--ink); background: #F5F1E8; }
+  .chip { border-radius: 999px; padding: 6px 12px; font-size: 12.5px; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--ink); transition: all .15s; }
+  .chip.on { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .tag { display: inline-flex; align-items: center; gap: 4px; border-radius: 999px; padding: 3px 9px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
+  .tag-brand { background: var(--brand-soft); color: var(--brand); }
+  .tag-brass { background: var(--brass-soft); color: #8A6A32; }
+  .tag-mute { background: var(--ground-2); color: var(--muted); }
+  .tag-ink { background: var(--ink); color: var(--surface); }
+  .hair { height: 1px; background: var(--line); }
+  .track { height: 3px; width: 100%; border-radius: 2px; background: var(--ground-2); }
+  .track > div { height: 3px; border-radius: 2px; background: var(--ink); transition: width .3s; }
+  .swatch { width: 18px; height: 18px; border-radius: 4px; border: 1px solid rgba(0,0,0,.12); flex-shrink: 0; }
+  .freijo { background: repeating-linear-gradient(100deg, #C9A574 0 3px, #B98F5C 3px 5px, #D4B283 5px 9px); }
+  .nogueira { background: repeating-linear-gradient(95deg, #6E4A31 0 4px, #5A3A26 4px 6px, #7C553A 6px 10px); }
+  .carvalho { background: repeating-linear-gradient(105deg, #D9C6A2 0 3px, #C6B08A 3px 4px, #E2D1B0 4px 9px); }
+  .laca { background: linear-gradient(135deg, #EDE9E1, #D9D3C7); }
+  .pedra { background: linear-gradient(135deg, #B9B6AE, #8E8B84); }
+  .field { width: 100%; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); padding: 10px 12px; font-size: 14px; }
+  .field:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+  .flabel { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin-bottom: 5px; display: block; }
+  .badge { min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--brass); color: #fff; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+  .seg button.on .badge { background: var(--brass); }
+  .tl { position: relative; padding-left: 26px; }
+  .tl::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: var(--line-strong); }
+  .tl-item { position: relative; padding-bottom: 18px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot { position: absolute; left: -26px; top: 3px; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid var(--line-strong); background: var(--surface); display: flex; align-items: center; justify-content: center; }
+  .tl-dot.done { background: var(--ink); border-color: var(--ink); }
+  .tl-dot.now { border-color: var(--brand); background: var(--brand-soft); box-shadow: 0 0 0 3px rgba(47,93,78,.18); }
+  .pulse { animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .45 } }
+  button { font: inherit; }
+  button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .phone-frame { background: var(--frame); border-radius: 44px; padding: 10px; box-shadow: 0 30px 60px -20px rgba(28,31,29,.45), 0 0 0 1px rgba(255,255,255,.06) inset; }
+  .phone-screen { background: var(--ground); border-radius: 36px; overflow: hidden; height: 760px; display: flex; flex-direction: column; }
+  .phone-scroll { flex: 1; overflow-y: auto; padding: 0 20px 44px; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  .phone-scroll::-webkit-scrollbar { width: 5px; } .phone-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+  .statusbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 26px 6px; font-size: 13px; font-weight: 600; color: var(--ink); }
+  .homebar { height: 5px; width: 120px; border-radius: 3px; background: var(--ink); opacity: .85; margin: 0 auto 8px; }
+  .seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+  .seg button { display: flex; align-items: center; gap: 6px; border-radius: 999px; padding: 8px 16px; font-size: 13.5px; font-weight: 600; color: var(--muted); transition: all .15s; }
+  .seg button.on { background: var(--ink); color: var(--surface); }
+  .backdrop-word { position: fixed; left: 50%; bottom: -0.18em; transform: translateX(-50%); font-size: min(34vw, 420px); line-height: 1; color: var(--ground-2); pointer-events: none; user-select: none; z-index: 0; white-space: nowrap; }
+  .stage { position: relative; z-index: 1; }
+  .toast { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); background: var(--ink); color: var(--surface); font-size: 12.5px; font-weight: 500; padding: 9px 14px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.25); white-space: nowrap; z-index: 5; }
+  #root { min-height: 100vh; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef } = React;
+
+/* ---------- icons (lucide paths, inline) ---------- */
+const PATHS = {
+  ChevronLeft: <path d="m15 18-6-6 6-6" />,
+  MapPin: <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></>,
+  Camera: <><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" /><circle cx="12" cy="13" r="3" /></>,
+  Check: <path d="M20 6 9 17l-5-5" />,
+  Star: <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />,
+  Clock: <><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>,
+  Lock: <><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>,
+  Building2: <><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /><path d="M10 6h4" /><path d="M10 10h4" /><path d="M10 14h4" /><path d="M10 18h4" /></>,
+  User: <><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>,
+  Compass: <><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></>,
+  Calendar: <><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></>,
+  ShieldCheck: <><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></>,
+  Plus: <><path d="M5 12h14" /><path d="M12 5v14" /></>,
+  FileText: <><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></>,
+  ArrowRight: <><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></>,
+  Paperclip: <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />,
+  RotateCcw: <><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /></>,
+  Send: <><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></>,
+};
+const mkIcon = (name) => ({ size = 16, color = "currentColor", fill = "none", strokeWidth = 1.75, className, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={color} strokeWidth={strokeWidth}
+       strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+    {PATHS[name]}
+  </svg>
+);
+const ChevronLeft = mkIcon("ChevronLeft"), MapPin = mkIcon("MapPin"), Camera = mkIcon("Camera"),
+  Check = mkIcon("Check"), Star = mkIcon("Star"), Clock = mkIcon("Clock"), Lock = mkIcon("Lock"),
+  Building2 = mkIcon("Building2"), User = mkIcon("User"), Compass = mkIcon("Compass"), Calendar = mkIcon("Calendar"),
+  ShieldCheck = mkIcon("ShieldCheck"), Plus = mkIcon("Plus"), FileText = mkIcon("FileText"), ArrowRight = mkIcon("ArrowRight"),
+  Paperclip = mkIcon("Paperclip"), RotateCcw = mkIcon("RotateCcw"), Send = mkIcon("Send");
+
+/* Escala de régua: o detalhe do ofício. */
+const Regua = ({ cm = 12 }) => {
+  const ticks = [];
+  for (let i = 0; i <= cm * 10; i++) {
+    const x = 1 + i * 2.6;
+    const h = i % 10 === 0 ? 12 : i % 5 === 0 ? 8 : 4.5;
+    ticks.push(<line key={i} x1={x} y1={0} x2={x} y2={h} stroke="var(--ink)" strokeWidth={i % 10 === 0 ? 1 : 0.6} opacity={i % 10 === 0 ? 0.9 : 0.5} />);
+    if (i % 10 === 0 && i < cm * 10) ticks.push(<text key={"t" + i} x={x + 2} y={19} fontSize="7" fontFamily="Hanken Grotesk, sans-serif" fontWeight="600" fill="var(--muted)">{i / 10}</text>);
+  }
+  return <svg viewBox={`0 0 ${cm * 26 + 4} 22`} width="100%" height="22" style={{ display: "block" }} aria-hidden="true"><line x1="0" y1="0.5" x2={cm * 26 + 4} y2="0.5" stroke="var(--ink)" strokeWidth="1" />{ticks}</svg>;
+};
+
+const Wordmark = ({ size = 22 }) => (
+  <span className="serif" style={{ fontSize: size, lineHeight: 1, color: "var(--ink)", letterSpacing: "-0.02em" }}>
+    Medida<span style={{ color: "var(--brass)" }}>.</span>
+  </span>
+);
+
+/* ---------- dados ---------- */
+const EU = "Serraria Marcenaria"; // a marcenaria que você controla na simulação
+
+const TIPOS = [
+  { id: "cozinha", label: "Cozinha", hint: "planejada, ilha, despensa" },
+  { id: "closet", label: "Dormitório e closet", hint: "guarda-roupa, cabeceira" },
+  { id: "office", label: "Home office", hint: "bancada, estante" },
+  { id: "sala", label: "Sala e painel", hint: "rack, buffet, adega" },
+  { id: "gourmet", label: "Área gourmet", hint: "churrasqueira, externa" },
+  { id: "corp", label: "Comercial", hint: "loja, escritório, clínica" },
+];
+const OBRA = ["Comprei na planta", "Em obra agora", "Chaves na mão", "Reforma de imóvel usado"];
+const PRAZO = ["Quero começar já", "Em 1 a 3 meses", "Em 3 a 6 meses", "Só pesquisando"];
+const FAIXA = ["Até R$ 15 mil", "R$ 15 a 40 mil", "R$ 40 a 80 mil", "Acima de R$ 80 mil", "Ainda não sei"];
+const PROJETO = ["Tenho projeto de arquiteto", "Tenho referências e ideias", "Preciso de ajuda com o projeto"];
+const BAIRROS = ["Campeche", "Centro", "Córrego Grande", "Itacorubi", "Jurerê Internacional", "Lagoa da Conceição", "Santo Antônio de Lisboa", "Trindade", "São José", "Palhoça"];
+const AMBIENTES = ["Cozinha", "Closet", "Home office", "Sala", "Área gourmet", "Banheiros", "Recepção"];
+
+const MARCENARIAS = [
+  { nome: "Ateliê Sambaqui", base: "Santo Antônio de Lisboa", km: 6.2, nota: 4.9, avals: 38, dias: 45, forte: "Lâmina natural e curvas", agenda: "Quinta, 10h", agendaDias: 3, materiais: ["freijo", "nogueira", "pedra"],
+    auto: { valor: 62400, dias: 45, material: "Lâmina de freijó + MDF Duratex", garantia: "5 anos", pgto: "40 / 30 / 30" } },
+  { nome: EU, base: "São José", km: 11.8, nota: 4.7, avals: 112, dias: 35, forte: "Cozinhas e volume", agenda: "Amanhã, 14h", agendaDias: 1, materiais: ["carvalho", "laca", "nogueira"] },
+  { nome: "Trilho Móveis", base: "Palhoça", km: 18.4, nota: 4.6, avals: 64, dias: 30, forte: "Custo-benefício, MDF", agenda: "Sábado, 9h", agendaDias: 2, materiais: ["carvalho", "laca"],
+    auto: { valor: 39700, dias: 30, material: "MDF Guararapes, ferragens FGV", garantia: "2 anos", pgto: "30 / 40 / 30" } },
+];
+const M = (nome) => MARCENARIAS.find((m) => m.nome === nome);
+
+const OUTROS_LEADS = [
+  { id: "l1", tipo: "Closet + home office", bairro: "Jurerê Internacional", km: 22, faixa: "R$ 40 a 80 mil", score: 92, compradopor: 3, fotos: 6, projeto: true, min: 12, contato: "Rafael Kuhn · (48) 991••-••07", end: "Av. dos Búzios, 1200 · disponível sexta 9h" },
+  { id: "l2", tipo: "Rack e painel de sala", bairro: "Trindade", km: 4, faixa: "Ainda não sei", score: 34, compradopor: 0, fotos: 0, projeto: false, min: 55, contato: "Júlia Ferraz · (48) 988••-••33", end: "Rua Lauro Linhares, 88 · combinar" },
+  { id: "l3", tipo: "Cozinha compacta", bairro: "Palhoça", km: 19, faixa: "Até R$ 15 mil", score: 61, compradopor: 1, fotos: 2, projeto: false, min: 130, contato: "Marcos Vieira · (48) 999••-••51", end: "Rua Caetano Silveira, 410 · sábado à tarde" },
+];
+const PROJETOS_INICIAIS = [
+  { id: "a1", obra: "Apto 802 · Beira-Mar Norte", cli: "Família Cardoso", amb: ["Cozinha", "Closet", "Home office"], n: 3, faixa: "Acima de R$ 80 mil", bairro: "Centro", km: 9, propostasBase: 3 },
+  { id: "a2", obra: "Casa · Santo Antônio de Lisboa", cli: "Ana Prado", amb: ["Área gourmet"], n: 2, faixa: "R$ 40 a 80 mil", bairro: "Santo Antônio de Lisboa", km: 14, propostasBase: 0, medicao: "Quinta, 10h" },
+  { id: "a3", obra: "Clínica · Itacorubi", cli: "Dra. Helena V.", amb: ["Recepção", "4 consultórios"], n: 3, faixa: "Acima de R$ 80 mil", bairro: "Itacorubi", km: 6, propostasBase: 0, semPlanta: true },
+];
+
+/* ---------- helpers ---------- */
+const addDias = (n, base = new Date()) => { const d = new Date(base); d.setDate(d.getDate() + n); return d; };
+const fmt = (d, opts = { day: "numeric", month: "short" }) => new Date(d).toLocaleDateString("pt-BR", opts).replace(/\./g, "");
+const fmtLongo = (d) => fmt(d, { weekday: "long", day: "numeric", month: "long" });
+const brl = (n) => "R$ " + Number(n).toLocaleString("pt-BR");
+function calcScore(p) {
+  let s = 25;
+  if (p.tipo) s += 10;
+  if (p.obra) s += 15;
+  if (p.prazo && p.prazo !== "Só pesquisando") s += 15;
+  if (p.faixa && p.faixa !== "Ainda não sei") s += 15;
+  if (p.fotos > 0) s += 10;
+  if (p.projeto === "Tenho projeto de arquiteto") s += 10;
+  return Math.min(s, 100);
+}
+function precoLead(score, comprado) {
+  const base = score >= 80 ? 48 : score >= 55 ? 32 : 16;
+  return Math.max(8, Math.round(base * (1 - comprado * 0.2)));
+}
+function faixaTemp(score) {
+  if (score >= 80) return { txt: "Pronto para fechar", cls: "tag-brand", cor: "var(--brand)" };
+  if (score >= 55) return { txt: "Em avaliação", cls: "tag-brass", cor: "var(--brass)" };
+  return { txt: "Pesquisando", cls: "tag-mute", cor: "var(--muted)" };
+}
+function etapas(contrato) {
+  const m = M(contrato.marcenaria);
+  const fechado = new Date(contrato.fechadoEm);
+  const medicao = addDias(m.agendaDias, fechado);
+  const executivo = addDias(m.agendaDias + 7, fechado);
+  const producao = addDias(m.agendaDias + 9, fechado);
+  const instalacao = addDias(contrato.dias, fechado);
+  return { medicao, executivo, producao, instalacao };
+}
+
+/* ---------- estado ---------- */
+const PEDIDO0 = { tipo: null, obra: null, prazo: null, faixa: null, projeto: null, bairro: null, fotos: 0, enviado: false, escolhidas: [], enviadoEm: null };
+const ESTADO0 = {
+  step: 0, pedido: PEDIDO0,
+  medicoes: {},            // { [marcenaria]: { status: "aguardando" | "confirmada", quando } }
+  propostas: [],           // { id, leadId, marcenaria, valor, dias, material, garantia, pgto, enviadaEm }
+  contrato: null,          // { marcenaria, propostaId, dias, valor, garantia, fechadoEm }
+  projetos: PROJETOS_INICIAIS.map((p) => ({ ...p, criado: false })),
+  desbloqueados: [], creditos: 120,
+  contratosOutros: [],     // fechados por arquitetos com EU
+};
+const KEY = "medida-sim-v2";
+function carregar() {
+  try { const s = localStorage.getItem(KEY); if (s) return { ...ESTADO0, ...JSON.parse(s) }; } catch (e) {}
+  return ESTADO0;
+}
+
+/* ---------- átomos de interface ---------- */
+const Btn = ({ children, onClick, variant = "primary", disabled, small, icon }) => (
+  <button onClick={disabled ? undefined : onClick} disabled={disabled}
+          className={`btn btn-${variant} ${small ? "btn-sm" : "btn-lg"} flex items-center justify-center gap-2`}>
+    {icon}{children}
+  </button>
+);
+const Pick = ({ label, hint, active, onClick }) => (
+  <button onClick={onClick} className={`pick ${active ? "on" : ""}`}>
+    <div className="flex items-center justify-between gap-3">
+      <div>
+        <div className="font-semibold text-[14.5px]">{label}</div>
+        {hint && <div className="text-xs mt-0.5 muted">{hint}</div>}
+      </div>
+      <span className="h-5 w-5 rounded-full flex items-center justify-center shrink-0"
+            style={{ border: `1px solid ${active ? "var(--ink)" : "var(--line-strong)"}`, background: active ? "var(--ink)" : "transparent" }}>
+        {active && <Check size={12} color="var(--surface)" strokeWidth={3} />}
+      </span>
+    </div>
+  </button>
+);
+const Track = ({ pct }) => <div className="track"><div style={{ width: `${pct}%` }} /></div>;
+const Head = ({ onBack, eyebrow, title, sub }) => (
+  <div className="mb-5">
+    {onBack && <button onClick={onBack} className="mb-4 flex items-center gap-1 text-[13px] muted"><ChevronLeft size={15} /> Voltar</button>}
+    {eyebrow && <div className="eyebrow mb-2">{eyebrow}</div>}
+    <h2 className="serif ink" style={{ fontSize: 28, lineHeight: 1.08, textWrap: "balance" }}>{title}</h2>
+    {sub && <p className="text-[13.5px] mt-2 muted leading-snug">{sub}</p>}
+  </div>
+);
+const Label = ({ children, note }) => (
+  <div className="mb-2">
+    <div className="eyebrow">{children}</div>
+    {note && <div className="text-xs muted mt-1">{note}</div>}
+  </div>
+);
+const Swatches = ({ list }) => <div className="flex gap-1.5">{list.map((m) => <span key={m} className={`swatch ${m}`} title={m} />)}</div>;
+
+const Proposta = ({ o, acao, acaoLabel, destaque }) => (
+  <div className="card p-4 mb-3">
+    <div className="flex justify-between items-baseline mb-3 gap-3">
+      <div>
+        <div className="text-[14.5px] font-semibold ink">{o.marcenaria}</div>
+        <div className="text-xs muted mt-0.5">enviada {fmt(o.enviadaEm, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</div>
+      </div>
+      <span className="serif num ink" style={{ fontSize: 26, lineHeight: 1 }}><span className="text-sm muted">R$ </span>{Number(o.valor).toLocaleString("pt-BR")}</span>
+    </div>
+    <div className="hair mb-3" />
+    <div className="grid grid-cols-[76px_1fr] gap-y-1.5 text-[12.5px]">
+      <span className="muted">Pronto em</span><span className="ink"><span className="font-semibold">{fmt(addDias(o.dias, o.enviadaEm))}</span> <span className="muted num">({o.dias} dias)</span></span>
+      <span className="muted">Material</span><span className="ink">{o.material}</span>
+      <span className="muted">Garantia</span><span className="ink">{o.garantia}</span>
+      <span className="muted">Pagamento</span><span className="ink num">{o.pgto}</span>
+    </div>
+    {destaque && <div className="mt-3 tag tag-brass">{destaque}</div>}
+    {acao && <div className="mt-3"><Btn small onClick={acao} icon={<Calendar size={14} />}>{acaoLabel}</Btn></div>}
+  </div>
+);
+
+/* Formulário da marcenaria: enviar proposta */
+function FormProposta({ faixa, onEnviar, onCancelar }) {
+  const [valor, setValor] = useState("");
+  const [dias, setDias] = useState(35);
+  const [material, setMaterial] = useState("MDF Duratex, ferragens Blum");
+  const [garantia, setGarantia] = useState("3 anos");
+  const [pgto, setPgto] = useState("50 / 50");
+  const n = Number(valor.replace(/\D/g, ""));
+  return (
+    <div className="inset p-3 mt-3">
+      <div className="flex items-center justify-between mb-3">
+        <span className="eyebrow" style={{ fontSize: 10 }}>Sua proposta</span>
+        <span className="text-xs muted">Cliente indicou: {faixa}</span>
+      </div>
+      <label className="flabel">Valor total</label>
+      <input className="field num mb-3" inputMode="numeric" placeholder="48.900" value={valor}
+             onChange={(e) => setValor(e.target.value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, "."))} />
+      <div className="grid grid-cols-2 gap-2 mb-3">
+        <div>
+          <label className="flabel">Pronto em</label>
+          <select className="field" value={dias} onChange={(e) => setDias(Number(e.target.value))}>
+            {[25, 30, 35, 45, 60].map((d) => <option key={d} value={d}>{d} dias · {fmt(addDias(d))}</option>)}
+          </select>
+        </div>
+        <div>
+          <label className="flabel">Garantia</label>
+          <select className="field" value={garantia} onChange={(e) => setGarantia(e.target.value)}>
+            {["2 anos", "3 anos", "5 anos"].map((g) => <option key={g}>{g}</option>)}
+          </select>
+        </div>
+      </div>
+      <label className="flabel">Material e ferragens</label>
+      <select className="field mb-3" value={material} onChange={(e) => setMaterial(e.target.value)}>
+        {["MDF Duratex, ferragens Blum", "MDF Guararapes, ferragens FGV", "Lâmina de carvalho + MDF Duratex", "Laca acetinada + ferragens Blum"].map((m) => <option key={m}>{m}</option>)}
+      </select>
+      <label className="flabel">Pagamento</label>
+      <select className="field mb-4" value={pgto} onChange={(e) => setPgto(e.target.value)}>
+        {["50 / 50", "40 / 30 / 30", "30 / 40 / 30", "À vista com 5% off"].map((m) => <option key={m}>{m}</option>)}
+      </select>
+      <div className="flex gap-2">
+        <Btn small variant="secondary" onClick={onCancelar}>Cancelar</Btn>
+        <Btn small disabled={!n} onClick={() => onEnviar({ valor: n, dias, material, garantia, pgto })} icon={<Send size={13} />}>Enviar proposta</Btn>
+      </div>
+    </div>
+  );
+}
+
+/* Formulário do arquiteto: novo projeto */
+function FormProjeto({ onCriar, onCancelar }) {
+  const [obra, setObra] = useState("");
+  const [cli, setCli] = useState("");
+  const [amb, setAmb] = useState([]);
+  const [n, setN] = useState(3);
+  const [faixa, setFaixa] = useState("R$ 40 a 80 mil");
+  const [bairro, setBairro] = useState("Campeche");
+  const [planta, setPlanta] = useState(false);
+  const ok = obra && cli && amb.length > 0 && planta;
+  return (
+    <div className="card p-4 mb-3" style={{ borderColor: "var(--ink)" }}>
+      <div className="eyebrow mb-3">Novo projeto</div>
+      <label className="flabel">Obra</label>
+      <input className="field mb-3" placeholder="Apto 1201 · Jurerê" value={obra} onChange={(e) => setObra(e.target.value)} />
+      <label className="flabel">Cliente</label>
+      <input className="field mb-3" placeholder="Família Souza" value={cli} onChange={(e) => setCli(e.target.value)} />
+      <label className="flabel">Ambientes</label>
+      <div className="flex flex-wrap gap-1.5 mb-3">
+        {AMBIENTES.map((a) => (
+          <button key={a} className={`chip ${amb.includes(a) ? "on" : ""}`} style={{ padding: "4px 10px" }}
+                  onClick={() => setAmb(amb.includes(a) ? amb.filter((x) => x !== a) : [...amb, a])}>{a}</button>
+        ))}
+      </div>
+      <div className="grid grid-cols-2 gap-2 mb-3">
+        <div>
+          <label className="flabel">Bairro</label>
+          <select className="field" value={bairro} onChange={(e) => setBairro(e.target.value)}>{BAIRROS.map((b) => <option key={b}>{b}</option>)}</select>
+        </div>
+        <div>
+          <label className="flabel">Verba do cliente</label>
+          <select className="field" value={faixa} onChange={(e) => setFaixa(e.target.value)}>{FAIXA.filter((f) => f !== "Ainda não sei").map((f) => <option key={f}>{f}</option>)}</select>
+        </div>
+      </div>
+      <label className="flabel">Quantas marcenarias devem orçar</label>
+      <div className="flex gap-2 mb-3">
+        {[1, 2, 3].map((k) => <button key={k} className={`chip num ${n === k ? "on" : ""}`} onClick={() => setN(k)}>{k}</button>)}
+      </div>
+      <button onClick={() => setPlanta(true)} className="w-full rounded-[10px] p-3 mb-4 flex items-center gap-2 text-[13.5px]"
+              style={{ border: `1px ${planta ? "solid var(--brand)" : "dashed var(--line-strong)"}`, background: planta ? "var(--brand-soft)" : "transparent", color: planta ? "var(--brand)" : "var(--muted)" }}>
+        {planta ? <Check size={15} strokeWidth={2.5} /> : <Paperclip size={15} />}
+        {planta ? "planta-executiva.pdf anexada · 2,4 MB" : "Anexar planta em PDF ou DWG"}
+      </button>
+      <div className="flex gap-2">
+        <Btn small variant="secondary" onClick={onCancelar}>Cancelar</Btn>
+        <Btn small disabled={!ok} onClick={() => onCriar({ obra, cli, amb, n, faixa, bairro })}>Enviar para orçamento</Btn>
+      </div>
+    </div>
+  );
+}
+
+/* Linha do tempo do contrato */
+function LinhaDoTempo({ contrato }) {
+  const e = etapas(contrato);
+  const m = M(contrato.marcenaria);
+  const itens = [
+    { t: "Contrato fechado", d: fmt(contrato.fechadoEm), s: `${brl(contrato.valor)} · garantia ${contrato.garantia}`, st: "done" },
+    { t: "Medição técnica", d: `${fmtLongo(e.medicao)}, ${m.agenda.split(", ")[1]}`, s: "A marcenaria confere cada parede e ponto elétrico.", st: "now" },
+    { t: "Projeto executivo aprovado", d: fmt(e.executivo), s: "Você aprova o desenho final antes de cortar qualquer chapa.", st: "next" },
+    { t: "Produção na fábrica", d: `${fmt(e.producao)} a ${fmt(addDias(-2, e.instalacao))}`, s: `${m.base} · acompanhe por fotos no app.`, st: "next" },
+    { t: "Instalação e entrega", d: `${fmtLongo(e.instalacao)}, 8h às 17h`, s: "Sonho pronto. Vistoria junto com você.", st: "next" },
+  ];
+  return (
+    <div className="tl">
+      {itens.map((i) => (
+        <div key={i.t} className="tl-item">
+          <div className={`tl-dot ${i.st}`}>{i.st === "done" && <Check size={9} color="var(--surface)" strokeWidth={3.5} />}</div>
+          <div className="flex justify-between items-baseline gap-3">
+            <div className="text-[14.5px] font-semibold ink">{i.t}</div>
+            {i.st === "now" && <span className="tag tag-brand">próxima</span>}
+          </div>
+          <div className="text-[13px] ink mt-0.5" style={{ color: i.st === "next" ? "var(--ink-2)" : "var(--ink)" }}>{i.d}</div>
+          <div className="text-xs muted mt-0.5">{i.s}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ---------- app ---------- */
+function App() {
+  const [persona, setPersona] = useState("cliente");
+  const [S, setS] = useState(carregar);
+  const [toast, setToast] = useState(null);
+  const [formLead, setFormLead] = useState(null);
+  const [novoProjeto, setNovoProjeto] = useState(false);
+  const timers = useRef([]);
+
+  useEffect(() => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }, [S]);
+  const up = (fn) => setS((s) => ({ ...s, ...fn(s) }));
+  const avisar = (msg) => { setToast(msg); clearTimeout(timers.current.toast); timers.current.toast = setTimeout(() => setToast(null), 2600); };
+
+  const { step, pedido: p, medicoes, propostas, contrato, projetos, desbloqueados, creditos } = S;
+  const score = calcScore(p);
+  const set = (k, v) => up((s) => ({ pedido: { ...s.pedido, [k]: v } }));
+  const go = (n) => up(() => ({ step: n }));
+  const reiniciar = () => { try { localStorage.removeItem(KEY); } catch (e) {} setS(ESTADO0); setFormLead(null); setNovoProjeto(false); setPersona("cliente"); };
+
+  /* As outras marcenarias (não a sua) respondem sozinhas na simulação. */
+  useEffect(() => {
+    if (!p.enviado) return;
+    const pendentes = p.escolhidas.filter((n) => n !== EU && M(n).auto);
+    const ts = [];
+    pendentes.forEach((n, i) => {
+      if (medicoes[n]?.status !== "confirmada") {
+        ts.push(setTimeout(() => {
+          up((s) => ({ medicoes: { ...s.medicoes, [n]: { status: "confirmada", quando: M(n).agenda } } }));
+          avisar(`${n} confirmou a medição`);
+        }, 2500 + i * 1800));
+      }
+      if (!propostas.some((x) => x.leadId === "cliente" && x.marcenaria === n)) {
+        ts.push(setTimeout(() => {
+          up((s) => s.propostas.some((x) => x.leadId === "cliente" && x.marcenaria === n) ? {} : ({
+            propostas: [...s.propostas, { id: "pr" + Date.now() + i, leadId: "cliente", marcenaria: n, ...M(n).auto, enviadaEm: new Date().toISOString() }],
+          }));
+          avisar(`Proposta recebida de ${n}`);
+        }, 7000 + i * 2500));
+      }
+    });
+    return () => ts.forEach(clearTimeout);
+  }, [p.enviado]);
+
+  /* ações */
+  const enviarPedido = () => up((s) => ({
+    step: 5,
+    pedido: { ...s.pedido, enviado: true, enviadoEm: new Date().toISOString() },
+    medicoes: Object.fromEntries(s.pedido.escolhidas.map((n) => [n, { status: "aguardando", quando: M(n).agenda }])),
+  }));
+  const fechar = (o) => { up(() => ({ step: 6, contrato: { marcenaria: o.marcenaria, propostaId: o.id, dias: o.dias, valor: o.valor, garantia: o.garantia, fechadoEm: new Date().toISOString() } })); avisar("Data marcada. A marcenaria foi avisada."); };
+  const novoPedido = () => up(() => ({ step: 0, pedido: PEDIDO0, medicoes: {}, propostas: S.propostas.filter((x) => x.leadId !== "cliente"), contrato: null, desbloqueados: S.desbloqueados.filter((d) => d !== "cliente") }));
+  const desbloquear = (lead, preco) => {
+    up((s) => ({
+      desbloqueados: [...s.desbloqueados, lead.id], creditos: s.creditos - preco,
+      medicoes: lead.id === "cliente" && !s.medicoes[EU] ? { ...s.medicoes, [EU]: { status: "aguardando", quando: M(EU).agenda } } : s.medicoes,
+    }));
+    avisar(`Contato liberado · ${preco} créditos`);
+  };
+  const confirmarMedicao = () => { up((s) => ({ medicoes: { ...s.medicoes, [EU]: { status: "confirmada", quando: M(EU).agenda } } })); avisar("Medição confirmada. O cliente recebeu a data."); };
+  const enviarProposta = (leadId, dados) => {
+    up((s) => ({ propostas: [...s.propostas, { id: "pr" + Date.now(), leadId, marcenaria: EU, ...dados, enviadaEm: new Date().toISOString() }] }));
+    setFormLead(null); avisar("Proposta enviada");
+  };
+  const criarProjeto = (d) => {
+    const id = "a" + Date.now();
+    up((s) => ({ projetos: [{ id, ...d, km: 8, propostasBase: 0, criado: true, criadoEm: new Date().toISOString() }, ...s.projetos] }));
+    setNovoProjeto(false); avisar(`Enviado para ${d.n} ${d.n === 1 ? "marcenaria" : "marcenarias"}`);
+  };
+
+  /* leads que a marcenaria vê */
+  const leadCliente = p.tipo ? {
+    id: "cliente", tipo: TIPOS.find((t) => t.id === p.tipo).label, bairro: p.bairro || "—", km: 7, faixa: p.faixa || "Ainda não sei",
+    score, compradopor: p.escolhidas.filter((n) => n !== EU).length, fotos: p.fotos, projeto: p.projeto === "Tenho projeto de arquiteto",
+    min: p.enviadoEm ? Math.max(1, Math.round((Date.now() - new Date(p.enviadoEm)) / 60000)) : 0, meu: true, rascunho: !p.enviado,
+    contato: "Marina Rebelo · (48) 996••-••21", end: `${p.bairro || "Bairro a definir"} · ${p.prazo || "prazo a definir"}`,
+  } : null;
+  const leadsArq = projetos.filter((x) => x.criado).map((x) => ({
+    id: x.id, tipo: x.amb.join(", "), bairro: x.bairro, km: x.km, faixa: x.faixa, score: 96, compradopor: 0, fotos: 4, projeto: true,
+    min: Math.max(1, Math.round((Date.now() - new Date(x.criadoEm)) / 60000)), arq: true, obra: x.obra,
+    contato: `${x.cli} · via arquiteto`, end: `${x.obra} · planta anexada`,
+  }));
+  const leads = [...(leadCliente ? [leadCliente] : []), ...leadsArq, ...OUTROS_LEADS];
+
+  const propostasCliente = propostas.filter((x) => x.leadId === "cliente");
+  const novosLeads = leads.filter((l) => !desbloqueados.includes(l.id) && !l.rascunho).length;
+  const propostasArq = propostas.filter((x) => projetos.some((pj) => pj.id === x.leadId)).length;
+  const badges = { cliente: p.enviado && !contrato ? propostasCliente.length : 0, marceneiro: novosLeads, arquiteto: propostasArq };
+
+  /* ----- cliente ----- */
+  const cliente = () => {
+    if (step === 0)
+      return (
+        <div>
+          <div className="pt-5 pb-6">
+            <div className="flex items-center justify-between mb-8">
+              <Wordmark size={26} />
+              <span className="eyebrow">Grande Florianópolis</span>
+            </div>
+            <h1 className="serif ink" style={{ fontSize: 44, lineHeight: 1.02, textWrap: "balance" }}>
+              A casa dos sonhos,<br /><em style={{ color: "var(--brand)" }}>com data e hora marcada.</em>
+            </h1>
+            <div className="mt-5 mb-4"><Regua cm={12} /></div>
+            <p className="text-[14.5px] muted leading-relaxed" style={{ maxWidth: 300 }}>
+              Praticidade e planejamento: você descreve o ambiente ideal, marcenarias selecionadas medem na sua casa e o sonho fica pronto na data combinada.
+            </p>
+          </div>
+          <div className="card px-4 mb-5">
+            {[
+              ["Você descreve o ambiente ideal", "3 minutos, pelo celular"],
+              ["Até 3 marcenarias medem e orçam", "com hora marcada, sem custo"],
+              ["Você escolhe e fecha a data", "compara prazo, material e entrega lado a lado"],
+            ].map(([t, s], i) => (
+              <div key={i} className="flex gap-4 items-baseline py-3.5" style={{ borderTop: i ? "1px solid var(--line)" : "none" }}>
+                <span className="serif num" style={{ fontSize: 22, color: "var(--brass)", width: 18 }}>{i + 1}</span>
+                <div>
+                  <div className="text-[14.5px] font-semibold ink">{t}</div>
+                  <div className="text-xs muted mt-0.5">{s}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Btn onClick={() => go(1)}>Planejar meu ambiente</Btn>
+          <p className="text-center text-xs mt-3 muted">Gratuito para quem contrata</p>
+        </div>
+      );
+
+    if (step === 1)
+      return (
+        <div className="pt-5">
+          <Track pct={20} /><div className="h-5" />
+          <Head onBack={() => go(0)} eyebrow="Passo 1 de 4 · Ambiente" title="O que você quer fazer?" sub="Escolha o principal. Dá para incluir outros depois." />
+          {TIPOS.map((t) => (
+            <Pick key={t.id} label={t.label} hint={t.hint} active={p.tipo === t.id}
+                  onClick={() => { set("tipo", t.id); setTimeout(() => go(2), 140); }} />
+          ))}
+        </div>
+      );
+
+    if (step === 2)
+      return (
+        <div className="pt-5">
+          <Track pct={45} /><div className="h-5" />
+          <Head onBack={() => go(1)} eyebrow="Passo 2 de 4 · Obra" title="Como está o imóvel?" sub="Isso define quem consegue medir e quando." />
+          <div className="mb-6">{OBRA.map((o) => <Pick key={o} label={o} active={p.obra === o} onClick={() => set("obra", o)} />)}</div>
+          <Label>Quando pretende instalar</Label>
+          <div className="mb-6">{PRAZO.map((o) => <Pick key={o} label={o} active={p.prazo === o} onClick={() => set("prazo", o)} />)}</div>
+          <Label note="Só a marcenaria vê. Serve para ela não te orçar fora da realidade.">Quanto pensa em investir</Label>
+          <div className="mb-7">{FAIXA.map((o) => <Pick key={o} label={o} active={p.faixa === o} onClick={() => set("faixa", o)} />)}</div>
+          <Btn onClick={() => go(3)} disabled={!p.obra || !p.prazo || !p.faixa}>Continuar</Btn>
+        </div>
+      );
+
+    if (step === 3)
+      return (
+        <div className="pt-5">
+          <Track pct={70} /><div className="h-5" />
+          <Head onBack={() => go(2)} eyebrow="Passo 3 de 4 · Local e projeto" title="Onde fica e o que já existe" />
+          <Label>Bairro</Label>
+          <div className="flex flex-wrap gap-2 mb-7">
+            {BAIRROS.map((b) => <button key={b} onClick={() => set("bairro", b)} className={`chip ${p.bairro === b ? "on" : ""}`}>{b}</button>)}
+          </div>
+          <Label>Você já tem projeto</Label>
+          <div className="mb-7">{PROJETO.map((o) => <Pick key={o} label={o} active={p.projeto === o} onClick={() => set("projeto", o)} />)}</div>
+          <Label note="Quem envia foto recebe orçamento 3x mais rápido.">Fotos do ambiente</Label>
+          <div className="flex gap-2 mb-7 mt-3">
+            {[0, 1, 2].map((i) => (
+              <button key={i} onClick={() => set("fotos", Math.max(p.fotos, i + 1))} aria-label={`Adicionar foto ${i + 1}`}
+                className="flex-1 aspect-square rounded-xl flex items-center justify-center"
+                style={{ background: p.fotos > i ? "var(--brand-soft)" : "var(--surface)", border: `1px ${p.fotos > i ? "solid var(--brand)" : "dashed var(--line-strong)"}` }}>
+                {p.fotos > i ? <Check size={18} color="var(--brand)" strokeWidth={2.5} /> : <Camera size={18} color="var(--muted)" />}
+              </button>
+            ))}
+          </div>
+          <Btn onClick={() => go(4)} disabled={!p.bairro || !p.projeto}>Ver marcenarias próximas</Btn>
+        </div>
+      );
+
+    if (step === 4)
+      return (
+        <div className="pt-5">
+          <Track pct={90} /><div className="h-5" />
+          <Head onBack={() => go(3)} eyebrow="Passo 4 de 4 · Marcenarias" title="Três atendem o seu bairro"
+                sub={`Ordenadas por distância até ${p.bairro}. Escolha quem você quer que vá medir.`} />
+          {MARCENARIAS.map((m) => {
+            const on = p.escolhidas.includes(m.nome);
+            return (
+              <div key={m.nome} className={`card p-4 mb-3 ${on ? "on" : ""}`}>
+                <div className="flex justify-between items-start mb-2 gap-3">
+                  <div>
+                    <div className="serif ink" style={{ fontSize: 21, lineHeight: 1.1 }}>{m.nome}</div>
+                    <div className="flex items-center gap-1 text-xs mt-1.5 muted"><MapPin size={12} /> {m.base} · <span className="num">{m.km} km</span></div>
+                  </div>
+                  <div className="flex items-center gap-1 shrink-0 mt-1">
+                    <Star size={12} color="var(--brass)" fill="var(--brass)" />
+                    <span className="text-sm font-semibold num ink">{m.nota}</span>
+                    <span className="text-xs muted num">({m.avals})</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between text-xs mb-3 muted">
+                  <span className="flex items-center gap-1"><Clock size={12} /> {m.dias} dias</span>
+                  <span>{m.forte}</span>
+                  <Swatches list={m.materiais} />
+                </div>
+                <div className="inset flex items-center justify-between px-3 py-2 mb-3">
+                  <span className="eyebrow" style={{ fontSize: 10 }}>Medição com hora marcada</span>
+                  <span className="text-xs font-semibold ink">{m.agenda}</span>
+                </div>
+                <Btn small variant={on ? "brand" : "secondary"}
+                     onClick={() => set("escolhidas", on ? p.escolhidas.filter((x) => x !== m.nome) : [...p.escolhidas, m.nome])}>
+                  {on ? "Selecionada" : "Quero esta"}
+                </Btn>
+              </div>
+            );
+          })}
+          <div className="h-2" />
+          <Btn onClick={enviarPedido} disabled={p.escolhidas.length === 0}>
+            Agendar {p.escolhidas.length || ""} {p.escolhidas.length === 1 ? "medição" : "medições"}
+          </Btn>
+        </div>
+      );
+
+    if (step === 5) {
+      const lista = Object.entries(medicoes);
+      const confirmadas = lista.filter(([, v]) => v.status === "confirmada").length;
+      const aguardandoProposta = lista.filter(([n]) => !propostasCliente.some((x) => x.marcenaria === n));
+      const menor = propostasCliente.length ? Math.min(...propostasCliente.map((x) => x.valor)) : null;
+      const maisRapida = propostasCliente.length ? Math.min(...propostasCliente.map((x) => x.dias)) : null;
+      return (
+        <div className="pt-5">
+          <div className="card p-5 mb-6 text-center" style={{ borderColor: "var(--brand)", background: "var(--brand-soft)" }}>
+            <div className="mx-auto mb-3 h-10 w-10 rounded-full flex items-center justify-center" style={{ background: "var(--brand)" }}>
+              <Check size={18} color="var(--surface)" strokeWidth={3} />
+            </div>
+            <div className="serif ink" style={{ fontSize: 24 }}>Sonho em andamento</div>
+            <p className="text-[13.5px] mt-1 muted">
+              {confirmadas === lista.length ? "Todas as medições confirmadas." : `${confirmadas} de ${lista.length} ${lista.length === 1 ? "medição confirmada" : "medições confirmadas"}. As outras respondem em até 4 horas.`}
+            </p>
+          </div>
+
+          <Label>Suas medições</Label>
+          {lista.map(([n, v]) => (
+            <div key={n} className="card px-4 py-3 mb-2 flex items-center gap-3">
+              <Calendar size={16} color={v.status === "confirmada" ? "var(--brand)" : "var(--muted)"} />
+              <div className="flex-1">
+                <div className="text-[14.5px] font-semibold ink">{n}</div>
+                <div className="text-xs muted">{v.quando} · {v.status === "confirmada" ? "confirmada" : "aguardando confirmação"}</div>
+              </div>
+              <span className={`tag ${v.status === "confirmada" ? "tag-brand" : "tag-mute"}`}>{v.status === "confirmada" ? "Confirmada" : <span className="pulse">Aguardando</span>}</span>
+            </div>
+          ))}
+
+          <div className="h-7" />
+          <div className="flex items-end justify-between mb-2">
+            <Label note={propostasCliente.length ? "Cada proposta traz a data em que o ambiente fica pronto." : "As propostas chegam aqui depois da medição."}>Comparar propostas</Label>
+            {propostasCliente.length > 0 && <span className="tag tag-ink num">{propostasCliente.length}</span>}
+          </div>
+          <div className="h-1" />
+          {propostasCliente.map((o) => (
+            <Proposta key={o.id} o={o} acao={() => fechar(o)} acaoLabel="Fechar com data marcada"
+                      destaque={o.valor === menor && o.dias === maisRapida ? "Menor preço e mais rápida" : o.valor === menor ? "Menor preço" : o.dias === maisRapida ? "Mais rápida" : null} />
+          ))}
+          {aguardandoProposta.map(([n]) => (
+            <div key={n} className="card ghost p-4 mb-3 flex items-center justify-between">
+              <div>
+                <div className="text-[14.5px] font-semibold ink">{n}</div>
+                <div className="text-xs muted mt-0.5">{n === EU ? "Abra a aba Marcenaria e envie a proposta você mesma." : "Preparando a proposta após a medição."}</div>
+              </div>
+              <span className="tag tag-mute pulse">Aguardando</span>
+            </div>
+          ))}
+          <div className="h-2" />
+          <Btn variant="ghost" onClick={novoPedido} icon={<RotateCcw size={14} />}>Simular outro pedido</Btn>
+        </div>
+      );
+    }
+
+    if (step === 6 && contrato) {
+      const e = etapas(contrato);
+      return (
+        <div className="pt-5">
+          <div className="eyebrow mb-2">Contrato fechado com {contrato.marcenaria}</div>
+          <h2 className="serif ink" style={{ fontSize: 34, lineHeight: 1.04 }}>
+            Pronto em<br /><em style={{ color: "var(--brand)" }}>{fmtLongo(e.instalacao)}.</em>
+          </h2>
+          <p className="text-[13.5px] muted mt-3 leading-snug">Data e hora marcadas. Cada etapa abaixo tem dia definido e você acompanha por aqui.</p>
+          <div className="mt-5 mb-6"><Regua cm={12} /></div>
+
+          <div className="card p-4 mb-6">
+            <LinhaDoTempo contrato={contrato} />
+          </div>
+
+          <div className="grid grid-cols-3 gap-2 mb-6">
+            {[["Valor", brl(contrato.valor)], ["Garantia", contrato.garantia], ["Prazo", `${contrato.dias} dias`]].map(([k, v]) => (
+              <div key={k} className="inset p-3">
+                <div className="eyebrow" style={{ fontSize: 9.5 }}>{k}</div>
+                <div className="text-[13.5px] font-semibold ink num mt-1">{v}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-[14px] p-4 mb-6 flex gap-3" style={{ background: "var(--ink)", color: "var(--surface)" }}>
+            <ShieldCheck size={18} color="var(--brass)" className="shrink-0 mt-0.5" />
+            <div className="text-[13px] leading-relaxed" style={{ color: "#C9CCC6" }}>
+              Pagamento em custódia: a marcenaria recebe cada parcela quando a etapa é concluída e você confirma no app.
+            </div>
+          </div>
+
+          <Btn variant="ghost" onClick={novoPedido} icon={<RotateCcw size={14} />}>Simular outro pedido</Btn>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  /* ----- marceneiro ----- */
+  const marceneiro = () => {
+    const agenda = [
+      ...(medicoes[EU]?.status === "confirmada" && !contrato ? [{ t: `Medição · ${leadCliente?.tipo}`, d: `${medicoes[EU].quando} · ${p.bairro}`, cls: "tag-brand", st: "Confirmada" }] : []),
+      ...(contrato?.marcenaria === EU ? [{ t: `Instalação · ${leadCliente?.tipo}`, d: `${fmt(etapas(contrato).instalacao)} · ${p.bairro} · ${brl(contrato.valor)}`, cls: "tag-brass", st: "Contrato" }] : []),
+      ...(contrato && contrato.marcenaria !== EU ? [{ t: `${leadCliente?.tipo} · ${p.bairro}`, d: `Cliente fechou com ${contrato.marcenaria}`, cls: "tag-mute", st: "Perdido" }] : []),
+    ];
+    return (
+      <div className="pt-5">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <div className="eyebrow mb-1">{EU} · raio de 25 km</div>
+            <div className="serif ink" style={{ fontSize: 28, lineHeight: 1.05 }}>Pedidos perto de você</div>
+          </div>
+          <div className="text-right shrink-0 mt-1">
+            <div className="serif num ink" style={{ fontSize: 26, lineHeight: 1 }}>{creditos}</div>
+            <div className="eyebrow" style={{ fontSize: 9.5 }}>créditos</div>
+          </div>
+        </div>
+
+        {agenda.length > 0 && (
+          <div className="mb-6">
+            <Label>Sua agenda</Label>
+            {agenda.map((a) => (
+              <div key={a.t} className="card px-4 py-3 mb-2 flex items-center gap-3">
+                <Calendar size={16} color="var(--brand)" />
+                <div className="flex-1">
+                  <div className="text-[14.5px] font-semibold ink">{a.t}</div>
+                  <div className="text-xs muted">{a.d}</div>
+                </div>
+                <span className={`tag ${a.cls}`}>{a.st}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {!p.tipo && (
+          <div className="card p-3 mb-4 text-xs" style={{ background: "var(--brass-soft)", borderColor: "#E3D3B0", color: "#8A6A32" }}>
+            Faça um pedido no modo Cliente e ele aparece aqui no topo, com a pontuação calculada.
+          </div>
+        )}
+
+        <Label>Leads</Label>
+        {leads.map((l) => {
+          const t = faixaTemp(l.score);
+          const preco = precoLead(l.score, l.compradopor);
+          const aberto = desbloqueados.includes(l.id);
+          const minhaProposta = propostas.find((x) => x.leadId === l.id && x.marcenaria === EU);
+          const medEU = l.id === "cliente" ? medicoes[EU] : null;
+          const fechadoComigo = l.id === "cliente" && contrato?.marcenaria === EU;
+          const fechadoOutro = l.id === "cliente" && contrato && contrato.marcenaria !== EU;
+          return (
+            <div key={l.id} className={`card p-4 mb-3 ${l.meu ? "on" : ""}`} style={{ opacity: fechadoOutro ? .6 : 1 }}>
+              {l.meu && <div className="eyebrow mb-2" style={{ color: "var(--brand)" }}>{l.rascunho ? "Seu pedido de teste · ainda não enviado" : "Seu pedido de teste"}</div>}
+              {l.arq && <div className="eyebrow mb-2" style={{ color: "var(--brass)" }}>Via arquiteto · {l.obra}</div>}
+              <div className="flex justify-between items-start mb-3 gap-3">
+                <div>
+                  <div className="serif ink" style={{ fontSize: 21, lineHeight: 1.1 }}>{l.tipo}</div>
+                  <div className="flex items-center gap-1 text-xs mt-1.5 muted">
+                    <MapPin size={12} /> {l.bairro} · <span className="num">{l.km} km</span>{l.min > 0 && <> · há <span className="num">{l.min} min</span></>}
+                  </div>
+                </div>
+                <span className={`tag ${t.cls} shrink-0`}>{t.txt}</span>
+              </div>
+
+              <div className="inset p-3 mb-3">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="eyebrow" style={{ fontSize: 10 }}>Qualificação</span>
+                  <span className="serif num" style={{ fontSize: 20, lineHeight: 1, color: t.cor }}>{l.score}<span className="text-xs muted" style={{ fontFamily: "Hanken Grotesk, sans-serif" }}>/100</span></span>
+                </div>
+                <Track pct={l.score} />
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {[[`Orçamento: ${l.faixa}`, l.faixa !== "Ainda não sei"], [`${l.fotos} fotos`, l.fotos > 0], ["Projeto pronto", l.projeto]].map(([txt, ok], j) => (
+                    <span key={j} className={`tag ${ok ? "tag-brand" : "tag-mute"}`} style={{ fontWeight: 500 }}>
+                      {ok ? <Check size={11} strokeWidth={3} /> : <span style={{ opacity: .6 }}>—</span>}{txt}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {fechadoComigo ? (
+                <div className="rounded-[10px] p-3" style={{ background: "var(--brand)", color: "var(--surface)" }}>
+                  <div className="text-[14.5px] font-semibold">Contrato fechado · {brl(contrato.valor)}</div>
+                  <div className="text-xs mt-1" style={{ color: "#C9DCD4" }}>Instalação em {fmtLongo(etapas(contrato).instalacao)}. Primeira parcela liberada após a medição.</div>
+                </div>
+              ) : fechadoOutro ? (
+                <div className="text-xs muted">O cliente fechou com {contrato.marcenaria}. Seu crédito deste lead não é devolvido: o contato respondeu.</div>
+              ) : l.rascunho ? (
+                <div className="text-xs muted">O cliente ainda está preenchendo. O lead libera quando ele agendar as medições.</div>
+              ) : aberto ? (
+                <>
+                  <div className="rounded-[10px] p-3" style={{ background: "var(--brand-soft)" }}>
+                    <div className="text-[14.5px] font-semibold ink">{l.contato}</div>
+                    <div className="text-xs mt-1 muted">{l.end}</div>
+                  </div>
+                  {medEU && medEU.status !== "confirmada" && (
+                    <div className="mt-3"><Btn small variant="brand" onClick={confirmarMedicao} icon={<Calendar size={14} />}>Confirmar medição {medEU.quando.toLowerCase()}</Btn></div>
+                  )}
+                  {medEU?.status === "confirmada" && !minhaProposta && (
+                    <div className="mt-3 flex items-center gap-2 text-xs brand"><Check size={13} strokeWidth={3} /> Medição confirmada para {medEU.quando.toLowerCase()}</div>
+                  )}
+                  {minhaProposta ? (
+                    <div className="mt-3 inset p-3 flex items-center justify-between">
+                      <div>
+                        <div className="eyebrow" style={{ fontSize: 10 }}>Proposta enviada</div>
+                        <div className="text-[14.5px] font-semibold ink num mt-0.5">{brl(minhaProposta.valor)} · {minhaProposta.dias} dias</div>
+                      </div>
+                      <span className="tag tag-mute pulse">Cliente avaliando</span>
+                    </div>
+                  ) : formLead === l.id ? (
+                    <FormProposta faixa={l.faixa} onEnviar={(d) => enviarProposta(l.id, d)} onCancelar={() => setFormLead(null)} />
+                  ) : (
+                    <div className="mt-3"><Btn small variant={medEU && medEU.status !== "confirmada" ? "secondary" : "primary"} onClick={() => setFormLead(l.id)} icon={<FileText size={14} />}>Enviar proposta</Btn></div>
+                  )}
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between mb-2 text-xs muted">
+                    <span className="flex items-center gap-1"><Lock size={12} /> Contato bloqueado</span>
+                    <span className="num">{l.compradopor === 0 ? "Nenhuma marcenaria ainda" : `${l.compradopor} já ${l.compradopor === 1 ? "respondeu" : "responderam"}`}</span>
+                  </div>
+                  <Btn small disabled={creditos < preco} onClick={() => desbloquear(l, preco)}>Desbloquear por {preco} créditos</Btn>
+                  <div className="flex items-start gap-1.5 mt-2.5">
+                    <ShieldCheck size={13} color="var(--brand)" className="mt-0.5 shrink-0" />
+                    <span className="text-xs muted">Crédito devolvido se o cliente não responder em 48h.</span>
+                  </div>
+                </>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  /* ----- arquiteto ----- */
+  const arquiteto = () => (
+    <div className="pt-5">
+      <div className="mb-6">
+        <div className="eyebrow mb-1">Ateliê · {projetos.length} obras ativas</div>
+        <div className="serif ink" style={{ fontSize: 28, lineHeight: 1.05 }}>Seus projetos</div>
+        <div className="text-[13.5px] muted mt-2">Envie a planta e receba orçamentos das marcenarias parceiras.</div>
+      </div>
+
+      {novoProjeto ? (
+        <FormProjeto onCriar={criarProjeto} onCancelar={() => setNovoProjeto(false)} />
+      ) : (
+        <button onClick={() => setNovoProjeto(true)} className="card ghost p-4 mb-3 w-full text-left" style={{ borderColor: "var(--line-strong)" }}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Plus size={16} color="var(--brand)" />
+              <span className="text-[14.5px] font-semibold ink">Novo projeto</span>
+            </div>
+            <ArrowRight size={16} color="var(--muted)" />
+          </div>
+          <p className="text-xs muted mt-1">Suba a planta em PDF ou DWG e escolha quantas marcenarias devem orçar.</p>
+        </button>
+      )}
+
+      {projetos.map((x) => {
+        const recebidas = propostas.filter((o) => o.leadId === x.id);
+        const total = x.propostasBase + recebidas.length;
+        const st = x.semPlanta ? { txt: "Aguardando planta", cls: "tag-mute" }
+          : x.medicao ? { txt: `Medição ${x.medicao.toLowerCase()}`, cls: "tag-brass" }
+          : total > 0 ? { txt: `${total} ${total === 1 ? "orçamento recebido" : "orçamentos recebidos"}`, cls: "tag-brand" }
+          : { txt: `Enviado a ${x.n} ${x.n === 1 ? "marcenaria" : "marcenarias"}`, cls: "tag-brass" };
+        return (
+          <div key={x.id} className={`card p-4 mb-3 ${x.criado ? "on" : ""}`}>
+            <div className="flex justify-between items-start mb-2 gap-3">
+              <div>
+                <div className="serif ink" style={{ fontSize: 20, lineHeight: 1.1 }}>{x.obra}</div>
+                <div className="text-xs mt-1 muted">{x.cli}</div>
+              </div>
+              <span className={`tag ${st.cls} shrink-0`}>{st.txt}</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs muted"><FileText size={12} /> {x.amb.join(", ")}</div>
+            {recebidas.length > 0 && (
+              <div className="mt-3">
+                {recebidas.map((o) => (
+                  <div key={o.id} className="inset p-3 flex items-center justify-between mb-2">
+                    <div>
+                      <div className="text-[13.5px] font-semibold ink">{o.marcenaria}</div>
+                      <div className="text-xs muted">{o.material} · garantia {o.garantia}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="serif num ink" style={{ fontSize: 20, lineHeight: 1 }}>{Number(o.valor).toLocaleString("pt-BR")}</div>
+                      <div className="text-xs muted num">pronto {fmt(addDias(o.dias, o.enviadaEm))}</div>
+                    </div>
+                  </div>
+                ))}
+                <div className="text-xs muted mt-1">Encaminhe ao cliente pelo app. Você aparece como responsável técnico em todas as propostas.</div>
+              </div>
+            )}
+            {x.criado && recebidas.length === 0 && (
+              <div className="mt-3 text-xs muted flex items-center gap-1.5"><span className="tag tag-mute pulse">Aguardando</span> Abra a aba Marcenaria: o projeto já está lá como lead.</div>
+            )}
+          </div>
+        );
+      })}
+
+      <div className="rounded-[14px] p-5 mt-2" style={{ background: "var(--ink)", color: "var(--surface)" }}>
+        <div className="serif" style={{ fontSize: 22, lineHeight: 1.1 }}>Por que arquitetos usam</div>
+        <p className="text-[13px] leading-relaxed mt-2" style={{ color: "#C9CCC6" }}>
+          Você não paga nada e não perde o cliente. As marcenarias competem pelo seu projeto, e o histórico de prazo e
+          execução de cada uma fica registrado, para você não repetir uma escolha ruim.
+        </p>
+      </div>
+    </div>
+  );
+
+  const abas = [
+    { id: "cliente", label: "Cliente", Icon: User },
+    { id: "marceneiro", label: "Marcenaria", Icon: Building2 },
+    { id: "arquiteto", label: "Arquiteto", Icon: Compass },
+  ];
+
+  return (
+    <div className="min-h-screen w-full flex flex-col items-center py-10 px-4" style={{ background: "var(--ground)" }}>
+      <div className="backdrop-word serif" aria-hidden="true">Medida</div>
+
+      <div className="stage flex flex-col items-center w-full">
+        <div className="mb-6 text-center">
+          <div className="eyebrow mb-2">Protótipo navegável</div>
+          <div className="serif ink" style={{ fontSize: 30, lineHeight: 1 }}>A casa dos sonhos, com data e hora marcada</div>
+          <div className="text-[13.5px] muted mt-2">Grande Florianópolis · Troque de lado para ver o mesmo pedido pelos três olhares.</div>
+        </div>
+
+        <div className="flex items-center gap-3 mb-7">
+          <div className="seg">
+            {abas.map(({ id, label, Icon }) => (
+              <button key={id} onClick={() => setPersona(id)} className={persona === id ? "on" : ""}>
+                <Icon size={14} /> {label}{badges[id] > 0 && <span className="badge num">{badges[id]}</span>}
+              </button>
+            ))}
+          </div>
+          <button onClick={reiniciar} title="Reiniciar simulação" className="h-9 w-9 rounded-full flex items-center justify-center" style={{ background: "var(--surface)", border: "1px solid var(--line)", color: "var(--muted)" }}>
+            <RotateCcw size={15} />
+          </button>
+        </div>
+
+        <div className="phone-frame w-full relative" style={{ maxWidth: 410 }}>
+          <div className="phone-screen">
+            <div className="statusbar">
+              <span className="num">9:41</span>
+              <span className="flex items-center gap-1.5" aria-hidden="true">
+                <span style={{ display: "inline-block", width: 14, height: 9, borderRadius: 2, background: "var(--ink)" }} />
+                <span style={{ display: "inline-block", width: 22, height: 10, borderRadius: 3, border: "1.5px solid var(--ink)", padding: 1.5 }}><span style={{ display: "block", height: "100%", width: "80%", background: "var(--ink)", borderRadius: 1 }} /></span>
+              </span>
+            </div>
+            <div className="phone-scroll" key={persona}>
+              {persona === "cliente" && cliente()}
+              {persona === "marceneiro" && marceneiro()}
+              {persona === "arquiteto" && arquiteto()}
+            </div>
+            <div className="homebar" />
+          </div>
+          {toast && <div className="toast">{toast}</div>}
+        </div>
+
+        <div className="mt-6 max-w-md w-full card p-4">
+          <div className="eyebrow mb-2">Roteiro da simulação</div>
+          <ol className="text-[13px] muted leading-relaxed" style={{ paddingLeft: 18, listStyle: "decimal" }}>
+            <li>Como <b className="ink">Cliente</b>, monte o pedido e agende as medições. Inclua a Serraria Marcenaria: é a que você controla.</li>
+            <li>Como <b className="ink">Marcenaria</b>, desbloqueie o lead, confirme a medição e envie sua proposta. As outras duas respondem sozinhas.</li>
+            <li>De volta ao <b className="ink">Cliente</b>, compare e feche com data marcada. A linha do tempo aparece com cada etapa datada.</li>
+            <li>Como <b className="ink">Arquiteto</b>, crie um projeto com planta. Ele vira lead na aba Marcenaria e os orçamentos voltam para o arquiteto.</li>
+          </ol>
+          <div className="text-xs muted mt-3">O estado fica salvo neste navegador. O botão circular reinicia tudo.</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
