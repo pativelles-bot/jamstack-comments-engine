@@ -1,4 +1,4 @@
-# Deploy estático do repositório de protótipos (site Netlify: pativelles-lab).
+# Deploy estático do repositório de protótipos (site Netlify: grupopv-dev).
 #
 # Publicamos a pasta ./public como está: cada projeto vive em public/<slug>/index.html
 # e a raiz é apenas o índice. Definimos `base` como essa pasta para o Netlify rodar ali,

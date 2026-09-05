@@ -13,9 +13,10 @@ conteúdo, cor, texto, imagem ou endereço de outro.
    fotos, depoimentos, telefone, redes sociais nem domínio de um projeto anterior. Se precisar de
    dados de exemplo, invente dados fictícios e diga que são fictícios.
 
-3. **O site Netlify deste repositório é genérico: `pativelles-lab`.** Nunca renomeie esse site com
-   o nome de um cliente. Os previews saem em
-   `https://deploy-preview-<n>--pativelles-lab.netlify.app/<slug>/`.
+3. **Repositório e site Netlify são genéricos: `grupopv-dev`.** Nunca renomeie o repositório nem
+   o site com o nome de um cliente. Os previews saem em
+   `https://deploy-preview-<n>--grupopv-dev.netlify.app/<slug>/` e a produção em
+   `https://grupopv-dev.netlify.app/<slug>/`.
 
 4. **Cliente em produção ganha casa própria.** Quando um projeto sair do protótipo, ele recebe
    repositório e site Netlify próprios, com o nome dele. Não publique o site definitivo de um
