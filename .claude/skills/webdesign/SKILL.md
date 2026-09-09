@@ -212,8 +212,7 @@ O conector é o TRANSPORTE, não a bancada:
 dentro da conversa: esses `index.html` são arquivo único com imagens em base64
 (0,1 a 0,8 MB) e não cabem em contexto.
 
-**Pasta local de trabalho desta máquina:** `<<PREENCHER NA INSTALAÇÃO>>`
-(ex.: `C:\sites`)
+**Pasta local de trabalho desta máquina:** `C:\Users\anacl\OneDrive\Documentos\sites-pedro`
 
 ### Estrutura no Drive
 
