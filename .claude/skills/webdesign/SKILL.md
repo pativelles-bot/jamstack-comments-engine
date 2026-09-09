@@ -221,8 +221,8 @@ Sites no Notion:
 
     PROJETOS/
     ├── sites-automacao/   ← EXCLUSIVO da esteira automática. Não suba nada aqui.
-    ├── sites-mauricio/    ← ★ destino desta instalação
-    ├── sites-pedro/
+    ├── sites-mauricio/
+    ├── sites-pedro/       ← ★ destino desta instalação
     ├── sites-kaue/
     ├── sites-patricia/
     └── onboardings/       ← não é site
@@ -244,11 +244,11 @@ Nome da pasta do projeto: `LP <Nome Sobrenome>` (iniciais maiúsculas).
 2. **Antes de subir, procure `LP <Nome>` no Drive em TODOS os baldes** — o site
    pode já existir, feito por outra pessoa. Se existir, **não sobrescreva**:
    pergunte primeiro. Sobrescrever site publicado é o pior erro possível aqui.
-3. Crie `sites-mauricio/LP <Nome>/` no Drive e suba o `index.html` e o
+3. Crie `sites-pedro/LP <Nome>/` no Drive e suba o `index.html` e o
    `PRODUCT.md`. (`_fotos/` e `_analise/` são material de trabalho: subir é
    opcional.)
 4. No Notion, na base de Sites: `Status do Site` = **Em revisão**,
-   `Feito por` = **Mauricio**, e o `Link do Site` quando publicar.
+   `Feito por` = **Pedro**, e o `Link do Site` quando publicar.
 
 ### Regras que não se negociam
 
